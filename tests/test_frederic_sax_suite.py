@@ -248,5 +248,60 @@ class TestSecurityPreflight(unittest.TestCase):
                         pass
         self.assertEqual(len(violations), 0, f"Found secrets in repo: {violations}")
 
+class TestAirbnbBookingEngine(unittest.TestCase):
+    def setUp(self):
+        self.index_content = (REPO_DIR / "index.html").read_text(encoding="utf-8")
+        self.css_path = REPO_DIR / "css" / "airbnb-booking.css"
+        self.js_path = REPO_DIR / "js" / "airbnb-calendar.js"
+        self.css_content = self.css_path.read_text(encoding="utf-8")
+        self.js_content = self.js_path.read_text(encoding="utf-8")
+
+    def test_modular_files_exist_and_non_empty(self):
+        self.assertTrue(self.css_path.exists(), "css/airbnb-booking.css must exist")
+        self.assertGreater(self.css_path.stat().st_size, 5000, "airbnb-booking.css must not be empty")
+        self.assertTrue(self.js_path.exists(), "js/airbnb-calendar.js must exist")
+        self.assertGreater(self.js_path.stat().st_size, 5000, "airbnb-calendar.js must not be empty")
+
+    def test_index_includes_modular_assets(self):
+        self.assertIn('href="css/airbnb-booking.css"', self.index_content)
+        self.assertIn('src="js/airbnb-calendar.js"', self.index_content)
+
+    def test_airbnb_css_tokens_and_selectors(self):
+        self.assertIn('.bnb-calendar-card', self.css_content)
+        self.assertIn('.bnb-segmented-control', self.css_content)
+        self.assertIn('.bnb-slot-bar', self.css_content)
+        self.assertIn('.bnb-day-cell.struck', self.css_content)
+        self.assertIn('.bnb-day-cell.range-start', self.css_content)
+        self.assertIn('.bnb-day-cell.range-end', self.css_content)
+        self.assertIn('.bnb-day-cell.in-range', self.css_content)
+        self.assertIn('.bnb-btn-test-sim', self.css_content)
+        self.assertIn('.bnb-slot-modal-overlay', self.css_content)
+
+    def test_airbnb_js_calendar_stream_and_methods(self):
+        self.assertIn('function renderCalendarStream', self.js_content)
+        self.assertIn('setAirbnbBookingMode', self.js_content)
+        self.assertIn('setAirbnbTolerance', self.js_content)
+        self.assertIn('clearAirbnbDates', self.js_content)
+        self.assertIn('openSlotChangeModal', self.js_content)
+        self.assertIn('selectPerformanceSlot', self.js_content)
+        self.assertIn('dispatchAirbnbReservationWhatsApp', self.js_content)
+
+    def test_simulation_mode_formatting(self):
+        self.assertIn('⚠️ [TEST BOOKING SIMULATION]', self.js_content)
+        self.assertIn('*AUTOMATED SYSTEM VERIFICATION TEST*', self.js_content)
+        self.assertIn('STATUS: TEST SIMULATION VERIFIED', self.js_content)
+        self.assertIn('https://wa.me/254745163122', self.js_content)
+
+    def test_dom_elements_for_airbnb_features(self):
+        self.assertIn('id="bnb-mode-dates"', self.index_content)
+        self.assertIn('id="bnb-mode-flexible"', self.index_content)
+        self.assertIn('id="bnb-slot-bar-val"', self.index_content)
+        self.assertIn('id="bnb-calendar-stream"', self.index_content)
+        self.assertIn('id="bnb-flex-section"', self.index_content)
+        self.assertIn('id="bnb-slot-modal"', self.index_content)
+        self.assertIn('dispatchAirbnbReservationWhatsApp(true)', self.index_content)
+        self.assertIn('dispatchAirbnbReservationWhatsApp(false)', self.index_content)
+
+
 if __name__ == "__main__":
     unittest.main()

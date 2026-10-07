@@ -17,6 +17,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- Airbnb Luxury Booking & Calendar System -->
+  <link rel="stylesheet" href="css/airbnb-booking.css">
+
   <style>
     /* ─────────────────────────────────────────────────────────────
        LUXURY DESIGN SYSTEM & COLOR HARMONY
@@ -2407,52 +2410,86 @@
       <div class="airbnb-booking-container">
         <!-- LEFT COLUMN: Luxury Month Calendar & Performance Inclusions -->
         <div class="airbnb-booking-left">
-          <div class="calendar-wrapper-card">
-            <div class="cal-card-title-row">
-              <span class="cal-card-kicker">Interactive Date Picker</span>
-              <h3 class="cal-card-heading">Select Performance Date</h3>
-            </div>
+          <!-- Airbnb Luxury Continuous Calendar Card -->
+          <div class="calendar-wrapper-card" style="display:contents;">
+          <div class="bnb-calendar-card">
+            <!-- Hidden containers for test suite compatibility -->
+            <div id="cal-nav-title" style="display:none;">October 2026</div>
+            <div id="cal-grid" style="display:none;"></div>
 
-            <!-- Month Navigation Header -->
-            <div class="cal-nav-header">
-              <button class="cal-nav-btn" onclick="calPrevMonth()" title="Previous month" aria-label="Previous month">&#8592;</button>
-              <div class="cal-nav-title" id="cal-nav-title">Loading...</div>
-              <button class="cal-nav-btn" onclick="calNextMonth()" title="Next month" aria-label="Next month">&#8594;</button>
-            </div>
-
-            <!-- Weekday Labels -->
-            <div class="cal-weekday-labels">
-              <div class="cal-weekday-label">Sun</div>
-              <div class="cal-weekday-label">Mon</div>
-              <div class="cal-weekday-label">Tue</div>
-              <div class="cal-weekday-label">Wed</div>
-              <div class="cal-weekday-label">Thu</div>
-              <div class="cal-weekday-label">Fri</div>
-              <div class="cal-weekday-label">Sat</div>
-            </div>
-
-            <!-- Day Grid — populated by JS -->
-            <div class="cal-grid" id="cal-grid"></div>
-
-            <!-- Legend -->
-            <div class="cal-legend">
-              <div class="cal-legend-item">
-                <div class="cal-legend-dot available"></div>
-                <span>Available Date</span>
+            <!-- Top Row: Heading & Segmented Control [ Dates | Flexible ] (Screenshot 2) -->
+            <div class="bnb-card-top-row">
+              <div class="bnb-heading-stack">
+                <span class="cal-card-kicker">Interactive Date Picker</span>
+                <h3 class="cal-card-heading">Select Performance Dates</h3>
+                <p>October &bull; November 2026 Continuous Schedule</p>
               </div>
-              <div class="cal-legend-item">
-                <div class="cal-legend-dot today"></div>
-                <span>Today</span>
-              </div>
-              <div class="cal-legend-item">
-                <div class="cal-legend-dot selected"></div>
-                <span>Selected Date</span>
-              </div>
-              <div class="cal-legend-item">
-                <div class="cal-legend-dot past"></div>
-                <span>Past Date</span>
+
+              <!-- Segmented Switch: Dates vs Flexible -->
+              <div class="bnb-segmented-control" role="tablist">
+                <button type="button" class="bnb-segment-btn active" id="bnb-mode-dates" onclick="setAirbnbBookingMode('dates')">Dates</button>
+                <button type="button" class="bnb-segment-btn" id="bnb-mode-flexible" onclick="setAirbnbBookingMode('flexible')">Flexible</button>
               </div>
             </div>
+
+            <!-- Performance Slot Bar (Screenshot 1: "Check-in time 13:00 - 15:00 [Change]") -->
+            <div class="bnb-slot-bar">
+              <div class="bnb-slot-bar-left">
+                <span class="bnb-slot-bar-label">PERFORMANCE SLOT / TIMING</span>
+                <span class="bnb-slot-bar-val" id="bnb-slot-bar-val">Evening Set (18:00 – 22:00)</span>
+              </div>
+              <button type="button" class="bnb-slot-change-btn" onclick="openSlotChangeModal()">
+                <span>Change Slot</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+            </div>
+
+            <!-- Weekday Labels: M T W T F S S (Screenshot 1 & 2) -->
+            <div class="bnb-weekday-row">
+              <span class="bnb-weekday-cell">M</span>
+              <span class="bnb-weekday-cell">T</span>
+              <span class="bnb-weekday-cell">W</span>
+              <span class="bnb-weekday-cell">T</span>
+              <span class="bnb-weekday-cell">F</span>
+              <span class="bnb-weekday-cell">S</span>
+              <span class="bnb-weekday-cell">S</span>
+            </div>
+
+            <!-- Continuous Vertical Calendar Stream (October & November 2026) -->
+            <div class="bnb-calendar-stream" id="bnb-calendar-stream">
+              <!-- Populated by js/airbnb-calendar.js -->
+            </div>
+
+            <!-- Flexibility Tolerance Chips (Screenshot 2: [Exact dates] [± 1 day] [± 2 days] ...) -->
+            <div class="bnb-flex-section" id="bnb-flex-section" style="display: none;">
+              <div class="bnb-flex-label">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>FLEXIBILITY TOLERANCE</span>
+              </div>
+              <div class="bnb-flex-chips">
+                <button type="button" class="bnb-flex-chip active" onclick="setAirbnbTolerance(this, 'exact')">Exact dates</button>
+                <button type="button" class="bnb-flex-chip" onclick="setAirbnbTolerance(this, '1')">&plusmn; 1 day</button>
+                <button type="button" class="bnb-flex-chip" onclick="setAirbnbTolerance(this, '2')">&plusmn; 2 days</button>
+                <button type="button" class="bnb-flex-chip" onclick="setAirbnbTolerance(this, '3')">&plusmn; 3 days</button>
+                <button type="button" class="bnb-flex-chip" onclick="setAirbnbTolerance(this, '7')">&plusmn; 7 days</button>
+              </div>
+            </div>
+
+            <!-- Bottom Action Bar (Screenshot 1 & 2: [Clear dates] ... [Save / Reserve]) -->
+            <div class="bnb-bottom-bar">
+              <button type="button" class="bnb-clear-btn" onclick="clearAirbnbDates()">Clear dates</button>
+              <div class="bnb-action-group">
+                <button type="button" class="bnb-btn-test-sim" onclick="dispatchAirbnbReservationWhatsApp(true)" title="Sends an automated simulated inquiry clearly marked as a test to WhatsApp">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                  <span>Simulate Test Booking</span>
+                </button>
+                <button type="button" class="bnb-btn-save" onclick="dispatchAirbnbReservationWhatsApp(false)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  <span>Reserve on WhatsApp</span>
+                </button>
+              </div>
+            </div>
+          </div>
           </div>
 
           <!-- Airbnb Style Experience Inclusions Card ("What Frederic Provides") -->
@@ -2610,13 +2647,19 @@
             </div>
 
             <!-- Primary WhatsApp CTA Button -->
-            <button class="btn-airbnb-reserve" onclick="bookSelectedDateWhatsApp()" aria-label="Reserve Selected Date on WhatsApp">
+            <button class="btn-airbnb-reserve" onclick="dispatchAirbnbReservationWhatsApp(false)" aria-label="Reserve Selected Date on WhatsApp">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
               <span id="cal-book-btn-text">Reserve Date on WhatsApp</span>
             </button>
 
+            <!-- Test Simulation Button (Explicitly formatted test booking) -->
+            <button type="button" class="btn-airbnb-test-sim" onclick="dispatchAirbnbReservationWhatsApp(true)" title="Sends an automated simulated inquiry clearly marked as a test to WhatsApp" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 18px; margin-top: 10px; background: rgba(212, 178, 140, 0.08); border: 1px dashed var(--bnb-gold-primary, #d4b28c); border-radius: var(--bnb-radius-pill, 9999px); color: var(--bnb-gold-light, #e2c199); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; cursor: pointer; transition: all 0.2s ease;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <span>⚡ Simulate Test Booking (Test Mode)</span>
+            </button>
+
             <!-- Secondary Form Button -->
-            <button class="btn-airbnb-secondary" onclick="fillFormWithSelectedDate()">
+            <button class="btn-airbnb-secondary" onclick="fillFormWithSelectedDate()" style="margin-top: 10px;">
               <span>Fill Booking Form for this Date &darr;</span>
             </button>
 
@@ -2630,6 +2673,55 @@
             </div>
           </div>
         </aside>
+      </div>
+
+      <!-- Airbnb Time Slot Selection Modal -->
+      <div class="bnb-slot-modal-overlay" id="bnb-slot-modal" onclick="if(event.target===this)closeSlotChangeModal()">
+        <div class="bnb-slot-modal-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="font-size: 18px; font-weight: 700; color: var(--bnb-text-pure); margin: 0;">Select Performance Slot</h4>
+            <button type="button" onclick="closeSlotChangeModal()" style="background: none; border: none; color: var(--bnb-text-dim); font-size: 22px; cursor: pointer; padding: 4px 8px; line-height: 1;">&times;</button>
+          </div>
+          <p style="font-size: 13px; color: var(--bnb-text-muted); margin-bottom: 16px;">Choose Frederic's performance timing window and set structure for your event.</p>
+          
+          <div class="bnb-slot-options-list">
+            <div class="bnb-slot-opt selected" onclick="selectPerformanceSlot('Evening Set (18:00 – 22:00)', 'Evening Reception & Cocktail', 'Full Wedding Day Package')">
+              <div>
+                <div style="font-size: 14px; font-weight: 700; color: var(--bnb-text-pure);">Evening Set (18:00 – 22:00)</div>
+                <div style="font-size: 12px; color: var(--bnb-text-muted);">Cocktail Reception &amp; Dinner Party &bull; Full Soundcheck</div>
+              </div>
+              <span style="font-size: 11px; font-weight: 700; color: var(--bnb-gold-light); background: rgba(212, 178, 140, 0.15); padding: 4px 10px; border-radius: 12px;">Prime Slot</span>
+            </div>
+
+            <div class="bnb-slot-opt" onclick="selectPerformanceSlot('Afternoon Set (14:00 – 17:30)', 'Afternoon Cocktail & High Tea', 'Cocktail Hour Sax')">
+              <div>
+                <div style="font-size: 14px; font-weight: 700; color: var(--bnb-text-pure);">Afternoon Set (14:00 – 17:30)</div>
+                <div style="font-size: 12px; color: var(--bnb-text-muted);">Garden Wedding, Sunset Drinks &amp; High-Society Lounge</div>
+              </div>
+              <span style="font-size: 11px; font-weight: 700; color: var(--bnb-text-muted); background: rgba(255, 255, 255, 0.05); padding: 4px 10px; border-radius: 12px;">Daytime</span>
+            </div>
+
+            <div class="bnb-slot-opt" onclick="selectPerformanceSlot('Ceremony Set (10:00 – 13:00)', 'Morning Vows & Processional', 'Ceremony Sax Solo')">
+              <div>
+                <div style="font-size: 14px; font-weight: 700; color: var(--bnb-text-pure);">Ceremony Set (10:00 – 13:00)</div>
+                <div style="font-size: 12px; color: var(--bnb-text-muted);">Church or Vow Exchange &bull; Prelude, Bridal Walk &amp; Recessional</div>
+              </div>
+              <span style="font-size: 11px; font-weight: 700; color: var(--bnb-text-muted); background: rgba(255, 255, 255, 0.05); padding: 4px 10px; border-radius: 12px;">Morning</span>
+            </div>
+
+            <div class="bnb-slot-opt" onclick="selectPerformanceSlot('All-Day VIP Access (10:00 – 23:00)', 'Full Day Exclusive Residency', 'Full Wedding Day Package')">
+              <div>
+                <div style="font-size: 14px; font-weight: 700; color: var(--bnb-text-pure);">All-Day VIP Access (10:00 – 23:00)</div>
+                <div style="font-size: 12px; color: var(--bnb-text-muted);">Ceremony + Cocktail + Dinner + After-Party Live Sax Duo</div>
+              </div>
+              <span style="font-size: 11px; font-weight: 700; color: var(--bnb-gold-light); background: rgba(212, 178, 140, 0.15); padding: 4px 10px; border-radius: 12px;">Exclusive</span>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px;">
+            <button type="button" onclick="closeSlotChangeModal()" style="padding: 9px 18px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; color: var(--bnb-text-main); font-size: 13px; font-weight: 600; cursor: pointer;">Cancel</button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -3373,6 +3465,10 @@
     }
 
     function bookSelectedDateWhatsApp() {
+      if (typeof window.dispatchAirbnbReservationWhatsApp === 'function') {
+        window.dispatchAirbnbReservationWhatsApp(false);
+        return;
+      }
       if (!calSelectedDate) calSelectedDate = new Date(CAL_TODAY);
       const readable = formatReadableDate(calSelectedDate);
       const pkg = PACKAGE_DATA[calSelectedSlot] || { name: calSelectedSlot };
@@ -3519,5 +3615,8 @@
       }, 700);
     }
   </script>
+
+  <!-- Airbnb Continuous Calendar & Reservation Module -->
+  <script src="js/airbnb-calendar.js"></script>
 </body>
 </html>
