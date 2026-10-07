@@ -1,0 +1,20 @@
+{
+  "schema": "hermes.preflight.v6",
+  "run_id": "hermes-2026-10-06-frederic-sax",
+  "project": "frederic-sax-ke",
+  "timestamp": "2026-10-06T22:46:00+03:00",
+  "platform": {
+    "os": "windows",
+    "python": "3.11.9",
+    "git": "2.55.0.windows.3",
+    "container_runtime": null,
+    "forced_mode": "static-only",
+    "confidence_ceiling": "E2-P"
+  },
+  "capabilities": {
+    "git_tracking": true,
+    "hermetic_testing": true,
+    "secret_scanning": true,
+    "browser_vitl": true
+  }
+}

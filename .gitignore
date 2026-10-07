@@ -1,14 +1,17 @@
-# OS & Editor
-.DS_Store
+# Universal HERMES Ignore Rules
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+venv/
+.venv/
+env/
+*.log
 Thumbs.db
-*.swp
-*.bak
-*~
+.DS_Store
 
-# Vercel & Node
-.vercel/
-node_modules/
-npm-debug.log*
-
-# Temp
-*.tmp
+# Large Archives & Temporary Storage
+*.zip
+.tempmediaStorage/
+.system_generated/

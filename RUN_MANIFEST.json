@@ -1,0 +1,29 @@
+{
+  "schema": "hermes.manifest.v6",
+  "run_id": "hermes-2026-10-06-frederic-sax",
+  "project": "frederic-sax-ke",
+  "produced_at": "2026-10-06T22:46:00+03:00",
+  "runner_tier": "T1 (read-only / static-only)",
+  "mode": "static-only",
+  "specs_referenced": [
+    "C:/Users/TATI/Desktop/DEV/.agents/00-README.md",
+    "C:/Users/TATI/Desktop/DEV/.agents/05-DECISIONS.md",
+    "C:/Users/TATI/Desktop/DEV/.agents/06-FIELD-REPORT.md",
+    "C:/Users/TATI/Desktop/DEV/.agents/10-ORCHESTRATION.md",
+    "C:/Users/TATI/Desktop/DEV/.agents/15-WEAK-MODEL-GUARDRAILS.md",
+    "C:/Users/TATI/Desktop/DEV/.agents/20-VITL.md",
+    "C:/Users/TATI/Desktop/DEV/.agents/25-PLATFORM-PREFLIGHT.md"
+  ],
+  "entrypoints": [
+    "index.html",
+    "rate-card.html",
+    "frederic-sax.html"
+  ],
+  "governing_skills": [
+    "/grilling",
+    "/domain-modeling",
+    "/to-spec",
+    "/to-tickets",
+    "/tdd"
+  ]
+}

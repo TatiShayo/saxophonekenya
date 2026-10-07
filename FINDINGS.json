@@ -1,0 +1,53 @@
+{
+  "schema": "hermes.findings.v6",
+  "run_id": "hermes-2026-10-06-frederic-sax",
+  "project": "frederic-sax-ke",
+  "phase": "5.0",
+  "produced_at": "2026-10-06T22:46:00+03:00",
+  "runner_tier": "T1",
+  "mode": "static-only",
+  "findings": [
+    {
+      "id": "F-001",
+      "title": "Stale selector in capture_all.py breaks screenshot automation",
+      "severity": "low",
+      "confidence_tier": "E4",
+      "actionability": "P1",
+      "confidence": 1.0,
+      "category": "correctness",
+      "cwe": "CWE-404",
+      "locations": [{ "file": "capture_all.py", "line": 32, "symbol": "execute_script" }],
+      "provenance": [{ "source": "file:capture_all.py", "trust": "repo" }],
+      "reproduction": { "kind": "python-script", "path": "capture_all.py", "exit_criteria": "Unhandled JavascriptException when executing scrollIntoView on null element" },
+      "impact": "Automated headless visual verification script crashes when attempting to scroll to deleted section.",
+      "recommended_fix": "Replace scroll target with active sections #calendar and #ratecard.",
+      "falsification": { "status": "survived", "by": "falsifier_agent", "note": "Defect confirmed; fix verified by test_capture_all_script_no_stale_selectors" },
+      "blast_radius": { "reachable_from_internet": false, "requires_auth": false, "data_classes": [] },
+      "acceptance": { "previously_accepted": false, "context_hash": null, "accepted_reason": null },
+      "provenance_chain": { "run_id": "hermes-2026-10-06-frederic-sax", "agent": "developer_agent", "poc": "capture_all.py", "fix_commit": "HEAD", "regression_test": "test_capture_all_script_no_stale_selectors" },
+      "fix_class": "code",
+      "attestation": { "evidence_path": "ATTESTATION.jsonl#L2", "self_reported_only": false, "runner_tier": "T1" }
+    },
+    {
+      "id": "F-002",
+      "title": "IMG_3615.MP4 exceeds GitHub 100MB push protection limit",
+      "severity": "medium",
+      "confidence_tier": "E2-P",
+      "actionability": "P2-GATE",
+      "confidence": 0.95,
+      "category": "other",
+      "cwe": "CWE-400",
+      "locations": [{ "file": "IMG_3615.MP4", "line": 1, "symbol": "asset" }],
+      "provenance": [{ "source": "file:IMG_3615.MP4", "trust": "repo" }],
+      "reproduction": { "kind": "none", "path": "IMG_3615.MP4", "exit_criteria": "File size 127,365,382 bytes > 104,857,600 bytes" },
+      "impact": "Pushing the local Git repository directly to GitHub will be rejected by GitHub Push Protection unless Git LFS is configured.",
+      "recommended_fix": "Configure Git LFS for *.MP4 or transcode IMG_3615.MP4 to 720p/1080p H.264 high-efficiency under 75MB.",
+      "falsification": { "status": "survived", "by": "falsifier_agent", "note": "Property verified via filesystem stat" },
+      "blast_radius": { "reachable_from_internet": false, "requires_auth": false, "data_classes": [] },
+      "acceptance": { "previously_accepted": false, "context_hash": null, "accepted_reason": null },
+      "provenance_chain": { "run_id": "hermes-2026-10-06-frederic-sax", "agent": "security_agent", "poc": "stat", "fix_commit": null, "regression_test": null },
+      "fix_class": "infra",
+      "attestation": { "evidence_path": "ATTESTATION.jsonl#L1", "self_reported_only": false, "runner_tier": "T1" }
+    }
+  ]
+}

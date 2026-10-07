@@ -1,0 +1,65 @@
+{
+  "schema": "hermes.tests.v6",
+  "run_id": "hermes-2026-10-06-frederic-sax",
+  "project": "frederic-sax-ke",
+  "produced_at": "2026-10-06T22:45:51+03:00",
+  "summary": {
+    "status": "PASS",
+    "passed": 23,
+    "failed": 0,
+    "skipped": 0,
+    "unrunnable": 0,
+    "wallclock_s": 0.149
+  },
+  "suites": [
+    {
+      "suite": "TestDocumentStructure",
+      "tool": "python -m unittest discover tests",
+      "tests_run": 6,
+      "passed": 6,
+      "status": "PASS"
+    },
+    {
+      "suite": "TestAssetResolution",
+      "tool": "python -m unittest discover tests",
+      "tests_run": 3,
+      "passed": 3,
+      "status": "PASS"
+    },
+    {
+      "suite": "TestNavigationIntegrity",
+      "tool": "python -m unittest discover tests",
+      "tests_run": 3,
+      "passed": 3,
+      "status": "PASS"
+    },
+    {
+      "suite": "TestCalendarStateEngine",
+      "tool": "python -m unittest discover tests",
+      "tests_run": 3,
+      "passed": 3,
+      "status": "PASS"
+    },
+    {
+      "suite": "TestWhatsAppAndFormIntegration",
+      "tool": "python -m unittest discover tests",
+      "tests_run": 3,
+      "passed": 3,
+      "status": "PASS"
+    },
+    {
+      "suite": "TestDeprecatedContentAbsence",
+      "tool": "python -m unittest discover tests",
+      "tests_run": 4,
+      "passed": 4,
+      "status": "PASS"
+    },
+    {
+      "suite": "TestSecurityPreflight",
+      "tool": "python -m unittest discover tests",
+      "tests_run": 1,
+      "passed": 1,
+      "status": "PASS"
+    }
+  ]
+}

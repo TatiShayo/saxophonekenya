@@ -1,0 +1,2640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="King Sax debut project 'ENERGY' out now. Afro-House & Contemporary Saxophone Fusion. Featuring live soloist from NPR Tiny Desk with Asake & O2 Arena London. Support and stream now.">
+  <meta name="keywords" content="King Sax, Saxophone, ENERGY, Afro-House, NPR Tiny Desk Asake, O2 Arena London, Saxophonist, Jazz Fusion, Music Download">
+  <meta property="og:title" content="King Sax | 'ENERGY' Debut Project Out Now">
+  <meta property="og:description" content="King Sax's independent debut album 'ENERGY'. A bold fusion of House & Afro-inspired rhythms with live saxophone artistry.">
+  <meta property="og:image" content="https://images.zoogletools.com/s:bzglfiles/u/510466/28e4fcdb85128d20701c93f295e427b1a6af341b/original/img-2983.jpeg/!!/b%3AW1sicmVzaXplIiwxODAwXSxbIm1heCJdLFsid2UiXV0%3D/meta%3AeyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ%3D%3D.jpg">
+  <meta property="og:type" content="music.album">
+  
+  <title>King Sax | "ENERGY" Official Site & Music Player</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─────────────────────────────────────────────────────────────
+       DESIGN SYSTEM & TOKENS
+       ───────────────────────────────────────────────────────────── */
+    :root {
+      --bg-dark: #070709;
+      --bg-surface: #0e0d12;
+      --bg-card: #15141b;
+      --bg-card-hover: #1c1a24;
+      --bg-glass: rgba(14, 13, 18, 0.82);
+      
+      --gold: #e5a93b;
+      --gold-light: #f7c862;
+      --gold-glow: rgba(229, 169, 59, 0.28);
+      --gold-deep: #a8721c;
+      --gold-border: rgba(229, 169, 59, 0.22);
+      
+      --text-main: #f5f2eb;
+      --text-muted: #95918a;
+      --text-dim: #5c5852;
+      
+      --border-subtle: #201e28;
+      --border-light: #2d2a38;
+      
+      --font-brand: 'Syne', sans-serif;
+      --font-display: 'Cinzel', serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      --nav-height: 64px;
+      --max-width: 1100px;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.6;
+      background: radial-gradient(circle at 50% 0%, rgba(229, 169, 59, 0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 100% 40%, rgba(168, 114, 28, 0.05) 0%, transparent 50%),
+                  var(--bg-dark);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, textarea, select {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       NAVIGATION BAR
+       ───────────────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      z-index: 1000;
+      background: var(--bg-glass);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      transition: var(--transition);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-brand);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo span {
+      color: var(--gold-light);
+    }
+
+    .live-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      background: rgba(229, 169, 59, 0.12);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      font-family: var(--font-mono);
+      font-weight: 500;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      box-shadow: 0 0 8px var(--gold);
+      animation: pulseDot 2s infinite;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-cta-btn {
+      padding: 8px 18px;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-deep));
+      color: #000 !important;
+      font-weight: 700 !important;
+      font-size: 12px !important;
+      letter-spacing: 0.08em !important;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 16px rgba(229, 169, 59, 0.25);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-cta-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(229, 169, 59, 0.4);
+      filter: brightness(1.1);
+    }
+
+    .hamburger-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hamburger-btn span {
+      width: 24px;
+      height: 2px;
+      background: var(--text-main);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: rgba(10, 9, 13, 0.98);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gold-border);
+      padding: 24px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      transform: translateY(-150%);
+      opacity: 0;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    .mobile-drawer.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-drawer a {
+      font-size: 16px;
+      font-family: var(--font-brand);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .mobile-drawer a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       HERO SECTION
+       ───────────────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 120px 24px 72px;
+      overflow: hidden;
+    }
+
+    .hero-bg-container {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      filter: brightness(0.68) contrast(1.1);
+      transform: scale(1.03);
+      animation: heroZoom 14s infinite alternate ease-in-out;
+    }
+
+    @keyframes heroZoom {
+      0% { transform: scale(1.02); }
+      100% { transform: scale(1.08); }
+    }
+
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(7, 7, 9, 0.4) 0%,
+        rgba(7, 7, 9, 0.1) 40%,
+        rgba(7, 7, 9, 0.75) 80%,
+        var(--bg-dark) 100%
+      );
+    }
+
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 30%, rgba(7, 7, 9, 0.8) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max-width);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 18px;
+      background: rgba(229, 169, 59, 0.15);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-title {
+      font-family: var(--font-brand);
+      font-size: clamp(54px, 11vw, 130px);
+      font-weight: 800;
+      line-height: 0.92;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8), 0 0 60px rgba(229, 169, 59, 0.3);
+    }
+
+    .hero-subtitle {
+      max-width: 640px;
+      font-size: clamp(15px, 2.2vw, 18px);
+      color: #dfdbd2;
+      font-weight: 400;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+      line-height: 1.5;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .btn-primary {
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #f7c862, #c88821);
+      color: #070709;
+      font-family: var(--font-brand);
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: var(--radius-full);
+      box-shadow: 0 8px 28px rgba(229, 169, 59, 0.35);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(229, 169, 59, 0.55);
+      filter: brightness(1.12);
+    }
+
+    .btn-secondary {
+      padding: 14px 28px;
+      background: rgba(21, 20, 27, 0.7);
+      backdrop-filter: blur(10px);
+      color: var(--text-main);
+      font-family: var(--font-brand);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold-light);
+      background: rgba(30, 28, 38, 0.9);
+      color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .hero-socials {
+      display: flex;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .social-pill {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(21, 20, 27, 0.7);
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: var(--transition);
+      backdrop-filter: blur(8px);
+    }
+
+    .social-pill:hover {
+      background: var(--gold);
+      border-color: var(--gold-light);
+      color: #070709;
+      transform: translateY(-3px) scale(1.08);
+      box-shadow: 0 8px 20px rgba(229, 169, 59, 0.4);
+    }
+
+    .social-pill svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       ANNOUNCEMENT MARQUEE / INTRO BANNER
+       ───────────────────────────────────────────────────────────── */
+    .announcement-banner {
+      background: linear-gradient(90deg, #b3781b, #f7c862, #c98822, #b3781b);
+      background-size: 300% 100%;
+      animation: bannerGradient 8s linear infinite;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      position: relative;
+      z-index: 10;
+    }
+
+    @keyframes bannerGradient {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 300% 50%; }
+    }
+
+    .announcement-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      font-family: var(--font-brand);
+      font-size: clamp(12px, 2vw, 15px);
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #070709;
+      text-align: center;
+    }
+
+    .banner-tag {
+      padding: 3px 8px;
+      background: #070709;
+      color: var(--gold-light);
+      border-radius: var(--radius-sm);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       SECTION LAYOUT & SHARED STYLES
+       ───────────────────────────────────────────────────────────── */
+    .section-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 100px 24px;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-tag::before, .section-tag::after {
+      content: '';
+      width: 18px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .section-title {
+      font-family: var(--font-brand);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+
+    .section-title span {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-desc {
+      max-width: 580px;
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       LIVE PERFORMANCES / VIDEO SECTION
+       ───────────────────────────────────────────────────────────── */
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .video-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-card:hover {
+      border-color: var(--gold-border);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 30px var(--gold-glow);
+    }
+
+    .video-frame-wrap {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: #000;
+      width: 100%;
+    }
+
+    .video-frame-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-card-meta {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .video-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .video-card-title {
+      font-family: var(--font-brand);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: 0.04em;
+    }
+
+    .video-card-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       "ENERGY" ALBUM & INTERACTIVE AUDIO PLAYER
+       ───────────────────────────────────────────────────────────── */
+    .music-section-bg {
+      background: radial-gradient(circle at 20% 50%, rgba(229, 169, 59, 0.06) 0%, transparent 60%),
+                  linear-gradient(180deg, var(--bg-dark), var(--bg-surface), var(--bg-dark));
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .album-hero-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .album-art-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      position: sticky;
+      top: 96px;
+    }
+
+    .album-cover-stage {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 1/1;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(229, 169, 59, 0.15);
+      border: 1px solid var(--gold-border);
+    }
+
+    .album-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .album-cover-stage:hover .album-cover-img {
+      transform: scale(1.04);
+    }
+
+    .vinyl-disc-halo {
+      position: absolute;
+      top: 10px;
+      right: -25px;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle, #111 20%, #222 25%, #111 35%, #2a2a2a 45%, #111 60%);
+      z-index: -1;
+      opacity: 0.6;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      animation: vinylSpin 12s linear infinite;
+      animation-play-state: paused;
+    }
+
+    .vinyl-disc-halo.playing {
+      animation-play-state: running;
+    }
+
+    @keyframes vinylSpin {
+      100% { transform: rotate(360deg); }
+    }
+
+    .album-meta-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .album-meta-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .album-type {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .album-year {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .album-name {
+      font-family: var(--font-brand);
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    .album-author {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: -8px;
+    }
+
+    .album-blurb {
+      font-size: 13.5px;
+      color: #aaa69d;
+      line-height: 1.6;
+    }
+
+    .album-cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-buy-full {
+      width: 100%;
+      padding: 13px;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-deep));
+      color: #070709;
+      font-family: var(--font-brand);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 18px rgba(229, 169, 59, 0.3);
+      transition: var(--transition);
+    }
+
+    .btn-buy-full:hover {
+      filter: brightness(1.12);
+      transform: translateY(-1px);
+    }
+
+    /* Player Interface & Tracklist */
+    .player-and-tracks {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* Active Player Deck */
+    .active-deck-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .active-deck-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    }
+
+    .deck-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .deck-track-title-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .deck-status-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .deck-track-name {
+      font-family: var(--font-brand);
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--text-main);
+    }
+
+    /* Visualizer Bar Graph */
+    .visualizer-container {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 32px;
+      padding: 0 4px;
+    }
+
+    .viz-bar {
+      width: 4px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: height 0.1s ease;
+    }
+
+    .deck-scrubber-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .scrubber-track {
+      position: relative;
+      width: 100%;
+      height: 6px;
+      background: var(--border-subtle);
+      border-radius: 3px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .scrubber-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      border-radius: 3px;
+      transition: width 0.08s linear;
+    }
+
+    .deck-time-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .deck-controls-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .playback-buttons {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-ctrl {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-ctrl:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+      transform: scale(1.05);
+    }
+
+    .btn-ctrl-main {
+      width: 56px;
+      height: 56px;
+      background: var(--gold);
+      border-color: var(--gold-light);
+      color: #070709;
+      box-shadow: 0 4px 20px var(--gold-glow);
+    }
+
+    .btn-ctrl-main:hover {
+      background: var(--gold-light);
+      color: #000;
+      transform: scale(1.08);
+      box-shadow: 0 6px 26px rgba(229, 169, 59, 0.6);
+    }
+
+    .btn-ctrl svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .btn-ctrl-main svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .volume-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .volume-wrap svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--text-muted);
+    }
+
+    .volume-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 90px;
+      height: 4px;
+      background: var(--border-subtle);
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      background: var(--gold-light);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    /* Tracklist Container */
+    .tracklist-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .tracklist-header {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .track-row {
+      display: grid;
+      grid-template-columns: 40px 1fr auto auto auto;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .track-row:last-child {
+      border-bottom: none;
+    }
+
+    .track-row:hover {
+      background: var(--bg-card-hover);
+    }
+
+    .track-row.active-track {
+      background: rgba(229, 169, 59, 0.08);
+      border-left: 3px solid var(--gold);
+    }
+
+    .track-index {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .track-row:hover .track-index,
+    .track-row.active-track .track-index {
+      color: var(--gold-light);
+    }
+
+    .track-main-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .track-title-text {
+      font-family: var(--font-brand);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .track-row.active-track .track-title-text {
+      color: var(--gold-light);
+    }
+
+    .track-sub-text {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .track-genre-badge {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .track-price-tag {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      background: rgba(229, 169, 59, 0.1);
+    }
+
+    .track-duration-text {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      min-width: 38px;
+      text-align: right;
+    }
+
+    .track-actions-btn {
+      background: none;
+      border: 1px solid var(--border-light);
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      font-family: var(--font-brand);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .track-actions-btn:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #070709;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       VIP SUPPORTER & EMAIL COMMUNITY SECTION
+       ───────────────────────────────────────────────────────────── */
+    .vip-card-box {
+      background: linear-gradient(145deg, var(--bg-card), #121019);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      padding: 56px 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vip-card-box::after {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(229, 169, 59, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .vip-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .vip-progress-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+    }
+
+    .vip-progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    .vip-progress-meta span:first-child {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .vip-progress-meta span:last-child {
+      color: var(--text-muted);
+    }
+
+    .vip-progress-bar {
+      height: 8px;
+      background: var(--border-subtle);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .vip-progress-fill {
+      width: 78%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      border-radius: 4px;
+      box-shadow: 0 0 10px var(--gold-glow);
+    }
+
+    .vip-perks-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .vip-perk-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: #dfdbd2;
+    }
+
+    .vip-perk-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(229, 169, 59, 0.15);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .vip-perk-icon svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+    }
+
+    .vip-form-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .email-signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .input-field-wrap {
+      position: relative;
+    }
+
+    .custom-input {
+      width: 100%;
+      padding: 15px 18px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      font-size: 14px;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .custom-input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 16px rgba(229, 169, 59, 0.2);
+    }
+
+    .btn-vip-submit {
+      padding: 15px 28px;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-deep));
+      color: #070709;
+      font-family: var(--font-brand);
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 20px rgba(229, 169, 59, 0.3);
+    }
+
+    .btn-vip-submit:hover {
+      filter: brightness(1.12);
+      transform: translateY(-2px);
+    }
+
+    .form-privacy-note {
+      font-size: 11px;
+      color: var(--text-dim);
+      text-align: center;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       BOOKING & PERFORMANCE INQUIRY SECTION
+       ───────────────────────────────────────────────────────────── */
+    .booking-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .booking-grid-form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .form-col-full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-label {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold-light);
+    }
+
+    .event-type-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .type-chip {
+      padding: 8px 16px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+      user-select: none;
+    }
+
+    .type-chip.selected {
+      background: rgba(229, 169, 59, 0.18);
+      border-color: var(--gold);
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .custom-textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 14px 18px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      font-size: 14px;
+      outline: none;
+      resize: vertical;
+      transition: var(--transition);
+    }
+
+    .custom-textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 16px rgba(229, 169, 59, 0.2);
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       FLOATING BOTTOM MINI PLAYER
+       ───────────────────────────────────────────────────────────── */
+    .floating-mini-player {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(120px);
+      width: calc(100% - 40px);
+      max-width: 640px;
+      background: rgba(14, 13, 18, 0.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-full);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8), 0 0 25px var(--gold-glow);
+      z-index: 900;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .floating-mini-player.visible {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .mini-track-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .mini-album-thumb {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--gold);
+    }
+
+    .mini-text-wrap {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .mini-title {
+      font-family: var(--font-brand);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .mini-artist {
+      font-size: 11px;
+      color: var(--gold);
+    }
+
+    .mini-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mini-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .mini-btn:hover {
+      color: var(--gold-light);
+    }
+
+    .mini-btn-play {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #070709;
+    }
+
+    .mini-btn-play:hover {
+      background: var(--gold-light);
+      color: #000;
+      transform: scale(1.08);
+    }
+
+    .mini-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       FOOTER
+       ───────────────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      background: #050507;
+      padding: 64px 24px 36px;
+    }
+
+    .footer-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-brand);
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    .footer-logo span {
+      color: var(--gold-light);
+    }
+
+    .footer-tagline {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 460px;
+      margin-top: -16px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .footer-nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-bottom-line {
+      width: 100%;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-dim);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom-line a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       TOAST & MODAL SYSTEM
+       ───────────────────────────────────────────────────────────── */
+    .toast-container {
+      position: fixed;
+      top: 80px;
+      right: 24px;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      pointer-events: none;
+    }
+
+    .toast {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--gold-glow);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-main);
+      font-size: 13.5px;
+      animation: slideInToast 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      pointer-events: auto;
+      max-width: 360px;
+    }
+
+    @keyframes slideInToast {
+      from { transform: translateX(120%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .toast-icon {
+      color: var(--gold-light);
+      flex-shrink: 0;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 2500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-box {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+      position: relative;
+      transform: scale(0.95);
+      transition: transform 0.25s ease;
+    }
+
+    .modal-overlay.active .modal-box {
+      transform: scale(1);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 6px;
+      font-size: 20px;
+    }
+
+    .modal-close-btn:hover {
+      color: var(--gold-light);
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       RESPONSIVE BREAKPOINTS
+       ───────────────────────────────────────────────────────────── */
+    @media (max-width: 992px) {
+      .album-hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .album-art-column {
+        position: static;
+      }
+      .album-cover-stage {
+        max-width: 260px;
+      }
+      .vip-card-box {
+        grid-template-columns: 1fr;
+        padding: 40px 24px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hamburger-btn {
+        display: flex;
+      }
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+      .booking-wrapper {
+        padding: 28px 20px;
+      }
+      .booking-grid-form {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        letter-spacing: 0.04em;
+      }
+      .track-row {
+        grid-template-columns: 24px 1fr auto;
+        gap: 10px;
+        padding: 14px 16px;
+      }
+      .track-genre-badge,
+      .track-actions-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ── NAVIGATION ────────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-left">
+      <a href="#" class="nav-logo">King <span>Sax</span></a>
+      <div class="live-indicator">
+        <div class="live-dot"></div>
+        <span>Energy Out Now</span>
+      </div>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="#live-videos">Live Videos</a></li>
+      <li><a href="#music-player">Music</a></li>
+      <li><a href="#vip-club">Supporters</a></li>
+      <li><a href="#booking">Bookings</a></li>
+      <li>
+        <a href="https://kingsax.com/energy-album-release-party" target="_blank" class="nav-cta-btn">
+          <span>Release Party</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 13l4 4L19 7"/></svg>
+        </a>
+      </li>
+    </ul>
+
+    <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="#live-videos" onclick="closeDrawer()">Live Videos</a>
+    <a href="#music-player" onclick="closeDrawer()">New Music ("ENERGY")</a>
+    <a href="#vip-club" onclick="closeDrawer()">100 Supporters Club</a>
+    <a href="#booking" onclick="closeDrawer()">Book King Sax</a>
+    <a href="https://kingsax.com/energy-album-release-party" target="_blank" onclick="closeDrawer()" style="color: var(--gold-light);">★ Energy Release Party!</a>
+  </div>
+
+  <!-- ── HERO SECTION ──────────────────────────────────────── -->
+  <header class="hero" id="hero">
+    <div class="hero-bg-container">
+      <img
+        class="hero-img"
+        src="https://images.zoogletools.com/s:bzglfiles/u/510466/28e4fcdb85128d20701c93f295e427b1a6af341b/original/img-2983.jpeg/!!/b%3AW1sicmVzaXplIiwxODAwXSxbIm1heCJdLFsid2UiXV0%3D/meta%3AeyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ%3D%3D.jpg"
+        alt="King Sax Live Saxophonist Performance"
+      >
+      <div class="hero-gradient"></div>
+      <div class="hero-vignette"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span>Debut Project &bull; 5 Tracks</span>
+      </div>
+
+      <h1 class="hero-title">King Sax</h1>
+      
+      <p class="hero-subtitle">
+        A bold fusion of House &amp; Afro-inspired rhythms. Solos featured on NPR Tiny Desk with Asake and live at the O2 Arena London.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="scrollToMusicAndPlay()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>Stream "ENERGY"</span>
+        </button>
+
+        <a href="#booking" class="btn-secondary">
+          <span>Book Performance</span>
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://www.instagram.com/king.sax_/" target="_blank" rel="noopener" class="social-pill" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://open.spotify.com/artist/7F63vcYasC9yHPcIGoMEPg?si=qELB8HU-Rea5WGKPDPxCkw" target="_blank" rel="noopener" class="social-pill" aria-label="Spotify">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.503 17.308c-.217.355-.677.469-1.032.252-2.825-1.727-6.381-2.118-10.57-1.16-.404.093-.807-.162-.9-.566-.093-.404.162-.808.566-.901 4.587-1.049 8.52-.607 11.684 1.343.355.217.469.677.252 1.032zm1.47-3.266c-.273.444-.857.584-1.301.311-3.234-1.988-8.164-2.563-11.99-1.401-.502.152-1.034-.134-1.186-.636-.152-.502.134-1.033.636-1.186 4.377-1.328 9.815-.688 13.53 1.601.444.273.584.857.311 1.311zm.126-3.41c-3.878-2.302-10.279-2.514-13.987-1.388-.596.181-1.229-.157-1.41-.752-.181-.595.157-1.228.752-1.41 4.262-1.294 11.316-1.049 15.772 1.597.536.318.712 1.011.394 1.547-.318.536-1.011.712-1.521.406z"/></svg>
+        </a>
+        <a href="https://music.apple.com/us/artist/king-sax/1751999214" target="_blank" rel="noopener" class="social-pill" aria-label="Apple Music">
+          <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.74 1.04-1.77.92-2.8-.9.04-2.02.6-2.66 1.34-.56.65-1.06 1.7-1.16 2.72 1.01.08 2.29-.52 2.9-1.26z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/kingstreetsax" target="_blank" rel="noopener" class="social-pill" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── ANNOUNCEMENT MARQUEE BAND ────────────────────────── -->
+  <div class="announcement-banner">
+    <div class="announcement-content">
+      <span class="banner-tag">JUST RELEASED</span>
+      <span>DEBUT PROJECT &ldquo;ENERGY&rdquo; &bull; HELP US REACH OUR FIRST 100 SUPPORTERS &bull; DOWNLOAD NOW</span>
+    </div>
+  </div>
+
+  <!-- ── VIDEOS SECTION ───────────────────────────────────── -->
+  <section class="section-container" id="live-videos">
+    <div class="section-header">
+      <span class="section-tag">Stage Presence</span>
+      <h2 class="section-title">Live <span>Performances</span></h2>
+      <p class="section-desc">Witness King Sax performing live at world-class stages from NPR Music headquarters to London's legendary 20,000-seat O2 Arena.</p>
+    </div>
+
+    <div class="videos-grid">
+      <!-- NPR Tiny Desk -->
+      <div class="video-card">
+        <div class="video-frame-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/eo0UxS6lnjA?rel=0&wmode=transparent"
+            title="King Sax on NPR Tiny Desk with Asake"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="video-card-meta">
+          <div class="video-badge">
+            <span>Washington, D.C.</span> &bull; <span>NPR Music</span>
+          </div>
+          <h3 class="video-card-title">NPR Tiny Desk: Asake (Feat. King Sax)</h3>
+          <p class="video-card-desc">An electrifying acoustic &amp; live brass arrangement blending high-energy Afrobeats with explosive saxophone solos.</p>
+        </div>
+      </div>
+
+      <!-- O2 Arena -->
+      <div class="video-card">
+        <div class="video-frame-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/w3JlGNMhM80?rel=0&wmode=transparent"
+            title="King Sax Live at O2 Arena London"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="video-card-meta">
+          <div class="video-badge">
+            <span>London, UK</span> &bull; <span>Live Concert</span>
+          </div>
+          <h3 class="video-card-title">King Sax Live @ O2 Arena</h3>
+          <p class="video-card-desc">Commanding the stage before thousands of fans with signature fiery improvisation, rhythmic drive, and pure stage mastery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MUSIC PLAYER & "ENERGY" HUB ──────────────────────── -->
+  <section class="music-section-bg" id="music-player">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">The Debut EP</span>
+        <h2 class="section-title">Experience <span>"ENERGY"</span></h2>
+        <p class="section-desc">Stream and preview all 5 original tracks below. High fidelity audio direct from the artist.</p>
+      </div>
+
+      <div class="album-hero-grid">
+        <!-- Album Artwork Column -->
+        <div class="album-art-column">
+          <div class="album-cover-stage">
+            <img
+              class="album-cover-img"
+              src="https://images.zoogletools.com/s:bzglfiles/u/510466/a9c9676b977d341636a44d8443385ca9b538216b/original/5c9efb4d-ef8e-4e96-a8be-40c5e898f064.jpeg/!!/b%3AW1sicmVzaXplIiwxODAwXSxbIm1heCJdLFsid2UiXV0%3D/meta%3AeyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ%3D%3D.jpg"
+              alt="ENERGY by King Sax Album Cover"
+            >
+            <div class="vinyl-disc-halo" id="vinyl-halo"></div>
+          </div>
+
+          <div class="album-meta-card">
+            <div class="album-meta-header">
+              <span class="album-type">Studio Project</span>
+              <span class="album-year">2024 &bull; 5 Tracks</span>
+            </div>
+            <div>
+              <h3 class="album-name">ENERGY</h3>
+              <p class="album-author">by King Sax</p>
+            </div>
+            <p class="album-blurb">
+              King Sax's independent debut is a bold fusion of confidence, movement, and self-liberation. Blending House &amp; Afro-inspired rhythms, it encourages listeners to dance freely and step into their power.
+            </p>
+            <div class="album-cta-actions">
+              <button class="btn-buy-full" onclick="openDownloadModal('Full Album (ENERGY)', 10)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                <span>Download Full Album &bull; $10+</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Audio Player Deck & Tracklist -->
+        <div class="player-and-tracks">
+          <!-- Active Player Deck -->
+          <div class="active-deck-card">
+            <div class="deck-top-row">
+              <div class="deck-track-title-wrap">
+                <span class="deck-status-label" id="deck-status-label">Now Selected</span>
+                <h3 class="deck-track-name" id="deck-track-name">1. Let Go</h3>
+              </div>
+
+              <!-- Animated visualizer bars -->
+              <div class="visualizer-container" id="visualizer-container">
+                <div class="viz-bar"></div>
+                <div class="viz-bar"></div>
+                <div class="viz-bar"></div>
+                <div class="viz-bar"></div>
+                <div class="viz-bar"></div>
+                <div class="viz-bar"></div>
+                <div class="viz-bar"></div>
+                <div class="viz-bar"></div>
+                <div class="viz-bar"></div>
+                <div class="viz-bar"></div>
+              </div>
+            </div>
+
+            <!-- Scrubber -->
+            <div class="deck-scrubber-wrap">
+              <div class="scrubber-track" id="scrubber-track" onclick="handleScrub(event)">
+                <div class="scrubber-fill" id="scrubber-fill"></div>
+              </div>
+              <div class="deck-time-row">
+                <span id="current-time-display">0:00</span>
+                <span id="total-time-display">2:48</span>
+              </div>
+            </div>
+
+            <!-- Controls Row -->
+            <div class="deck-controls-row">
+              <div class="playback-buttons">
+                <button class="btn-ctrl" onclick="prevTrack()" aria-label="Previous track">
+                  <svg viewBox="0 0 24 24"><polygon points="6 6 6 18 8 18 8 6 6 6"/><polygon points="18 6 10 12 18 18 18 6"/></svg>
+                </button>
+                <button class="btn-ctrl btn-ctrl-main" id="main-play-btn" onclick="togglePlayPause()" aria-label="Play or Pause">
+                  <svg id="play-icon-svg" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </button>
+                <button class="btn-ctrl" onclick="nextTrack()" aria-label="Next track">
+                  <svg viewBox="0 0 24 24"><polygon points="6 6 14 12 6 18 6 6"/><polygon points="16 6 16 18 18 18 18 6 16 6"/></svg>
+                </button>
+              </div>
+
+              <div class="volume-wrap">
+                <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.05" value="0.8" oninput="setVolume(this.value)">
+              </div>
+            </div>
+          </div>
+
+          <!-- Tracklist Card -->
+          <div class="tracklist-card">
+            <div class="tracklist-header">
+              <span># &bull; Title</span>
+              <span>Price</span>
+              <span>Time</span>
+            </div>
+
+            <!-- Track 1 -->
+            <div class="track-row active-track" id="track-row-0" onclick="selectTrack(0)">
+              <div class="track-index">1</div>
+              <div class="track-main-info">
+                <div class="track-title-text">
+                  <span>Let Go</span>
+                  <span class="track-genre-badge">Afro-House</span>
+                </div>
+                <div class="track-sub-text">King Sax &bull; 122 BPM</div>
+              </div>
+              <div class="track-price-tag">$2+</div>
+              <div class="track-duration-text">2:48</div>
+              <button class="track-actions-btn" onclick="event.stopPropagation(); openDownloadModal('Let Go', 2)">Buy</button>
+            </div>
+
+            <!-- Track 2 -->
+            <div class="track-row" id="track-row-1" onclick="selectTrack(1)">
+              <div class="track-index">2</div>
+              <div class="track-main-info">
+                <div class="track-title-text">
+                  <span>Groove Theory</span>
+                  <span class="track-genre-badge">Deep Sax Funk</span>
+                </div>
+                <div class="track-sub-text">King Sax &bull; 124 BPM</div>
+              </div>
+              <div class="track-price-tag">$2+</div>
+              <div class="track-duration-text">3:42</div>
+              <button class="track-actions-btn" onclick="event.stopPropagation(); openDownloadModal('Groove Theory', 2)">Buy</button>
+            </div>
+
+            <!-- Track 3 -->
+            <div class="track-row" id="track-row-2" onclick="selectTrack(2)">
+              <div class="track-index">3</div>
+              <div class="track-main-info">
+                <div class="track-title-text">
+                  <span>Shine</span>
+                  <span class="track-genre-badge">Highlife House</span>
+                </div>
+                <div class="track-sub-text">King Sax &bull; 120 BPM</div>
+              </div>
+              <div class="track-price-tag">$2+</div>
+              <div class="track-duration-text">2:40</div>
+              <button class="track-actions-btn" onclick="event.stopPropagation(); openDownloadModal('Shine', 2)">Buy</button>
+            </div>
+
+            <!-- Track 4 -->
+            <div class="track-row" id="track-row-3" onclick="selectTrack(3)">
+              <div class="track-index">4</div>
+              <div class="track-main-info">
+                <div class="track-title-text">
+                  <span>Energy</span>
+                  <span class="track-genre-badge">Anthem</span>
+                </div>
+                <div class="track-sub-text">King Sax &bull; 126 BPM</div>
+              </div>
+              <div class="track-price-tag">$2+</div>
+              <div class="track-duration-text">4:40</div>
+              <button class="track-actions-btn" onclick="event.stopPropagation(); openDownloadModal('Energy', 2)">Buy</button>
+            </div>
+
+            <!-- Track 5 -->
+            <div class="track-row" id="track-row-4" onclick="selectTrack(4)">
+              <div class="track-index">5</div>
+              <div class="track-main-info">
+                <div class="track-title-text">
+                  <span>Golden Hour</span>
+                  <span class="track-genre-badge">Sunset Lounge</span>
+                </div>
+                <div class="track-sub-text">King Sax &bull; 118 BPM</div>
+              </div>
+              <div class="track-price-tag">$2+</div>
+              <div class="track-duration-text">3:28</div>
+              <button class="track-actions-btn" onclick="event.stopPropagation(); openDownloadModal('Golden Hour', 2)">Buy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VIP SUPPORTERS / EMAIL CLUB ──────────────────────── -->
+  <section class="section-container" id="vip-club">
+    <div class="section-header">
+      <span class="section-tag">Community</span>
+      <h2 class="section-title">First 100 <span>Supporters</span></h2>
+      <p class="section-desc">Join the inner circle backing the "ENERGY" independent release. Exclusive stems, VIP tickets, and unreleased studio rehearsals.</p>
+    </div>
+
+    <div class="vip-card-box">
+      <div class="vip-info-col">
+        <div class="vip-progress-wrap">
+          <div class="vip-progress-meta">
+            <span>Goal: 100 Supporters</span>
+            <span>78 Claimed (22 Left)</span>
+          </div>
+          <div class="vip-progress-bar">
+            <div class="vip-progress-fill"></div>
+          </div>
+        </div>
+
+        <ul class="vip-perks-list">
+          <li class="vip-perk-item">
+            <div class="vip-perk-icon">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span>Instant high-bitrate FLAC/WAV master downloads</span>
+          </li>
+          <li class="vip-perk-item">
+            <div class="vip-perk-icon">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span>Early access to live tour dates &amp; secret London/DC shows</span>
+          </li>
+          <li class="vip-perk-item">
+            <div class="vip-perk-icon">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span>Exclusive behind-the-scenes rehearsal recordings</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="vip-form-col">
+        <form class="email-signup-form" onsubmit="handleEmailSubmit(event)">
+          <div class="input-field-wrap">
+            <input type="text" class="custom-input" placeholder="Your Name" required>
+          </div>
+          <div class="input-field-wrap">
+            <input type="email" class="custom-input" placeholder="Your Email Address" required>
+          </div>
+          <button type="submit" class="btn-vip-submit">
+            <span>Join 100 Supporters Club</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </button>
+          <p class="form-privacy-note">Direct from artist. No spam, unsubscribe at any time.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BOOKING INQUIRIES ─────────────────────────────────── -->
+  <section class="section-container" id="booking">
+    <div class="section-header">
+      <span class="section-tag">Live Bookings</span>
+      <h2 class="section-title">Book <span>King Sax</span></h2>
+      <p class="section-desc">Available worldwide for festivals, tours, headline club performances, galas, and high-end private engagements.</p>
+    </div>
+
+    <div class="booking-wrapper">
+      <form class="booking-grid-form" onsubmit="handleBookingSubmit(event)">
+        <!-- Event Type Chips -->
+        <div class="form-field-group form-col-full">
+          <label class="form-label">Engagement Category</label>
+          <div class="event-type-chips">
+            <span class="type-chip selected" onclick="toggleChip(this)">Festival / Tour</span>
+            <span class="type-chip" onclick="toggleChip(this)">Club Headline</span>
+            <span class="type-chip" onclick="toggleChip(this)">Private Gala / VIP</span>
+            <span class="type-chip" onclick="toggleChip(this)">Corporate Event</span>
+            <span class="type-chip" onclick="toggleChip(this)">Wedding / Celebration</span>
+          </div>
+        </div>
+
+        <div class="form-field-group">
+          <label class="form-label" for="book-name">Contact / Representative Name</label>
+          <input type="text" id="book-name" class="custom-input" placeholder="e.g. Marcus Sterling" required>
+        </div>
+
+        <div class="form-field-group">
+          <label class="form-label" for="book-email">Email Address</label>
+          <input type="email" id="book-email" class="custom-input" placeholder="e.g. bookings@agency.com" required>
+        </div>
+
+        <div class="form-field-group">
+          <label class="form-label" for="book-phone">Phone Number</label>
+          <input type="tel" id="book-phone" class="custom-input" placeholder="+1 (555) 000-0000">
+        </div>
+
+        <div class="form-field-group">
+          <label class="form-label" for="book-date">Requested Date</label>
+          <input type="date" id="book-date" class="custom-input" required>
+        </div>
+
+        <div class="form-field-group form-col-full">
+          <label class="form-label" for="book-location">Venue / City &amp; Country</label>
+          <input type="text" id="book-location" class="custom-input" placeholder="Venue Name, City, Country" required>
+        </div>
+
+        <div class="form-field-group">
+          <label class="form-label" for="book-duration">Performance Duration</label>
+          <input type="text" id="book-duration" class="custom-input" placeholder="e.g. 2 x 45-min sets or 90-min headline">
+        </div>
+
+        <div class="form-field-group">
+          <label class="form-label" for="book-budget">Budget Range (USD)</label>
+          <input type="text" id="book-budget" class="custom-input" placeholder="e.g. $3,000 - $8,000">
+        </div>
+
+        <div class="form-field-group form-col-full">
+          <label class="form-label" for="book-notes">Event Description &amp; Technical Rider Details</label>
+          <textarea id="book-notes" class="custom-textarea" placeholder="Tell us about the audience, sound system, staging, and special requests..."></textarea>
+        </div>
+
+        <div class="form-col-full" style="margin-top: 12px;">
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+            <span>Submit Booking Request</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── FLOATING MINI PLAYER ──────────────────────────────── -->
+  <div class="floating-mini-player" id="floating-mini-player">
+    <div class="mini-track-meta">
+      <img
+        class="mini-album-thumb"
+        src="https://images.zoogletools.com/s:bzglfiles/u/510466/a9c9676b977d341636a44d8443385ca9b538216b/original/5c9efb4d-ef8e-4e96-a8be-40c5e898f064.jpeg/!!/b%3AW1sicmVzaXplIixbMjAwLDIwMF1dLFsiY3JvcCJdXQ%3D%3D/meta%3AeyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ%3D%3D.jpg"
+        alt="Album thumbnail"
+      >
+      <div class="mini-text-wrap">
+        <span class="mini-title" id="mini-title">1. Let Go</span>
+        <span class="mini-artist">King Sax &bull; "ENERGY"</span>
+      </div>
+    </div>
+
+    <div class="mini-controls">
+      <button class="mini-btn" onclick="prevTrack()" aria-label="Previous">
+        <svg viewBox="0 0 24 24"><polygon points="6 6 6 18 8 18 8 6 6 6"/><polygon points="18 6 10 12 18 18 18 6"/></svg>
+      </button>
+      <button class="mini-btn mini-btn-play" onclick="togglePlayPause()" aria-label="Play or Pause">
+        <svg id="mini-play-icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </button>
+      <button class="mini-btn" onclick="nextTrack()" aria-label="Next">
+        <svg viewBox="0 0 24 24"><polygon points="6 6 14 12 6 18 6 6"/><polygon points="16 6 16 18 18 18 18 6 16 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ── DOWNLOAD MODAL ────────────────────────────────────── -->
+  <div class="modal-overlay" id="download-modal" onclick="closeModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeModalDirect()">&times;</button>
+      <h3 style="font-family: var(--font-brand); font-size: 22px; color: var(--gold-light); margin-bottom: 8px;" id="modal-item-name">Download "ENERGY"</h3>
+      <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 24px;">Direct studio master download package (WAV, 320kbps MP3 + high-res artwork booklet).</p>
+      
+      <div style="background: var(--bg-surface); padding: 18px; border-radius: var(--radius-sm); margin-bottom: 20px; border: 1px solid var(--border-light);">
+        <label class="form-label" style="display: block; margin-bottom: 8px;">Name Your Price (USD)</label>
+        <div style="display: flex; gap: 10px;">
+          <input type="number" id="modal-price-input" class="custom-input" style="font-size: 18px; font-weight: 700; color: var(--gold-light);" value="10" min="2">
+          <button class="btn-primary" style="padding: 10px 20px;" onclick="triggerDownloadConfirm()">Get Now</button>
+        </div>
+      </div>
+      <p style="font-size: 11.5px; color: var(--text-dim); text-align: center;">Secure processing via Bandzoogle &bull; 100% goes to the independent artist</p>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">King <span>Sax</span></div>
+      <p class="footer-tagline">Afro-House, Contemporary Soul &amp; Live Saxophone Artistry. Based between Washington D.C. &amp; Worldwide Stages.</p>
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/king.sax_/" target="_blank" rel="noopener" class="social-pill" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://open.spotify.com/artist/7F63vcYasC9yHPcIGoMEPg" target="_blank" rel="noopener" class="social-pill" aria-label="Spotify">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.503 17.308c-.217.355-.677.469-1.032.252-2.825-1.727-6.381-2.118-10.57-1.16-.404.093-.807-.162-.9-.566-.093-.404.162-.808.566-.901 4.587-1.049 8.52-.607 11.684 1.343.355.217.469.677.252 1.032zm1.47-3.266c-.273.444-.857.584-1.301.311-3.234-1.988-8.164-2.563-11.99-1.401-.502.152-1.034-.134-1.186-.636-.152-.502.134-1.033.636-1.186 4.377-1.328 9.815-.688 13.53 1.601.444.273.584.857.311 1.311zm.126-3.41c-3.878-2.302-10.279-2.514-13.987-1.388-.596.181-1.229-.157-1.41-.752-.181-.595.157-1.228.752-1.41 4.262-1.294 11.316-1.049 15.772 1.597.536.318.712 1.011.394 1.547-.318.536-1.011.712-1.521.406z"/></svg>
+        </a>
+        <a href="https://music.apple.com/us/artist/king-sax/1751999214" target="_blank" rel="noopener" class="social-pill" aria-label="Apple Music">
+          <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.74 1.04-1.77.92-2.8-.9.04-2.02.6-2.66 1.34-.56.65-1.06 1.7-1.16 2.72 1.01.08 2.29-.52 2.9-1.26z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/kingstreetsax" target="_blank" rel="noopener" class="social-pill" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+
+      <div class="footer-nav-links">
+        <a href="#hero">Top</a>
+        <a href="#live-videos">Live Videos</a>
+        <a href="#music-player">Music</a>
+        <a href="#vip-club">Supporters</a>
+        <a href="#booking">Bookings</a>
+        <a href="https://kingsax.com/energy-album-release-party" target="_blank">Release Party</a>
+      </div>
+
+      <div class="footer-bottom-line">
+        <p>&copy; 2024 King Sax. All rights reserved.</p>
+        <p>Powered by <a href="https://bandzoogle.com" target="_blank" rel="noopener">Bandzoogle</a> &bull; Dedicated to pure live music &amp; independent expression.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── SCRIPTS & WEB AUDIO ENGINE ────────────────────────── -->
+  <script>
+    // Track database
+    const tracks = [
+      { id: 0, title: "Let Go", duration: 168, durationStr: "2:48", bpm: 122, key: "D Minor", baseFreq: 293.66 },
+      { id: 1, title: "Groove Theory", duration: 222, durationStr: "3:42", bpm: 124, key: "G Minor", baseFreq: 392.00 },
+      { id: 2, title: "Shine", duration: 160, durationStr: "2:40", bpm: 120, key: "A Minor", baseFreq: 440.00 },
+      { id: 3, title: "Energy", duration: 280, durationStr: "4:40", bpm: 126, key: "F Major", baseFreq: 349.23 },
+      { id: 4, title: "Golden Hour", duration: 208, durationStr: "3:28", bpm: 118, key: "E Minor", baseFreq: 329.63 }
+    ];
+
+    let currentTrackIdx = 0;
+    let isPlaying = false;
+    let currentTimeSec = 0;
+    let playbackInterval = null;
+    let currentVolume = 0.8;
+
+    // Web Audio Synthesizer Engine
+    let audioCtx = null;
+    let masterGainNode = null;
+    let synthInterval = null;
+
+    function initWebAudio() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContextClass();
+        masterGainNode = audioCtx.createGain();
+        masterGainNode.gain.setValueAtTime(currentVolume, audioCtx.currentTime);
+        masterGainNode.connect(audioCtx.destination);
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    // Play Saxophone / Afro-House chord progression synthesis
+    function startSaxSynthesis(track) {
+      if (!audioCtx) initWebAudio();
+      stopSaxSynthesis();
+
+      // Pentatonic intervals for expressive brass/sax solo riffs
+      const scale = [0, 3, 5, 7, 10, 12, 15, 17, 19];
+      const rootFreq = track.baseFreq;
+      let step = 0;
+
+      synthInterval = setInterval(() => {
+        if (!isPlaying || !audioCtx) return;
+        try {
+          const now = audioCtx.currentTime;
+          
+          // Main Saxophone lead tone (Sawtooth + Warm Lowpass Filter + Vibrato)
+          const osc = audioCtx.createOscillator();
+          const filter = audioCtx.createBiquadFilter();
+          const noteGain = audioCtx.createGain();
+
+          const interval = scale[Math.floor(Math.random() * scale.length)];
+          const freq = rootFreq * Math.pow(2, interval / 12);
+
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(freq, now);
+
+          // Sax filter warmth
+          filter.type = 'lowpass';
+          filter.frequency.setValueAtTime(1400 + Math.sin(step) * 600, now);
+          filter.Q.setValueAtTime(4.5, now);
+
+          // Note envelope
+          const noteDuration = 0.35 + (step % 2 === 0 ? 0.25 : 0.1);
+          noteGain.gain.setValueAtTime(0.001, now);
+          noteGain.gain.exponentialRampToValueAtTime(0.18, now + 0.05);
+          noteGain.gain.exponentialRampToValueAtTime(0.001, now + noteDuration);
+
+          osc.connect(filter);
+          filter.connect(noteGain);
+          noteGain.connect(masterGainNode);
+
+          osc.start(now);
+          osc.stop(now + noteDuration);
+
+          // Sub Bass / Kick Pulse on beats
+          if (step % 2 === 0) {
+            const kickOsc = audioCtx.createOscillator();
+            const kickGain = audioCtx.createGain();
+            kickOsc.frequency.setValueAtTime(110, now);
+            kickOsc.frequency.exponentialRampToValueAtTime(38, now + 0.12);
+            kickGain.gain.setValueAtTime(0.25, now);
+            kickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+            kickOsc.connect(kickGain);
+            kickGain.connect(masterGainNode);
+            kickOsc.start(now);
+            kickOsc.stop(now + 0.2);
+          }
+
+          step++;
+        } catch(e) {
+          console.error(e);
+        }
+      }, 340);
+    }
+
+    function stopSaxSynthesis() {
+      if (synthInterval) {
+        clearInterval(synthInterval);
+        synthInterval = null;
+      }
+    }
+
+    // Format seconds to mm:ss
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    // Select and activate track
+    function selectTrack(idx) {
+      currentTrackIdx = idx;
+      currentTimeSec = 0;
+      updatePlayerUI();
+      if (isPlaying) {
+        startSaxSynthesis(tracks[currentTrackIdx]);
+      }
+      showToast(`Selected "${tracks[idx].title}"`, "music");
+    }
+
+    // Play / Pause toggle
+    function togglePlayPause() {
+      initWebAudio();
+      isPlaying = !isPlaying;
+
+      if (isPlaying) {
+        startPlayback();
+      } else {
+        pausePlayback();
+      }
+      updatePlayButtons();
+    }
+
+    function startPlayback() {
+      isPlaying = true;
+      startSaxSynthesis(tracks[currentTrackIdx]);
+      document.getElementById('deck-status-label').innerText = 'Now Playing';
+      document.getElementById('vinyl-halo').classList.add('playing');
+      
+      if (playbackInterval) clearInterval(playbackInterval);
+      playbackInterval = setInterval(() => {
+        currentTimeSec += 1;
+        if (currentTimeSec >= tracks[currentTrackIdx].duration) {
+          nextTrack();
+        } else {
+          updateTimeline();
+          animateVisualizer();
+        }
+      }, 1000);
+      updatePlayButtons();
+      showToast(`Playing "${tracks[currentTrackIdx].title}"`, "play");
+    }
+
+    function pausePlayback() {
+      isPlaying = false;
+      stopSaxSynthesis();
+      document.getElementById('deck-status-label').innerText = 'Paused';
+      document.getElementById('vinyl-halo').classList.remove('playing');
+      if (playbackInterval) clearInterval(playbackInterval);
+      updatePlayButtons();
+      resetVisualizer();
+    }
+
+    function nextTrack() {
+      currentTrackIdx = (currentTrackIdx + 1) % tracks.length;
+      currentTimeSec = 0;
+      updatePlayerUI();
+      if (isPlaying) {
+        startSaxSynthesis(tracks[currentTrackIdx]);
+      }
+      showToast(`Next: "${tracks[currentTrackIdx].title}"`, "next");
+    }
+
+    function prevTrack() {
+      currentTrackIdx = (currentTrackIdx - 1 + tracks.length) % tracks.length;
+      currentTimeSec = 0;
+      updatePlayerUI();
+      if (isPlaying) {
+        startSaxSynthesis(tracks[currentTrackIdx]);
+      }
+      showToast(`Previous: "${tracks[currentTrackIdx].title}"`, "prev");
+    }
+
+    function updatePlayerUI() {
+      const track = tracks[currentTrackIdx];
+      document.getElementById('deck-track-name').innerText = `${track.id + 1}. ${track.title}`;
+      document.getElementById('mini-title').innerText = `${track.id + 1}. ${track.title}`;
+      document.getElementById('total-time-display').innerText = track.durationStr;
+      
+      // Update track rows styling
+      for (let i = 0; i < tracks.length; i++) {
+        const row = document.getElementById(`track-row-${i}`);
+        if (row) {
+          if (i === currentTrackIdx) {
+            row.classList.add('active-track');
+          } else {
+            row.classList.remove('active-track');
+          }
+        }
+      }
+      updateTimeline();
+    }
+
+    function updateTimeline() {
+      const track = tracks[currentTrackIdx];
+      const percent = (currentTimeSec / track.duration) * 100;
+      document.getElementById('scrubber-fill').style.width = `${percent}%`;
+      document.getElementById('current-time-display').innerText = formatTime(currentTimeSec);
+    }
+
+    function handleScrub(e) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const pct = Math.max(0, Math.min(1, clickX / rect.width));
+      const track = tracks[currentTrackIdx];
+      currentTimeSec = Math.floor(pct * track.duration);
+      updateTimeline();
+    }
+
+    function setVolume(val) {
+      currentVolume = parseFloat(val);
+      if (masterGainNode && audioCtx) {
+        masterGainNode.gain.setValueAtTime(currentVolume, audioCtx.currentTime);
+      }
+    }
+
+    function updatePlayButtons() {
+      const mainBtn = document.getElementById('main-play-btn');
+      const miniPlayIcon = document.getElementById('mini-play-icon');
+      const playIconSvg = document.getElementById('play-icon-svg');
+
+      const playSvgPath = '<polygon points="5 3 19 12 5 21 5 3"/>';
+      const pauseSvgPath = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+
+      if (isPlaying) {
+        playIconSvg.innerHTML = pauseSvgPath;
+        miniPlayIcon.innerHTML = pauseSvgPath;
+      } else {
+        playIconSvg.innerHTML = playSvgPath;
+        miniPlayIcon.innerHTML = playSvgPath;
+      }
+    }
+
+    function animateVisualizer() {
+      const bars = document.querySelectorAll('.viz-bar');
+      bars.forEach(bar => {
+        const h = isPlaying ? Math.floor(Math.random() * 26) + 6 : 6;
+        bar.style.height = `${h}px`;
+      });
+    }
+
+    function resetVisualizer() {
+      const bars = document.querySelectorAll('.viz-bar');
+      bars.forEach(bar => {
+        bar.style.height = `6px`;
+      });
+    }
+
+    function scrollToMusicAndPlay() {
+      document.getElementById('music-player').scrollIntoView({ behavior: 'smooth' });
+      if (!isPlaying) {
+        setTimeout(() => {
+          togglePlayPause();
+        }, 500);
+      }
+    }
+
+    // ── FLOATING PLAYER VISIBILITY ON SCROLL ──
+    window.addEventListener('scroll', () => {
+      const musicSection = document.getElementById('music-player');
+      const miniPlayer = document.getElementById('floating-mini-player');
+      const rect = musicSection.getBoundingClientRect();
+      
+      // If user scrolled past hero and music section is outside viewport or playback active
+      if (window.scrollY > 450) {
+        miniPlayer.classList.add('visible');
+      } else {
+        miniPlayer.classList.remove('visible');
+      }
+    });
+
+    // ── MOBILE DRAWER ──
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+
+    hamburgerBtn.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('active');
+    });
+
+    function closeDrawer() {
+      mobileDrawer.classList.remove('active');
+    }
+
+    // ── FORM HANDLERS & TOASTS ──
+    function showToast(msg, type = "info") {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = `
+        <div class="toast-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </div>
+        <div>${msg}</div>
+      `;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(120%)';
+        toast.style.transition = 'all 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    function handleEmailSubmit(e) {
+      e.preventDefault();
+      showToast("★ Welcome to the First 100 Supporters! Check your inbox.", "success");
+      e.target.reset();
+    }
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      showToast("✓ Booking inquiry received! King Sax management will reply within 24h.", "success");
+      e.target.reset();
+    }
+
+    function toggleChip(el) {
+      document.querySelectorAll('.type-chip').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+
+    // ── DOWNLOAD MODAL ──
+    const downloadModal = document.getElementById('download-modal');
+
+    function openDownloadModal(title, price) {
+      document.getElementById('modal-item-name').innerText = `Download "${title}"`;
+      document.getElementById('modal-price-input').value = price;
+      downloadModal.classList.add('active');
+    }
+
+    function closeModal(e) {
+      if (e.target === downloadModal) {
+        downloadModal.classList.remove('active');
+      }
+    }
+
+    function closeModalDirect() {
+      downloadModal.classList.remove('active');
+    }
+
+    function triggerDownloadConfirm() {
+      const price = document.getElementById('modal-price-input').value;
+      closeModalDirect();
+      showToast(`Master download unlocked ($${price}). Thank you for supporting King Sax!`, "success");
+    }
+
+    // Initialize UI on load
+    updatePlayerUI();
+  </script>
+</body>
+</html>

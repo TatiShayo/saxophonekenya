@@ -1,0 +1,79 @@
+{
+  "schema": "hermes.ledger.v5",
+  "run_id": "hermes-2026-10-06-frederic-sax",
+  "project": "frederic-sax-ke",
+  "work_items": [
+    {
+      "id": "WI-01",
+      "title": "Establish git version control and repository baseline",
+      "state": "merged",
+      "acceptance_criteria": [
+        {
+          "id": "AC-1",
+          "text": "Git repository initialized and initial baseline commit created",
+          "verified_by": "git log -1"
+        }
+      ],
+      "cycle_count": 1,
+      "max_cycles": 3,
+      "owner": "project_lead_agent",
+      "budget": { "allocated_usd": 1.0, "spent_usd": 0.05, "hard_cap_usd": 2.0 },
+      "blocked_on": null,
+      "unreviewed_runs": 0
+    },
+    {
+      "id": "WI-02",
+      "title": "Scan all codebase assets against secret exposure patterns",
+      "state": "merged",
+      "acceptance_criteria": [
+        {
+          "id": "AC-2",
+          "text": "Zero secret patterns detected across all code and documentation files",
+          "verified_by": "TEST_RESULTS.json#suites[0]"
+        }
+      ],
+      "cycle_count": 1,
+      "max_cycles": 3,
+      "owner": "security_agent",
+      "budget": { "allocated_usd": 1.0, "spent_usd": 0.05, "hard_cap_usd": 2.0 },
+      "blocked_on": null,
+      "unreviewed_runs": 0
+    },
+    {
+      "id": "WI-03",
+      "title": "Fix stale screenshot target selector in capture_all.py automation script",
+      "state": "merged",
+      "acceptance_criteria": [
+        {
+          "id": "AC-3",
+          "text": "capture_all.py updated to point to active calendar and ratecard DOM anchors",
+          "verified_by": "TEST_RESULTS.json#suites[0]"
+        }
+      ],
+      "cycle_count": 1,
+      "max_cycles": 3,
+      "owner": "developer_agent",
+      "budget": { "allocated_usd": 1.0, "spent_usd": 0.05, "hard_cap_usd": 2.0 },
+      "blocked_on": null,
+      "unreviewed_runs": 0
+    },
+    {
+      "id": "WI-04",
+      "title": "Author and execute hermetic Python test suite",
+      "state": "merged",
+      "acceptance_criteria": [
+        {
+          "id": "AC-4",
+          "text": "23/23 tests pass with exit code 0",
+          "verified_by": "TEST_RESULTS.json#summary"
+        }
+      ],
+      "cycle_count": 1,
+      "max_cycles": 3,
+      "owner": "qa_agent",
+      "budget": { "allocated_usd": 1.5, "spent_usd": 0.1, "hard_cap_usd": 3.0 },
+      "blocked_on": null,
+      "unreviewed_runs": 0
+    }
+  ]
+}

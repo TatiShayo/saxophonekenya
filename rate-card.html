@@ -615,9 +615,297 @@
       color: var(--text-dim);
     }
 
+    /* ── ACTION BUTTON IN TABLE ── */
+    .btn-table-inquire {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 15px;
+      background: rgba(212, 178, 140, 0.12);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-full);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      white-space: nowrap;
+    }
+
+    .btn-table-inquire:hover {
+      background: linear-gradient(135deg, var(--accent-light), var(--accent-rich));
+      color: #08070a;
+      border-color: var(--accent-primary);
+      box-shadow: 0 4px 16px rgba(212, 178, 140, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .btn-table-inquire.featured-btn {
+      background: linear-gradient(135deg, rgba(212, 178, 140, 0.25), rgba(160, 120, 64, 0.25));
+      border-color: var(--accent-primary);
+      color: #fff;
+    }
+
+    .btn-table-inquire.featured-btn:hover {
+      background: linear-gradient(135deg, var(--accent-light), var(--accent-rich));
+      color: #08070a;
+    }
+
+    /* ── BOOKING INQUIRY MODAL ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 5, 8, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-lg);
+      max-width: 560px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 34px 30px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85), 0 0 50px rgba(212, 178, 140, 0.15);
+      position: relative;
+      transform: translateY(20px) scale(0.98);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--accent-border-subtle);
+    }
+
+    .modal-kicker {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-primary);
+      margin-bottom: 4px;
+    }
+
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-pure);
+    }
+
+    .modal-title span { color: var(--accent-light); }
+
+    .modal-close-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-subtle);
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(212, 178, 140, 0.2);
+      color: var(--accent-light);
+      border-color: var(--accent-primary);
+      transform: rotate(90deg);
+    }
+
+    .modal-pkg-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(212, 178, 140, 0.08);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin-bottom: 22px;
+    }
+
+    .modal-pkg-label {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .modal-pkg-name {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent-light);
+    }
+
+    .modal-pkg-price {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-pure);
+      text-align: right;
+    }
+
+    .modal-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: rgba(10, 9, 13, 0.85);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 11px 14px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--text-pure);
+      transition: var(--transition-smooth);
+      outline: none;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(212, 178, 140, 0.18);
+      background: rgba(14, 12, 18, 0.95);
+    }
+
+    .form-select {
+      cursor: pointer;
+    }
+
+    .form-select option {
+      background: #131118;
+      color: #fff;
+    }
+
+    .form-textarea {
+      min-height: 80px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    .modal-submit-btn {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      background: linear-gradient(135deg, var(--accent-light), var(--accent-rich));
+      color: #08070a;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 12.5px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: var(--radius-full);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      box-shadow: 0 6px 24px rgba(212, 178, 140, 0.35);
+      margin-top: 18px;
+    }
+
+    .modal-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(212, 178, 140, 0.55);
+      filter: brightness(1.06);
+    }
+
+    .modal-trust-footnote {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text-dim);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* ── FLOATING TOAST NOTIFICATION ── */
+    .toast-msg {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(40px);
+      background: rgba(14, 12, 18, 0.95);
+      border: 1px solid var(--accent-primary);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7), 0 0 20px rgba(212, 178, 140, 0.25);
+      backdrop-filter: blur(16px);
+      padding: 12px 24px;
+      border-radius: var(--radius-full);
+      color: var(--accent-light);
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .toast-msg.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
     /* ── PRINT STYLES ── */
     @media print {
-      .top-bar, .btn-back, .btn-print, .booking-cta-panel, .page-footer, .controls-bar .currency-toggle-group { display: none !important; }
+      .top-bar, .btn-back, .btn-print, .booking-cta-panel, .page-footer, .controls-bar .currency-toggle-group, .modal-overlay, .toast-msg, .btn-table-inquire { display: none !important; }
       body { background: #fff; color: #111; }
       .page-bg { display: none; }
       .page-content { padding: 20px; max-width: 100%; }
@@ -633,15 +921,18 @@
       .doc-meta-stack { align-items: flex-start; text-align: left; }
       .top-bar { padding: 0 18px; }
       .page-content { padding: 36px 18px 72px; }
-      .rates-table th, .rates-table td { padding: 16px 14px; }
+      .rates-table th, .rates-table td { padding: 16px 12px; }
       .rates-table th:nth-child(3), .rates-table td:nth-child(3) { display: none; }
       .booking-cta-panel { padding: 28px 20px; }
       .controls-bar { flex-direction: column; align-items: flex-start; }
+      .modal-card { padding: 26px 20px; }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 540px) {
+      .modal-form-grid { grid-template-columns: 1fr; }
       .rates-table th:nth-child(2), .rates-table td:nth-child(2) { display: none; }
       .price-amount { font-size: 15px; }
+      .btn-table-inquire { padding: 6px 10px; font-size: 10px; }
     }
   </style>
 </head>
@@ -715,10 +1006,11 @@
             <th>Duration</th>
             <th>Production Inclusions</th>
             <th style="text-align:right;">Investment</th>
+            <th style="text-align:center;">Inquire</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr onclick="openBookingModal('Solo Sax • Cocktail Hour')" style="cursor: pointer;">
             <td>
               <div class="service-name">Solo Sax &bull; Cocktail Hour</div>
               <div class="service-desc">Intimate receptions, dinners, private soirees</div>
@@ -729,8 +1021,13 @@
               <span class="price-amount" data-kes="KES 25,000" data-usd="$190">KES 25,000</span>
               <span class="price-usd" id="alt-1">≈ $190 USD</span>
             </td>
+            <td style="text-align:center;">
+              <button class="btn-table-inquire" type="button" onclick="event.stopPropagation(); openBookingModal('Solo Sax • Cocktail Hour')">
+                <span>Book</span> &rarr;
+              </button>
+            </td>
           </tr>
-          <tr>
+          <tr onclick="openBookingModal('Solo Sax • Extended Event')" style="cursor: pointer;">
             <td>
               <div class="service-name">Solo Sax &bull; Extended Event</div>
               <div class="service-desc">Corporate galas, product launches, summits</div>
@@ -741,8 +1038,13 @@
               <span class="price-amount" data-kes="KES 45,000" data-usd="$350">KES 45,000</span>
               <span class="price-usd" id="alt-2">≈ $350 USD</span>
             </td>
+            <td style="text-align:center;">
+              <button class="btn-table-inquire" type="button" onclick="event.stopPropagation(); openBookingModal('Solo Sax • Extended Event')">
+                <span>Book</span> &rarr;
+              </button>
+            </td>
           </tr>
-          <tr class="featured-row">
+          <tr class="featured-row" onclick="openBookingModal('Full Wedding Day Package')" style="cursor: pointer;">
             <td>
               <div class="featured-tag">Most Popular</div>
               <div class="service-name">Full Wedding Day Package</div>
@@ -754,8 +1056,13 @@
               <span class="price-amount" data-kes="KES 75,000" data-usd="$580">KES 75,000</span>
               <span class="price-usd" id="alt-3">≈ $580 USD</span>
             </td>
+            <td style="text-align:center;">
+              <button class="btn-table-inquire featured-btn" type="button" onclick="event.stopPropagation(); openBookingModal('Full Wedding Day Package')">
+                <span>Book</span> &rarr;
+              </button>
+            </td>
           </tr>
-          <tr>
+          <tr onclick="openBookingModal('Saxophone + DJ Live Duo')" style="cursor: pointer;">
             <td>
               <div class="service-name">Saxophone + DJ Live Duo</div>
               <div class="service-desc">High-energy club, lounge &amp; evening celebration</div>
@@ -766,8 +1073,13 @@
               <span class="price-amount" data-kes="KES 65,000" data-usd="$500">KES 65,000</span>
               <span class="price-usd" id="alt-4">≈ $500 USD</span>
             </td>
+            <td style="text-align:center;">
+              <button class="btn-table-inquire" type="button" onclick="event.stopPropagation(); openBookingModal('Saxophone + DJ Live Duo')">
+                <span>Book</span> &rarr;
+              </button>
+            </td>
           </tr>
-          <tr>
+          <tr onclick="openBookingModal('Full Live Band Experience')" style="cursor: pointer;">
             <td>
               <div class="service-name">Full Live Band Experience</div>
               <div class="service-desc">Sax, Keys, Bass Guitar, Drums</div>
@@ -777,6 +1089,11 @@
             <td class="price-cell">
               <span class="price-amount" data-kes="KES 120,000" data-usd="$920">KES 120,000</span>
               <span class="price-usd" id="alt-5">≈ $920 USD</span>
+            </td>
+            <td style="text-align:center;">
+              <button class="btn-table-inquire" type="button" onclick="event.stopPropagation(); openBookingModal('Full Live Band Experience')">
+                <span>Book</span> &rarr;
+              </button>
             </td>
           </tr>
         </tbody>
@@ -820,15 +1137,15 @@
       <div class="doc-kicker" style="margin-bottom: 0; justify-content: center;">Ready to Book?</div>
       <h2 class="cta-headline">Secure Your <span>Date Today</span></h2>
       <p class="cta-subtext">
-        Reach out directly via WhatsApp for fast response, or email for formal event inquiries. All bookings include a dedicated consultation call.
+        Click any package above or use the booking button below to send your event details directly to Frederic's WhatsApp for instant date verification.
       </p>
       <div class="cta-buttons-row">
-        <a href="https://wa.me/254745163122?text=Hi%20Frederic%20Sax%20Ke%2C%20I%20viewed%20your%20Rate%20Card%20and%20would%20like%20to%20book%20a%20performance." target="_blank" rel="noopener" class="btn-wa">
+        <button type="button" onclick="openBookingModal('Full Wedding Day Package')" class="btn-wa">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
           </svg>
-          Book via WhatsApp
-        </a>
+          Book via WhatsApp Form
+        </button>
         <a href="mailto:saxophonekenya@gmail.com?subject=Rate%20Card%20Inquiry%20-%20Frederic%20Sax%20Ke&body=Hi%20Frederic%2C%0A%0AI%20reviewed%20your%20rate%20card%20and%20would%20like%20to%20discuss%20booking%20you%20for%20an%20event.%0A%0AEvent%20details%3A" class="btn-email">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -837,8 +1154,12 @@
         </a>
       </div>
 
+      <a href="https://wa.me/254745163122?text=Hi%20Frederic%20Sax%20Ke%2C%20I%20viewed%20your%20Rate%20Card%20and%20would%20like%20to%20chat%20directly." target="_blank" rel="noopener" style="font-size: 11.5px; color: var(--accent-light); text-decoration: underline; margin-top: 4px; opacity: 0.9;">
+        Or start a quick WhatsApp chat directly &rarr;
+      </a>
+
       <!-- Contact Info Row -->
-      <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center; margin-top:6px; font-family: var(--font-mono); font-size:11px; color: var(--text-dim); align-items:center;">
+      <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center; margin-top:8px; font-family: var(--font-mono); font-size:11px; color: var(--text-dim); align-items:center;">
         <span style="display:inline-flex; align-items:center; gap:5px;">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           +254 745 163 122
@@ -856,6 +1177,89 @@
 
   </main>
 
+  <!-- ── BOOKING INQUIRY MODAL OVERLAY ── -->
+  <div class="modal-overlay" id="booking-modal-overlay" onclick="handleOverlayClick(event)">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div>
+          <div class="modal-kicker">Direct Artist Booking</div>
+          <h2 class="modal-title" id="modal-title">Performance <span>Inquiry</span></h2>
+        </div>
+        <button type="button" class="modal-close-btn" onclick="closeBookingModal()" aria-label="Close booking modal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Package Highlight Banner -->
+      <div class="modal-pkg-banner">
+        <div>
+          <span class="modal-pkg-label">Selected Rate Option</span>
+          <h3 class="modal-pkg-name" id="modal-pkg-name">Full Wedding Day Package</h3>
+        </div>
+        <div class="modal-pkg-price" id="modal-pkg-price">KES 75,000</div>
+      </div>
+
+      <!-- Booking Form -->
+      <form onsubmit="handleRateCardWhatsAppSubmit(event)">
+        <div class="modal-form-grid">
+          <div class="form-group">
+            <label for="modal-name" class="form-label">Full Name / Organization *</label>
+            <input type="text" id="modal-name" class="form-input" placeholder="e.g. David Mwangi / Safaricom Ltd" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="modal-phone" class="form-label">WhatsApp / Phone *</label>
+            <input type="tel" id="modal-phone" class="form-input" placeholder="e.g. +254 712 345 678" required autocomplete="tel">
+          </div>
+
+          <div class="form-group">
+            <label for="modal-date" class="form-label">Performance Date *</label>
+            <input type="date" id="modal-date" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label for="modal-venue" class="form-label">Event Venue &amp; City *</label>
+            <input type="text" id="modal-venue" class="form-input" placeholder="e.g. Windsor Golf Hotel, Nairobi" required>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 14px;">
+          <label for="modal-pkg-select" class="form-label">Selected Performance Package</label>
+          <select id="modal-pkg-select" class="form-select" onchange="syncSelectedPackageFromDropdown()">
+            <option value="Solo Sax • Cocktail Hour" data-kes="KES 25,000" data-usd="$190">Solo Sax • Cocktail Hour (1 – 1.5 Hours)</option>
+            <option value="Solo Sax • Extended Event" data-kes="KES 45,000" data-usd="$350">Solo Sax • Extended Event (2 – 3 Hours)</option>
+            <option value="Full Wedding Day Package" data-kes="KES 75,000" data-usd="$580">Full Wedding Day Package (Full Day)</option>
+            <option value="Saxophone + DJ Live Duo" data-kes="KES 65,000" data-usd="$500">Saxophone + DJ Live Duo (3 – 4 Hours)</option>
+            <option value="Full Live Band Experience" data-kes="KES 120,000" data-usd="$920">Full Live Band Experience (3 Hours)</option>
+            <option value="Custom Bespoke Booking" data-kes="Custom Quote" data-usd="Custom Quote">Custom Bespoke Booking</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="margin-top: 14px;">
+          <label for="modal-notes" class="form-label">Event Details, Repertoire &amp; Special Requests</label>
+          <textarea id="modal-notes" class="form-textarea" placeholder="Tell us about the event schedule, preferred songs (first dance, entrance), estimated guests, and acoustic preferences..."></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="modal-submit-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+          <span>Send Booking Request to WhatsApp &rarr;</span>
+        </button>
+
+        <div class="modal-trust-footnote">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Direct connection to Frederic Ogonda (+254 745 163 122) &bull; Priority confirmation
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- ── PAGE FOOTER ── -->
   <footer class="page-footer">
     <div class="footer-brand">Frederic <span>Sax Ke</span></div>
@@ -867,6 +1271,15 @@
   <script>
     // ── Currency Toggle ──
     let currentCurrency = 'kes';
+
+    const PACKAGE_PRICES = {
+      'Solo Sax • Cocktail Hour': { kes: 'KES 25,000', usd: '$190' },
+      'Solo Sax • Extended Event': { kes: 'KES 45,000', usd: '$350' },
+      'Full Wedding Day Package': { kes: 'KES 75,000', usd: '$580' },
+      'Saxophone + DJ Live Duo': { kes: 'KES 65,000', usd: '$500' },
+      'Full Live Band Experience': { kes: 'KES 120,000', usd: '$920' },
+      'Custom Bespoke Booking': { kes: 'Custom Quote', usd: 'Custom Quote' }
+    };
 
     function setCurrency(cur) {
       currentCurrency = cur;
@@ -893,6 +1306,133 @@
         const el = document.getElementById(r.id);
         if (el) el.textContent = cur === 'kes' ? r.kes : r.usd;
       });
+
+      // Refresh modal price if open
+      syncSelectedPackageFromDropdown();
+    }
+
+    // ── Booking Modal Engine ──
+    function openBookingModal(pkgName) {
+      const modal = document.getElementById('booking-modal-overlay');
+      const selectEl = document.getElementById('modal-pkg-select');
+      const dateInput = document.getElementById('modal-date');
+
+      const targetPkg = pkgName || 'Full Wedding Day Package';
+
+      if (selectEl) {
+        let matched = false;
+        for (let i = 0; i < selectEl.options.length; i++) {
+          if (selectEl.options[i].value === targetPkg || targetPkg.includes(selectEl.options[i].value)) {
+            selectEl.selectedIndex = i;
+            matched = true;
+            break;
+          }
+        }
+        if (!matched) {
+          selectEl.value = 'Custom Bespoke Booking';
+        }
+      }
+
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+      }
+
+      syncSelectedPackageFromDropdown();
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      setTimeout(() => {
+        const nameInput = document.getElementById('modal-name');
+        if (nameInput) nameInput.focus();
+      }, 120);
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('booking-modal-overlay');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleOverlayClick(e) {
+      if (e.target && e.target.id === 'booking-modal-overlay') {
+        closeBookingModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeBookingModal();
+      }
+    });
+
+    function syncSelectedPackageFromDropdown() {
+      const selectEl = document.getElementById('modal-pkg-select');
+      const pkgNameEl = document.getElementById('modal-pkg-name');
+      const pkgPriceEl = document.getElementById('modal-pkg-price');
+      if (!selectEl || !pkgNameEl || !pkgPriceEl) return;
+
+      const selValue = selectEl.value;
+      pkgNameEl.textContent = selValue;
+
+      const info = PACKAGE_PRICES[selValue];
+      if (info) {
+        pkgPriceEl.textContent = currentCurrency === 'kes' ? info.kes : info.usd;
+      } else {
+        pkgPriceEl.textContent = 'Custom Quote';
+      }
+    }
+
+    function showToast(msg) {
+      let toast = document.getElementById('ratecard-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'ratecard-toast';
+        toast.className = 'toast-msg';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+
+    function handleRateCardWhatsAppSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('modal-name').value.trim();
+      const phone = document.getElementById('modal-phone').value.trim();
+      const date = document.getElementById('modal-date').value;
+      const venue = document.getElementById('modal-venue').value.trim();
+      const selectEl = document.getElementById('modal-pkg-select');
+      const pkgName = selectEl ? selectEl.value : 'Performance Booking';
+      const notes = document.getElementById('modal-notes').value.trim();
+      const refNumber = document.getElementById('ref-number') ? document.getElementById('ref-number').textContent : 'FSK-RC-2026';
+
+      const info = PACKAGE_PRICES[pkgName];
+      const rateText = info ? (currentCurrency === 'kes' ? info.kes : info.usd) : 'Bespoke Quote';
+
+      const whatsappText =
+        `*FREDERIC SAX KE - PERFORMANCE INQUIRY*\n` +
+        `----------------------------------------\n` +
+        `Client / Org: ${name}\n` +
+        `Phone / WhatsApp: ${phone}\n` +
+        `Performance Date: ${date}\n` +
+        `Venue & City: ${venue}\n` +
+        `Package Selected: ${pkgName}\n` +
+        `Rate Card Rate: ${rateText}\n` +
+        `Event Notes: ${notes ? notes : 'Tailored repertoire curation'}\n` +
+        `----------------------------------------\n` +
+        `${refNumber} | fredericsax.com`;
+
+      showToast("Redirecting to WhatsApp with your inquiry...");
+      setTimeout(() => {
+        window.open(`https://wa.me/254745163122?text=${encodeURIComponent(whatsappText)}`, '_blank');
+        closeBookingModal();
+      }, 500);
     }
 
     // ── Auto-generate a dated reference number ──

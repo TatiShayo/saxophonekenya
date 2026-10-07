@@ -1778,6 +1778,17 @@
       color: var(--accent-light);
       text-transform: uppercase;
       letter-spacing: 0.1em;
+      transition: var(--transition-smooth);
+    }
+
+    .ratecard-feature-pill.interactive {
+      cursor: pointer;
+    }
+
+    .ratecard-feature-pill.interactive:hover {
+      background: rgba(212, 178, 140, 0.2);
+      border-color: var(--accent-primary);
+      transform: translateY(-1px);
     }
 
     .ratecard-cta-btn {
@@ -2669,7 +2680,7 @@
               <span>Joyous Recessional Exit</span>
             </li>
           </ul>
-          <a href="#contact" class="btn-camel-primary" style="width: 100%; justify-content: center; font-size: 12px;">Book Ceremony</a>
+          <a href="#contact" onclick="selectPackageAndScroll('Ceremony Sax Only')" class="btn-camel-primary" style="width: 100%; justify-content: center; font-size: 12px;">Book Ceremony</a>
         </div>
 
         <!-- Cocktail Hour (Featured) -->
@@ -2695,7 +2706,7 @@
               <span>Custom Repertoire Requests</span>
             </li>
           </ul>
-          <a href="#contact" class="btn-camel-primary" style="width: 100%; justify-content: center; font-size: 12px;">Book Cocktail</a>
+          <a href="#contact" onclick="selectPackageAndScroll('Cocktail Hour Sax')" class="btn-camel-primary" style="width: 100%; justify-content: center; font-size: 12px;">Book Cocktail</a>
         </div>
 
         <!-- Reception -->
@@ -2720,7 +2731,7 @@
               <span>Crowd Hype &amp; Stage Interaction</span>
             </li>
           </ul>
-          <a href="#contact" class="btn-camel-primary" style="width: 100%; justify-content: center; font-size: 12px;">Book Reception</a>
+          <a href="#contact" onclick="selectPackageAndScroll('Reception Party Performance')" class="btn-camel-primary" style="width: 100%; justify-content: center; font-size: 12px;">Book Reception</a>
         </div>
       </div>
 
@@ -2794,10 +2805,10 @@
 
         <!-- Feature pills -->
         <div class="ratecard-feature-pills">
-          <div class="ratecard-feature-pill">✓ Solo Saxophone</div>
-          <div class="ratecard-feature-pill">✓ Sax + DJ Live Duo</div>
-          <div class="ratecard-feature-pill">✓ Full Wedding Package</div>
-          <div class="ratecard-feature-pill">✓ Full Live Band</div>
+          <div class="ratecard-feature-pill interactive" onclick="selectPackageAndScroll('Solo Sax • Cocktail Hour')" title="Click to pre-fill booking inquiry for WhatsApp">✓ Solo Saxophone</div>
+          <div class="ratecard-feature-pill interactive" onclick="selectPackageAndScroll('Saxophone + DJ Live Duo')" title="Click to pre-fill booking inquiry for WhatsApp">✓ Sax + DJ Live Duo</div>
+          <div class="ratecard-feature-pill interactive" onclick="selectPackageAndScroll('Full Wedding Day Package')" title="Click to pre-fill booking inquiry for WhatsApp">✓ Full Wedding Package</div>
+          <div class="ratecard-feature-pill interactive" onclick="selectPackageAndScroll('Full Live Band Experience')" title="Click to pre-fill booking inquiry for WhatsApp">✓ Full Live Band</div>
           <div class="ratecard-feature-pill">✓ KES &amp; USD Pricing</div>
           <div class="ratecard-feature-pill">✓ Printable / PDF</div>
         </div>
@@ -3025,7 +3036,11 @@
             <div>
               <label for="form-package" class="form-field-label">Performance Package</label>
               <select id="form-package" class="form-select-clean">
-                <option value="Full Wedding Day Package">Full Wedding Day Package</option>
+                <option value="Full Wedding Day Package">Full Wedding Day Package (Ceremony + Cocktail + Reception)</option>
+                <option value="Solo Sax • Cocktail Hour">Solo Sax • Cocktail Hour (1 – 1.5 Hours)</option>
+                <option value="Solo Sax • Extended Event">Solo Sax • Extended Event (2 – 3 Hours)</option>
+                <option value="Saxophone + DJ Live Duo">Saxophone + DJ Live Duo (3 – 4 Hours)</option>
+                <option value="Full Live Band Experience">Full Live Band Experience (3 Hours)</option>
                 <option value="Ceremony Sax Only">Ceremony Sax Only</option>
                 <option value="Cocktail Hour Sax">Cocktail Hour Sax</option>
                 <option value="Reception Party Performance">Reception Party Performance</option>
@@ -3446,18 +3461,57 @@
       showToast(`Viewing: ${title} (@ojiespov)`);
     }
 
+    function selectPackageAndScroll(pkgName) {
+      const pkgSelect = document.getElementById('form-package');
+      if (pkgSelect) {
+        let matched = false;
+        for (let i = 0; i < pkgSelect.options.length; i++) {
+          const optVal = pkgSelect.options[i].value.toLowerCase();
+          const optText = pkgSelect.options[i].text.toLowerCase();
+          const target = pkgName.toLowerCase();
+          if (optVal === target || optVal.includes(target) || target.includes(optVal) || optText.includes(target)) {
+            pkgSelect.selectedIndex = i;
+            matched = true;
+            break;
+          }
+        }
+        if (!matched) {
+          pkgSelect.value = pkgName;
+        }
+      }
+      const contactSec = document.getElementById('contact');
+      if (contactSec) {
+        contactSec.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          const nameInput = document.getElementById('form-name');
+          if (nameInput) nameInput.focus();
+        }, 550);
+      }
+      showToast(`Selected Package: ${pkgName} • Complete details below to send to WhatsApp`);
+    }
+
     function handleDirectBookingSubmit(e) {
       e.preventDefault();
-      const name = document.getElementById('form-name').value;
-      const phone = document.getElementById('form-phone').value;
+      const name = document.getElementById('form-name').value.trim();
+      const phone = document.getElementById('form-phone').value.trim();
       const date = document.getElementById('form-date').value;
-      const location = document.getElementById('form-location').value;
+      const location = document.getElementById('form-location').value.trim();
       const pkg = document.getElementById('form-package').value;
-      const msg = document.getElementById('form-message').value;
+      const msg = document.getElementById('form-message').value.trim();
 
-      const whatsappMsg = encodeURIComponent(
-        `Hi Frederic Sax Ke! My name is ${name} (${phone}).\nI would like to book you for:\nDate: ${date}\nVenue: ${location}\nPackage: ${pkg}\nNotes: ${msg}`
-      );
+      const formattedMsg =
+        `*FREDERIC SAX KE - PERFORMANCE INQUIRY*\n` +
+        `----------------------------------------\n` +
+        `Client / Org: ${name}\n` +
+        `Phone / WhatsApp: ${phone}\n` +
+        `Performance Date: ${date}\n` +
+        `Venue & City: ${location}\n` +
+        `Package Selected: ${pkg}\n` +
+        `Event Notes: ${msg ? msg : 'Tailored repertoire curation'}\n` +
+        `----------------------------------------\n` +
+        `Sent via fredericsax.com Booking Form`;
+
+      const whatsappMsg = encodeURIComponent(formattedMsg);
 
       showToast("Redirecting to WhatsApp to send booking inquiry...");
       setTimeout(() => {
