@@ -1,0 +1,14 @@
+# OS & Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+*~
+
+# Vercel & Node
+.vercel/
+node_modules/
+npm-debug.log*
+
+# Temp
+*.tmp

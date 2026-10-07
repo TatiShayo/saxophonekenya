@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Frederic Sax Ke — Official Rate Card & Performance Pricing. Luxury Saxophonist in Nairobi, Kenya.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Rate Card | Frederic Sax Ke — Luxury Saxophonist Nairobi</title>
+
+  <!-- Google Fonts: Cinzel & Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─────────────────────────────────────────────────────────────
+       LUXURY DESIGN SYSTEM — matches main site palette
+       ───────────────────────────────────────────────────────────── */
+    :root {
+      --bg-base: #08070a;
+      --bg-surface: rgba(14, 12, 18, 0.90);
+      --bg-card: rgba(19, 17, 24, 0.88);
+      --bg-card-elevated: rgba(26, 23, 33, 0.92);
+      --bg-glass: rgba(10, 9, 14, 0.92);
+
+      --accent-primary: #d4b28c;
+      --accent-light: #f3e5d3;
+      --accent-rich: #b38b5d;
+      --accent-deep: #7a5832;
+      --accent-glow: rgba(212, 178, 140, 0.22);
+      --accent-border: rgba(212, 178, 140, 0.28);
+      --accent-border-subtle: rgba(212, 178, 140, 0.14);
+
+      --text-pure: #ffffff;
+      --text-main: #f5f2eb;
+      --text-muted: #a6a095;
+      --text-dim: #6b6459;
+
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-light: rgba(212, 178, 140, 0.18);
+
+      --font-display: 'Cinzel', serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --max-width: 960px;
+      --radius-xs: 4px;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+
+      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.65;
+      background: var(--bg-base);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── ANIMATED BACKGROUND ── */
+    .page-bg {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(212, 178, 140, 0.07) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(122, 88, 50, 0.07) 0%, transparent 60%),
+        var(--bg-base);
+      z-index: 0;
+    }
+
+    /* ── TOP NAV BAR ── */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 7, 10, 0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--accent-border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      height: 64px;
+    }
+
+    .top-bar-brand {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-pure);
+    }
+
+    .top-bar-brand span { color: var(--accent-light); }
+
+    .top-bar-right {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 16px;
+      background: rgba(19, 17, 24, 0.85);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--accent-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: var(--transition-smooth);
+      cursor: pointer;
+    }
+
+    .btn-back:hover {
+      background: rgba(212, 178, 140, 0.12);
+      border-color: var(--accent-primary);
+      transform: translateX(-2px);
+    }
+
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 18px;
+      background: linear-gradient(135deg, var(--accent-light), var(--accent-rich));
+      color: #08070a;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: var(--radius-full);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 16px rgba(212, 178, 140, 0.3);
+    }
+
+    .btn-print:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(212, 178, 140, 0.5);
+      filter: brightness(1.06);
+    }
+
+    /* ── MAIN CONTENT WRAPPER ── */
+    .page-content {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 60px 28px 100px;
+    }
+
+    /* ── DOCUMENT HEADER ── */
+    .doc-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 48px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--accent-border);
+    }
+
+    .doc-header-left {}
+
+    .doc-kicker {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-primary);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .doc-kicker::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 1px;
+      background: var(--accent-primary);
+      opacity: 0.6;
+    }
+
+    .doc-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4.5vw, 50px);
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-pure);
+      line-height: 1.08;
+    }
+
+    .doc-title span { color: var(--accent-light); }
+
+    .doc-subtitle {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    .doc-meta-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .doc-meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 14px;
+      background: rgba(212, 178, 140, 0.10);
+      border: 1px solid var(--accent-border-subtle);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      color: var(--accent-light);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    .pulse-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      box-shadow: 0 0 8px var(--accent-primary);
+      animation: pulse 2.2s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.8); }
+    }
+
+    .doc-ref-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    /* ── CURRENCY TOGGLE ── */
+    .controls-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .controls-bar-left h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent-light);
+      letter-spacing: 0.04em;
+    }
+
+    .controls-bar-left p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .currency-toggle-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .curr-btn {
+      padding: 7px 16px;
+      background: var(--bg-surface);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .curr-btn.active {
+      background: rgba(212, 178, 140, 0.18);
+      color: var(--accent-light);
+      border-color: var(--accent-primary);
+    }
+
+    .curr-btn:hover:not(.active) {
+      background: rgba(212, 178, 140, 0.08);
+      color: var(--accent-light);
+    }
+
+    /* ── RATE TABLE ── */
+    .ratecard-sheet {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 24px 72px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05);
+      margin-bottom: 36px;
+    }
+
+    .rates-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .rates-table thead tr {
+      background: rgba(212, 178, 140, 0.08);
+      border-bottom: 1px solid var(--accent-border);
+    }
+
+    .rates-table th {
+      text-align: left;
+      padding: 16px 22px;
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+
+    .rates-table tbody tr {
+      border-bottom: 1px solid var(--border-subtle);
+      transition: background 0.2s ease;
+    }
+
+    .rates-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .rates-table tbody tr:hover {
+      background: rgba(212, 178, 140, 0.05);
+    }
+
+    .rates-table tbody tr.featured-row {
+      background: rgba(212, 178, 140, 0.07);
+      border-left: 3px solid var(--accent-primary);
+    }
+
+    .rates-table tbody tr.featured-row:hover {
+      background: rgba(212, 178, 140, 0.12);
+    }
+
+    .rates-table td {
+      padding: 22px 22px;
+      vertical-align: middle;
+    }
+
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-pure);
+      margin-bottom: 4px;
+    }
+
+    .service-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .duration-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .inclusions-text {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      max-width: 220px;
+    }
+
+    .price-cell {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .price-amount {
+      font-family: var(--font-mono);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent-light);
+      display: block;
+    }
+
+    .price-usd {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-top: 2px;
+      display: block;
+    }
+
+    .featured-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 10px;
+      background: var(--accent-primary);
+      color: #08070a;
+      font-family: var(--font-sans);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: var(--radius-full);
+      margin-bottom: 5px;
+    }
+
+    /* ── NOTES & TERMS SECTION ── */
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+
+    .note-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .note-icon {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .note-title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent-light);
+      letter-spacing: 0.05em;
+    }
+
+    .note-body {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── CTA BOOKING PANEL ── */
+    .booking-cta-panel {
+      background: linear-gradient(135deg, rgba(212, 178, 140, 0.12) 0%, rgba(19, 17, 24, 0.95) 100%);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 18px;
+      box-shadow: 0 0 60px rgba(212, 178, 140, 0.08);
+    }
+
+    .cta-headline {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-pure);
+    }
+
+    .cta-headline span { color: var(--accent-light); }
+
+    .cta-subtext {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 480px;
+      line-height: 1.65;
+    }
+
+    .cta-buttons-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      background: linear-gradient(135deg, var(--accent-light), var(--accent-rich));
+      color: #08070a;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: var(--radius-full);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      box-shadow: 0 8px 28px rgba(212, 178, 140, 0.35);
+    }
+
+    .btn-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(212, 178, 140, 0.55);
+      filter: brightness(1.08);
+    }
+
+    .btn-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 26px;
+      background: rgba(19, 17, 24, 0.85);
+      backdrop-filter: blur(12px);
+      color: var(--text-pure);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-email:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-light);
+      transform: translateY(-2px);
+    }
+
+    /* ── FOOTER ── */
+    .page-footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border-subtle);
+      padding: 32px 28px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .footer-brand span { color: var(--accent-light); }
+
+    .footer-copy {
+      font-size: 11.5px;
+      color: var(--text-dim);
+    }
+
+    /* ── PRINT STYLES ── */
+    @media print {
+      .top-bar, .btn-back, .btn-print, .booking-cta-panel, .page-footer, .controls-bar .currency-toggle-group { display: none !important; }
+      body { background: #fff; color: #111; }
+      .page-bg { display: none; }
+      .page-content { padding: 20px; max-width: 100%; }
+      .ratecard-sheet { box-shadow: none; border: 1px solid #ddd; }
+      .doc-title, .doc-title span, .service-name, .note-title { color: #111 !important; }
+      .service-desc, .inclusions-text, .note-body, .doc-subtitle { color: #555 !important; }
+      .price-amount { color: #7a5832 !important; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .doc-header { grid-template-columns: 1fr; }
+      .doc-meta-stack { align-items: flex-start; text-align: left; }
+      .top-bar { padding: 0 18px; }
+      .page-content { padding: 36px 18px 72px; }
+      .rates-table th, .rates-table td { padding: 16px 14px; }
+      .rates-table th:nth-child(3), .rates-table td:nth-child(3) { display: none; }
+      .booking-cta-panel { padding: 28px 20px; }
+      .controls-bar { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .rates-table th:nth-child(2), .rates-table td:nth-child(2) { display: none; }
+      .price-amount { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-bg"></div>
+
+  <!-- ── TOP NAVIGATION BAR ── -->
+  <div class="top-bar">
+    <a href="index.html" class="top-bar-brand">Frederic <span>Sax Ke</span></a>
+    <div class="top-bar-right">
+      <a href="index.html" class="btn-back">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+        Back to Site
+      </a>
+      <button class="btn-print" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+        </svg>
+        Print / Save PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- ── MAIN PAGE CONTENT ── -->
+  <main class="page-content">
+
+    <!-- Document Header -->
+    <div class="doc-header">
+      <div class="doc-header-left">
+        <div class="doc-kicker">Official Rate Card &bull; FY 2026</div>
+        <h1 class="doc-title">Performance <span>Rate Card</span></h1>
+        <p class="doc-subtitle">
+          Transparent performance investment guide for solo saxophone, live duo sets, and full band ensembles across Nairobi and East Africa.
+          All rates inclusive of wireless microphone system, sound check, and tailored repertoire curation.
+        </p>
+      </div>
+      <div class="doc-meta-stack">
+        <div class="doc-meta-badge">
+          <div class="pulse-dot"></div>
+          <span>Accepting Bookings</span>
+        </div>
+        <div class="doc-meta-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>Nairobi, Kenya</span>
+        </div>
+        <div class="doc-ref-num" id="ref-number">REF: FSK-RC-2026</div>
+      </div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div class="controls-bar-left">
+        <h3>Performance Rate Matrix</h3>
+        <p>Includes sound check, wireless mic system &amp; tailored song curation</p>
+      </div>
+      <div class="currency-toggle-group">
+        <button class="curr-btn active" id="btn-kes" onclick="setCurrency('kes')">KES</button>
+        <button class="curr-btn" id="btn-usd" onclick="setCurrency('usd')">USD</button>
+      </div>
+    </div>
+
+    <!-- Rate Card Table -->
+    <div class="ratecard-sheet">
+      <table class="rates-table">
+        <thead>
+          <tr>
+            <th>Service Package</th>
+            <th>Duration</th>
+            <th>Production Inclusions</th>
+            <th style="text-align:right;">Investment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="service-name">Solo Sax &bull; Cocktail Hour</div>
+              <div class="service-desc">Intimate receptions, dinners, private soirees</div>
+            </td>
+            <td><span class="duration-badge">1 – 1.5 Hours</span></td>
+            <td><div class="inclusions-text">Dedicated PA sound &amp; high-fidelity backing tracks</div></td>
+            <td class="price-cell">
+              <span class="price-amount" data-kes="KES 25,000" data-usd="$190">KES 25,000</span>
+              <span class="price-usd" id="alt-1">≈ $190 USD</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="service-name">Solo Sax &bull; Extended Event</div>
+              <div class="service-desc">Corporate galas, product launches, summits</div>
+            </td>
+            <td><span class="duration-badge">2 – 3 Hours</span></td>
+            <td><div class="inclusions-text">Custom curated repertoire &amp; roaming solos</div></td>
+            <td class="price-cell">
+              <span class="price-amount" data-kes="KES 45,000" data-usd="$350">KES 45,000</span>
+              <span class="price-usd" id="alt-2">≈ $350 USD</span>
+            </td>
+          </tr>
+          <tr class="featured-row">
+            <td>
+              <div class="featured-tag">Most Popular</div>
+              <div class="service-name">Full Wedding Day Package</div>
+              <div class="service-desc">Ceremony + Cocktail Hour + Grand Reception</div>
+            </td>
+            <td><span class="duration-badge">Full Day</span></td>
+            <td><div class="inclusions-text">All 3 segments + First Dance Accompaniment</div></td>
+            <td class="price-cell">
+              <span class="price-amount" data-kes="KES 75,000" data-usd="$580">KES 75,000</span>
+              <span class="price-usd" id="alt-3">≈ $580 USD</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="service-name">Saxophone + DJ Live Duo</div>
+              <div class="service-desc">High-energy club, lounge &amp; evening celebration</div>
+            </td>
+            <td><span class="duration-badge">3 – 4 Hours</span></td>
+            <td><div class="inclusions-text">Pro DJ console, lighting &amp; live sax improvisation</div></td>
+            <td class="price-cell">
+              <span class="price-amount" data-kes="KES 65,000" data-usd="$500">KES 65,000</span>
+              <span class="price-usd" id="alt-4">≈ $500 USD</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="service-name">Full Live Band Experience</div>
+              <div class="service-desc">Sax, Keys, Bass Guitar, Drums</div>
+            </td>
+            <td><span class="duration-badge">3 Hours</span></td>
+            <td><div class="inclusions-text">Full stage backline &amp; live acoustic instrumentation</div></td>
+            <td class="price-cell">
+              <span class="price-amount" data-kes="KES 120,000" data-usd="$920">KES 120,000</span>
+              <span class="price-usd" id="alt-5">≈ $920 USD</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Notes & Terms Grid -->
+    <div class="notes-grid">
+      <div class="note-card">
+        <div class="note-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path d="M12 18V6"></path></svg>
+        </div>
+        <div class="note-title">Deposit &amp; Payment Terms</div>
+        <div class="note-body">50% deposit required to lock your date. Remaining 50% settled on the event day prior to performance start. M-Pesa &amp; bank transfer accepted.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        </div>
+        <div class="note-title">Cancellation Policy</div>
+        <div class="note-body">Rescheduling with 14+ days' notice allows full deposit transfer to any open date. Cancellations within 14 days forfeit the deposit.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+        </div>
+        <div class="note-title">Technical Requirements</div>
+        <div class="note-body">Venue provides clean power access. Sound check occurs 90–120 minutes before guest arrival. Wireless sax mic system is included.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <div class="note-title">Travel &amp; Destination Events</div>
+        <div class="note-body">Available across all 47 counties of Kenya. International &amp; destination bookings available — travel &amp; accommodation costs quoted separately.</div>
+      </div>
+    </div>
+
+    <!-- Booking CTA -->
+    <div class="booking-cta-panel">
+      <div class="doc-kicker" style="margin-bottom: 0; justify-content: center;">Ready to Book?</div>
+      <h2 class="cta-headline">Secure Your <span>Date Today</span></h2>
+      <p class="cta-subtext">
+        Reach out directly via WhatsApp for fast response, or email for formal event inquiries. All bookings include a dedicated consultation call.
+      </p>
+      <div class="cta-buttons-row">
+        <a href="https://wa.me/254745163122?text=Hi%20Frederic%20Sax%20Ke%2C%20I%20viewed%20your%20Rate%20Card%20and%20would%20like%20to%20book%20a%20performance." target="_blank" rel="noopener" class="btn-wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+          Book via WhatsApp
+        </a>
+        <a href="mailto:saxophonekenya@gmail.com?subject=Rate%20Card%20Inquiry%20-%20Frederic%20Sax%20Ke&body=Hi%20Frederic%2C%0A%0AI%20reviewed%20your%20rate%20card%20and%20would%20like%20to%20discuss%20booking%20you%20for%20an%20event.%0A%0AEvent%20details%3A" class="btn-email">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          Email Inquiry
+        </a>
+      </div>
+
+      <!-- Contact Info Row -->
+      <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center; margin-top:6px; font-family: var(--font-mono); font-size:11px; color: var(--text-dim); align-items:center;">
+        <span style="display:inline-flex; align-items:center; gap:5px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          +254 745 163 122
+        </span>
+        <span style="display:inline-flex; align-items:center; gap:5px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          saxophonekenya@gmail.com
+        </span>
+        <span style="display:inline-flex; align-items:center; gap:5px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Nairobi, Kenya
+        </span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── PAGE FOOTER ── -->
+  <footer class="page-footer">
+    <div class="footer-brand">Frederic <span>Sax Ke</span></div>
+    <p class="footer-copy">
+      Fredrick Ogonda Odundo &bull; Saxist &bull; Nairobi, Kenya &bull; &copy; 2026. All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    // ── Currency Toggle ──
+    let currentCurrency = 'kes';
+
+    function setCurrency(cur) {
+      currentCurrency = cur;
+
+      // Update toggle button states
+      document.getElementById('btn-kes').classList.toggle('active', cur === 'kes');
+      document.getElementById('btn-usd').classList.toggle('active', cur === 'usd');
+
+      // Update all price cells
+      const priceAmounts = document.querySelectorAll('.price-amount');
+      priceAmounts.forEach(el => {
+        el.textContent = cur === 'kes' ? el.dataset.kes : el.dataset.usd;
+      });
+
+      // Update all alt-currency labels
+      const rates = [
+        { id: 'alt-1', kes: '≈ $190 USD', usd: '≈ KES 25,000' },
+        { id: 'alt-2', kes: '≈ $350 USD', usd: '≈ KES 45,000' },
+        { id: 'alt-3', kes: '≈ $580 USD', usd: '≈ KES 75,000' },
+        { id: 'alt-4', kes: '≈ $500 USD', usd: '≈ KES 65,000' },
+        { id: 'alt-5', kes: '≈ $920 USD', usd: '≈ KES 120,000' },
+      ];
+      rates.forEach(r => {
+        const el = document.getElementById(r.id);
+        if (el) el.textContent = cur === 'kes' ? r.kes : r.usd;
+      });
+    }
+
+    // ── Auto-generate a dated reference number ──
+    (function() {
+      const now = new Date();
+      const yr = now.getFullYear();
+      const mo = String(now.getMonth() + 1).padStart(2, '0');
+      const dy = String(now.getDate()).padStart(2, '0');
+      const el = document.getElementById('ref-number');
+      if (el) el.textContent = `REF: FSK-RC-${yr}${mo}${dy}`;
+    })();
+  </script>
+</body>
+</html>
