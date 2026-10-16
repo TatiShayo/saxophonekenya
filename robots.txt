@@ -14,4 +14,4 @@ Disallow: /build.py$
 # Never index the test harness or the build manifest.
 Disallow: /build.config.json
 
-Sitemap: https://fredericsax.com/sitemap.xml
+Sitemap: https://saxophonekenya.com/sitemap.xml
