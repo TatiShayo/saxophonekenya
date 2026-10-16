@@ -1,41 +1,41 @@
 HOTEL & RESORT OUTREACH - SEND INDEX
 ==========================================================================
 
-One plain-text draft per file. Verified & populated into Gmail Drafts.
+One plain-text draft per file. Verified and ready for outreach.
 
   #  FILE                 RECIPIENT                                   SUBJECT
 --------------------------------------------------------------------------
-  1  emails-outbox\01-send-1.txt meetings.villarosa@kempinski.com           Live saxophone for Fedora Ballroom events — F
-  2  emails-outbox\02-send-2.txt kenya.reservations@fairmont.com            Live saxophone for Fairmont Kenya functions —
-  3  emails-outbox\03-send-3.txt central.reservations@hemingways.co         Live saxophone for Hemingways private functio
-  4  emails-outbox\04-send-4.txt reservations@tribehotel-kenya.com          Live saxophone for Tribe Hotel functions — Fr
-  5  emails-outbox\05-send-5.txt info.nairobi@radissonblu.com               Live saxophone for Radisson Blu Upper Hill fu
-  6  emails-outbox\06-send-6.txt reservations@crowneplazanairobiairport.com Live saxophone for Crowne Plaza Nairobi Airpo
-  7  emails-outbox\07-send-7.txt reservations.africa@serenahotels.com       Live saxophone for Serena events — Frederic S
-  8  emails-outbox\08-send-8.txt sarovastanley@sarovahotels.com             Live saxophone for Sarova Stanley functions —
-  9  emails-outbox\09-send-9.txt centralreservations@sarovahotels.com       Live saxophone for Sarova Whitesands & Lion H
- 10  emails-outbox\10-send-10.txt info@ole-serenihotel.com                   Live saxophone for Ole Sereni events — Freder
- 11  emails-outbox\11-send-11.txt nbokn_res@hilton.com                       Live saxophone for Kwetu Nairobi functions — 
- 12  emails-outbox\12-send-12.txt sales@sankara.com                          Live saxophone for Woodvale Ballrooms & garde
- 13  emails-outbox\13-send-13.txt hotel.nairobi@movenpick.com                Live saxophone for Mövenpick Nairobi function
- 14  emails-outbox\14-send-14.txt reservations@leopardbeachresort.com        Live saxophone for Leopard Beach events — Fre
- 15  emails-outbox\15-send-15.txt info@dianireef.com                         Live saxophone for Diani Reef events — Freder
- 16  emails-outbox\16-send-16.txt reservations@medinapalms.com               Live saxophone for Medina Palms events — Fred
- 17  emails-outbox\17-send-17.txt enquiries@singita.com                      Live saxophone for Singita functions — Nairob
- 18  emails-outbox\18-send-18.txt reservation-zanzibar@theresidence.com      Live saxophone for The Residence Zanzibar eve
- 19  emails-outbox\19-send-19.txt kampala@serena.co.ug                       Live saxophone for Kampala Serena functions —
- 20  emails-outbox\20-send-20.txt reservations@sheratonkampala.com           Live saxophone for Sheraton Kampala functions
- 21  emails-outbox\21-send-21.txt reservations@munyonyocommonwealth.com      Live saxophone for Speke Resort Munyonyo even
- 22  emails-outbox\22-send-22.txt banqueting.kigali@serenahotels.com         Live saxophone for Kigali Serena banqueting —
- 23  emails-outbox\23-send-23.txt reservations.kigali@marriott.com           Live saxophone for Kigali Marriott events — F
- 24  emails-outbox\24-send-24.txt info.kigali@radissonblu.com                Live saxophone for Radisson Blu Kigali events
- 25  emails-outbox\25-send-25.txt info@millecollines.rw                      Live saxophone for Hôtel des Mille Collines e
- 26  emails-outbox\26-send-26.txt reservations.addisethiopia@luxurycollection.com Live saxophone for Sheraton Addis functions —
- 27  emails-outbox\27-send-27.txt reservations.addisababa@hilton.com         Live saxophone for Hilton Addis Ababa functio
- 28  emails-outbox\28-send-28.txt reservations.addisababa@radissonblu.com    Live saxophone for Radisson Blu Addis Ababa f
- 29  emails-outbox\29-send-29.txt reservation@capitalhotelandspa.com         Live saxophone for Capital Hotel & Spa events
- 30  emails-outbox\30-send-30.txt jw.nbojw.cateringsales@marriott.com        Live saxophone for Grand Ballroom events — Fr
- 31  emails-outbox\31-send-31.txt reservations@windsor.co.ke                 Live saxophone for Windsor Golf Hotel garden 
- 32  emails-outbox\32-send-32.txt reservations.tth@tamarind.co.ke            Live saxophone for Tamarind Tree Hotel functi
+  1  01-send-1.txt        meetings.villarosa@kempinski.com           Live saxophone for Fedora Ballroom events: Fr
+  2  02-send-2.txt        kenya.reservations@fairmont.com            Live saxophone for Fairmont Kenya functions: 
+  3  03-send-3.txt        central.reservations@hemingways.co         Live saxophone for Hemingways private functio
+  4  04-send-4.txt        reservations@tribehotel-kenya.com          Live saxophone for Tribe Hotel functions: Fre
+  5  05-send-5.txt        info.nairobi@radissonblu.com               Live saxophone for Radisson Blu Upper Hill fu
+  6  06-send-6.txt        reservations@crowneplazanairobiairport.com Live saxophone for Crowne Plaza Nairobi Airpo
+  7  07-send-7.txt        reservations.africa@serenahotels.com       Live saxophone for Serena events: Frederic Sa
+  8  08-send-8.txt        sarovastanley@sarovahotels.com             Live saxophone for Sarova Stanley functions: 
+  9  09-send-9.txt        centralreservations@sarovahotels.com       Live saxophone for Sarova Whitesands & Lion H
+ 10  10-send-10.txt       info@ole-serenihotel.com                   Live saxophone for Ole Sereni events: Frederi
+ 11  11-send-11.txt       nbokn_res@hilton.com                       Live saxophone for Kwetu Nairobi functions: F
+ 12  12-send-12.txt       sales@sankara.com                          Live saxophone for Woodvale Ballrooms & garde
+ 13  13-send-13.txt       hotel.nairobi@movenpick.com                Live saxophone for Mövenpick Nairobi function
+ 14  14-send-14.txt       reservations@leopardbeachresort.com        Live saxophone for Leopard Beach events: Fred
+ 15  15-send-15.txt       info@dianireef.com                         Live saxophone for Diani Reef events: Frederi
+ 16  16-send-16.txt       reservations@medinapalms.com               Live saxophone for Medina Palms events: Frede
+ 17  17-send-17.txt       enquiries@singita.com                      Live saxophone for Singita functions: Nairobi
+ 18  18-send-18.txt       reservation-zanzibar@theresidence.com      Live saxophone for The Residence Zanzibar eve
+ 19  19-send-19.txt       kampala@serena.co.ug                       Live saxophone for Kampala Serena functions: 
+ 20  20-send-20.txt       reservations@sheratonkampala.com           Live saxophone for Sheraton Kampala functions
+ 21  21-send-21.txt       reservations@munyonyocommonwealth.com      Live saxophone for Speke Resort Munyonyo even
+ 22  22-send-22.txt       banqueting.kigali@serenahotels.com         Live saxophone for Kigali Serena banqueting: 
+ 23  23-send-23.txt       reservations.kigali@marriott.com           Live saxophone for Kigali Marriott events: Fr
+ 24  24-send-24.txt       info.kigali@radissonblu.com                Live saxophone for Radisson Blu Kigali events
+ 25  25-send-25.txt       info@millecollines.rw                      Live saxophone for Hôtel des Mille Collines e
+ 26  26-send-26.txt       reservations.addisethiopia@luxurycollection.com Live saxophone for Sheraton Addis functions: 
+ 27  27-send-27.txt       reservations.addisababa@hilton.com         Live saxophone for Hilton Addis Ababa functio
+ 28  28-send-28.txt       reservations.addisababa@radissonblu.com    Live saxophone for Radisson Blu Addis Ababa f
+ 29  29-send-29.txt       reservation@capitalhotelandspa.com         Live saxophone for Capital Hotel & Spa events
+ 30  30-send-30.txt       jw.nbojw.cateringsales@marriott.com        Live saxophone for Grand Ballroom events: Fre
+ 31  31-send-31.txt       reservations@windsor.co.ke                 Live saxophone for Windsor Golf Hotel garden 
+ 32  32-send-32.txt       reservations.tth@tamarind.co.ke            Live saxophone for Tamarind Tree Hotel functi
 --------------------------------------------------------------------------
-32 drafts ready in emails-outbox/ and verified in Gmail Drafts.
+32 drafts ready in emails-outbox/.
