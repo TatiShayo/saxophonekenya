@@ -1,0 +1,170 @@
+/* ==========================================================================
+   responsive.css — Breakpoints, fluid parity 375px -> 4K
+   --------------------------------------------------------------------------
+   Breakpoints are ordered desktop-down. Every rule here overrides a
+   component rule from an earlier stylesheet; nothing component-specific is
+   defined here for the first time.
+   ========================================================================== */
+
+/* ---- Tablet landscape and below ------------------------------------------ */
+@media (max-width: 1024px) {
+  .airbnb-booking-container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* The sticky side rail only makes sense beside a scrolling calendar. */
+  .airbnb-booking-right { position: static; }
+
+  .bio-magazine-card,
+  .wedding-visual-hero,
+  .wedding-grid,
+  .video-theater-grid,
+  .booking-split-grid,
+  .invoice-form {
+    grid-template-columns: 1fr;
+  }
+
+  .phone-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .bio-magazine-card { gap: 32px; padding: 36px 28px; }
+
+  /* ---------------------------------------------------------------
+     `background-attachment: fixed` is the single most expensive
+     property in this stylesheet on mobile: the compositor cannot
+     cache the layer, so it repaints the full-bleed image on every
+     scroll frame. Switching to `scroll` on small viewports is the
+     standard fix and is visually indistinguishable at this size.
+     --------------------------------------------------------------- */
+  .site-main-flow {
+    background-attachment: scroll;
+    background-position: center top;
+  }
+}
+
+/* ---- Navbar collapses to hamburger -------------------------------------- */
+@media (max-width: 860px) {
+  nav { padding: 0 20px; }
+
+  .nav-menu,
+  .nav-cta-group { display: none; }
+
+  .hamburger { display: flex; }
+
+  .location-badge { display: none; }
+
+  /* Section padding shrinks so content is not cramped. */
+  :root { --section-pad-y: 64px; }
+}
+
+/* ---- Phones -------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .hero { padding: 110px 16px 48px; }
+
+  .hero-actions-row { flex-direction: column; align-items: stretch; }
+
+  .hero-actions-row .btn-camel-primary,
+  .hero-actions-row .btn-glass-secondary { width: 100%; }
+
+  .hero-bottom-controls {
+    flex-direction: column-reverse;
+    gap: 14px;
+  }
+
+  .video-sound-toggle { width: 100%; justify-content: center; }
+
+  .phone-gallery-grid { grid-template-columns: 1fr; }
+
+  .bio-magazine-card,
+  .booking-split-grid { padding: 24px 18px; }
+
+  .ratecard-request-panel { padding: 44px 22px; }
+
+  .pinterest-section-box { padding: 24px 18px; }
+
+  .partners-panel { padding: 22px 16px; }
+
+  .portal-inner-pad { padding: 20px 14px; }
+
+  .portal-tab-header { flex-direction: column; }
+
+  .portal-nav-tab { padding: 14px 16px; }
+
+  /* Toast moves to the bottom so it never covers the fixed navbar. */
+  .toast-container {
+    top: auto;
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+    align-items: stretch;
+  }
+
+  .toast { max-width: none; }
+
+  /* comfortable reading measure */
+  .section-subtitle { font-size: 13.5px; }
+
+  .bio-metrics-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Very small phones (iPhone SE / 320px) ------------------------------- */
+@media (max-width: 380px) {
+  .brand-mark { font-size: 15px; letter-spacing: 0.1em; }
+
+  .cal-slots-grid { gap: 6px; }
+
+  .amenities-grid { grid-template-columns: 1fr; }
+
+  .airbnb-price-val { font-size: 22px; }
+}
+
+/* ---- Short landscape phones --------------------------------------------- */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero { min-height: auto; padding: 96px 20px 40px; }
+
+  .hero-headline { font-size: clamp(22px, 6vw, 44px); }
+}
+
+/* ---- Large desktop / 4K --------------------------------------------------
+   Cap the content measure and scale display type so the layout does not
+   stretch into unreadable line lengths on ultra-wide monitors. */
+@media (min-width: 1600px) {
+  :root {
+    --max-width: 1320px;
+    --section-pad-y: 104px;
+  }
+}
+
+@media (min-width: 2200px) {
+  :root { --max-width: 1480px; }
+}
+
+/* ---- Coarse pointers (touch): no hover-only affordances ----------------- */
+@media (hover: none) {
+  .bio-portrait-frame:hover img,
+  .wedding-photo-card:hover img,
+  .phone-shot-item:hover img { transform: none; }
+
+  .video-card-cinema:hover { transform: none; }
+
+  /* Play affordance must be permanently visible on touch. */
+  .cinema-play-affordance { opacity: 0.55; }
+}
+
+/* ---- Dark scheme is the only theme; light gets the same palette --------- */
+@media (prefers-color-scheme: light) {
+  /* The brand is obsidian-black by design. We deliberately do not invert it. */
+  :root { color-scheme: dark; }
+}
+
+/* ---- Forced colours (Windows High Contrast) ----------------------------- */
+@media (forced-colors: active) {
+  .toast { border: 1px solid CanvasText; }
+
+  .cal-slot-chip[aria-pressed="true"],
+  .bnb-segment-btn.active,
+  .bnb-flex-chip.active,
+  .portal-nav-tab.active {
+    border: 2px solid Highlight;
+  }
+}

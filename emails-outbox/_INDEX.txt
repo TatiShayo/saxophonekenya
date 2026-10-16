@@ -1,0 +1,72 @@
+HOTEL & RESORT OUTREACH - SEND INDEX
+==========================================================================
+
+One plain-text draft per file. Paste the body into your mail client.
+The Subject: and To: lines are there for reference - do not send them.
+
+  #  PROPERTY                                        RECIPIENT                                   
+--------------------------------------------------------------------------
+  1  Send 1                                          meetings.villarosa@kempinski.com            
+     -> 01-send-1.txt
+  2  Send 2                                          kenya.reservations@fairmont.com             
+     -> 02-send-2.txt
+  3  Send 3                                          central.reservations@hemingways.co          
+     -> 03-send-3.txt
+  4  Send 4                                          reservations@tribehotel-kenya.com           
+     -> 04-send-4.txt
+  5  Send 5                                          info.nairobi@radissonblu.com                
+     -> 05-send-5.txt
+  6  Send 6                                          reservations.icnairobi@ihg.com              
+     -> 06-send-6.txt
+  7  Send 7                                          reservations.africa@serenahotels.com        
+     -> 07-send-7.txt
+  8  Send 8                                          sarovastanley@sarovahotels.com              
+     -> 08-send-8.txt
+  9  Send 9                                          centralreservations@sarovahotels.com        
+     -> 09-send-9.txt
+ 10  Send 10                                         info@ole-serenihotel.com                    
+     -> 10-send-10.txt
+ 11  Send 11                                         reservations.nairobi@hilton.com             
+     -> 11-send-11.txt
+ 12  Send 12                                         sales@sankara.com                           
+     -> 12-send-12.txt
+ 13  Send 13                                         hotel.nairobi@movenpick.com                 
+     -> 13-send-13.txt
+ 14  Send 14                                         reservations@leopardbeachresort.com         
+     -> 14-send-14.txt
+ 15  Send 15                                         info@dianireef.com                          
+     -> 15-send-15.txt
+ 16  Send 16                                         reservations@medinapalms.com                
+     -> 16-send-16.txt
+ 17  Send 17                                         enquiries@singita.com                       
+     -> 17-send-17.txt
+ 18  Send 18                                         reservation-zanzibar@theresidence.com       
+     -> 18-send-18.txt
+ 19  Send 19                                         kampala@serena.co.ug                        
+     -> 19-send-19.txt
+ 20  Send 20                                         reservations@sheratonkampala.com            
+     -> 20-send-20.txt
+ 21  Send 21                                         reservations@munyonyocommonwealth.com       
+     -> 21-send-21.txt
+ 22  Send 22                                         banqueting.kigali@serenahotels.com          
+     -> 22-send-22.txt
+ 23  Send 23                                         reservations.kigali@marriott.com            
+     -> 23-send-23.txt
+ 24  Send 24                                         info.kigali@radissonblu.com                 
+     -> 24-send-24.txt
+ 25  Send 25                                         info@millecollines.rw                       
+     -> 25-send-25.txt
+ 26  Send 26                                         reservations.addisethiopia@luxurycollection 
+     -> 26-send-26.txt
+ 27  Send 27                                         reservations.addisababa@hilton.com          
+     -> 27-send-27.txt
+ 28  Send 28                                         reservations.addisababa@radissonblu.com     
+     -> 28-send-28.txt
+ 29  Send 29                                         reservation@capitalhotelandspa.com          
+     -> 29-send-29.txt
+
+--------------------------------------------------------------------------
+29 drafts ready in emails-outbox/
+
+Before sending, read Section 4 (Deliverability Rules) and Section 9
+(Legal & Compliance) of the outreach pack.

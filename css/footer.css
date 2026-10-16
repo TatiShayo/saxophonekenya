@@ -1,0 +1,54 @@
+/* ==========================================================================
+   footer.css — Site footer
+   ========================================================================== */
+
+footer {
+  padding: 64px var(--section-pad-x) 36px;
+  text-align: center;
+  background: rgba(5, 5, 7, 0.95);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-pure);
+}
+
+.footer-brand span { color: var(--accent-light); }
+
+.footer-details {
+  max-width: 520px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.footer-details a { color: var(--accent-light); }
+
+.footer-socials {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-legal {
+  width: 100%;
+  padding-top: 22px;
+  font-size: 12px;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.footer-legal p + p { margin-top: 6px; }

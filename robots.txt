@@ -1,2 +1,17 @@
 User-agent: *
 Allow: /
+
+# The rate card is intentionally withheld from search indexes: pricing is a
+# gated document shared on request (see CONTEXT.md, "Rate Card Separation").
+# Remove the next line if that policy ever changes.
+Disallow: /rate-card.html
+
+# Deployable artefacts and developer tooling. These should never be crawled.
+Disallow: /*.zip$
+Disallow: /partials/
+Disallow: /build.py$
+
+# Never index the test harness or the build manifest.
+Disallow: /build.config.json
+
+Sitemap: https://fredericsax.com/sitemap.xml

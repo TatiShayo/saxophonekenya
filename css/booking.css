@@ -1,0 +1,518 @@
+/* ==========================================================================
+   booking.css — Airbnb-style reservation widget, package chips, amenities
+   and price breakdown. The calendar grid itself lives in
+   css/airbnb-booking.css; this file covers everything around it.
+   ==========================================================================
+/* ---- Booking utility classes (describe booking engine cards) ------------ */
+.cal-slots-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.cal-slots-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+/* Package chip — was a <div onclick>. Now a <button type="button"> with
+   aria-pressed, so keyboard and screen-reader users can select a package. */
+.cal-slot-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 11px 13px;
+  text-align: left;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.cal-slot-chip:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-border);
+  background: rgba(212, 178, 140, 0.08);
+}
+
+.cal-slot-chip[aria-pressed="true"] {
+  border-color: var(--accent-primary);
+  background: rgba(212, 178, 140, 0.16);
+  box-shadow: 0 4px 15px rgba(212, 178, 140, 0.18);
+}
+
+.slot-chip-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.slot-chip-time {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-light);
+}
+
+.slot-chip-status-pill {
+  padding: 1px 7px;
+  background: rgba(212, 178, 140, 0.12);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  white-space: nowrap;
+}
+
+.slot-chip-name {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-pure);
+}
+
+.slot-chip-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 1px;
+  font-size: 10px;
+  color: #4ade80;
+}
+
+.slot-chip-status::before {
+  content: "\25CF";
+  font-size: 7px;
+}
+
+/* ---- Airbnb reservation card ------------------------------------------- */
+.airbnb-booking-container {
+  display: grid;
+  grid-template-columns: 1fr 410px;
+  gap: 32px;
+  align-items: start;
+}
+
+.airbnb-booking-left {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  min-width: 0;
+}
+
+.airbnb-booking-right {
+  position: sticky;
+  top: 96px;
+  min-width: 0;
+}
+
+.calendar-wrapper-card,
+.airbnb-amenities-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.calendar-wrapper-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 30px;
+}
+
+.airbnb-amenities-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px;
+}
+
+.cal-card-title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cal-card-kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+}
+
+.cal-card-heading {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-pure);
+}
+
+/* Amenities ----------------------------------------------------------------- */
+.amenities-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.amenities-kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+}
+
+.amenities-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-pure);
+}
+
+.amenities-sub {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.amenity-item {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+
+.amenity-item:hover {
+  border-color: var(--accent-border);
+  background: rgba(212, 178, 140, 0.06);
+}
+
+.amenity-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.amenity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.amenity-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+
+.amenity-desc {
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+/* Reservation card ---------------------------------------------------------- */
+.airbnb-reserve-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 26px;
+  background: rgba(14, 13, 19, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--accent-border);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(212, 178, 140, 0.12);
+}
+
+.airbnb-reserve-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.airbnb-price-block {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.airbnb-price-val {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--accent-light);
+}
+
+.airbnb-price-unit {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.airbnb-rating-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  font-size: 11.5px;
+  color: var(--text-pure);
+}
+
+.rating-star  { color: #fbbf24; font-size: 12px; }
+.rating-score { font-weight: 700; }
+.rating-count { color: var(--text-muted); }
+.rating-sep   { color: var(--text-dim); }
+.rating-badge { color: var(--accent-light); font-weight: 600; }
+
+/* Segmented date box -------------------------------------------------------- */
+.airbnb-segmented-box {
+  overflow: hidden;
+  background: var(--bg-surface);
+  border: 1px solid var(--accent-border);
+  border-radius: 12px;
+}
+
+.segmented-row-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--accent-border);
+}
+
+.segmented-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: default;
+  min-width: 0;
+}
+
+.segmented-cell.cell-date {
+  cursor: pointer;
+  border-right: 1px solid var(--accent-border);
+  transition: var(--transition-fast);
+}
+
+.segmented-cell.cell-date:hover { background: rgba(212, 178, 140, 0.08); }
+
+.segmented-row-bottom .segmented-cell { padding: 10px 14px; }
+
+.segmented-label {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+}
+
+.segmented-value {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-pure);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Price breakdown ----------------------------------------------------------- */
+.airbnb-price-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.breakdown-item { color: var(--text-pure); }
+
+.breakdown-val {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-pure);
+  white-space: nowrap;
+}
+
+.breakdown-val.free {
+  color: #4ade80;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.breakdown-divider {
+  height: 1px;
+  margin: 4px 0;
+  background: var(--border-subtle);
+}
+
+.breakdown-row.total-row { font-size: 13.5px; padding-top: 2px; }
+
+.breakdown-total-label {
+  font-weight: 700;
+  color: var(--text-pure);
+}
+
+.breakdown-total-val {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--accent-light);
+}
+
+.breakdown-total-val--link {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-light);
+  text-decoration: none;
+}
+
+/* Reserve buttons ----------------------------------------------------------- */
+.btn-airbnb-reserve {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #e4c49d 0%, #c49a6c 50%, #b88b58 100%);
+  color: #0d0c11;
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  box-shadow: var(--shadow-accent);
+  transition: var(--transition-smooth);
+}
+
+.btn-airbnb-reserve:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(212, 178, 140, 0.5);
+  filter: brightness(1.06);
+}
+
+.btn-airbnb-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 11px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--accent-light);
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-airbnb-secondary:hover {
+  background: rgba(212, 178, 140, 0.1);
+  border-color: var(--accent-border);
+  color: var(--text-pure);
+}
+
+/* Explicitly-labelled test harness button. Kept visible because AGENTS.md
+   requires an end-to-end WhatsApp dispatch proof. */
+.btn-airbnb-test-sim {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 11px 18px;
+  background: rgba(212, 178, 140, 0.08);
+  border: 1px dashed var(--accent-primary);
+  border-radius: var(--radius-full);
+  color: var(--accent-light);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-airbnb-test-sim:hover {
+  background: rgba(212, 178, 140, 0.2);
+  transform: translateY(-1px);
+}
+
+.airbnb-reassurance-note {
+  margin: -4px 0 0;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.airbnb-trust-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.trust-badge-pill {
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--text-muted);
+}
+
+.amenity-item .amenity-icon svg { display: block; }

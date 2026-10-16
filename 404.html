@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08070a">
+  <title>Page not found | Frederic Sax Ke</title>
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <style>
+    .nf {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 40px 24px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(212, 178, 140, 0.14), transparent 62%),
+        var(--bg-base);
+    }
+    .nf__inner { max-width: 560px; display: flex; flex-direction: column; gap: 18px; align-items: center; }
+    .nf__eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent-primary);
+    }
+    .nf__title {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 6vw, 62px);
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-pure);
+      line-height: 1.1;
+    }
+    .nf__body { font-size: 15px; line-height: 1.7; color: var(--text-muted); }
+    .nf__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <main class="nf">
+    <div class="nf__inner">
+      <p class="nf__eyebrow">Frederic Sax Ke</p>
+      <h1 class="nf__title">Page not found</h1>
+      <p class="nf__body">
+        The page you were looking for has moved or no longer exists. The performance
+        portfolio, availability calendar and rate card are all one click away.
+      </p>
+      <div class="nf__actions">
+        <a class="btn-camel-primary" href="/">Back to the showcase</a>
+        <a class="btn-glass-secondary" href="/rate-card.html" target="_blank" rel="noopener noreferrer">View rate card</a>
+        <a class="btn-glass-secondary" href="https://wa.me/254745163122" target="_blank" rel="noopener noreferrer">WhatsApp +254 745 163 122</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

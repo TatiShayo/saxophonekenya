@@ -1,0 +1,362 @@
+<section class="section-wrap" id="calendar" aria-labelledby="calendar-title">
+  <div class="section-header">
+    <span class="section-tagline">Open Performance Schedule</span>
+    <h2 class="section-title" id="calendar-title">Availability &amp; Booking <span>Experience</span></h2>
+    <p class="section-subtitle">
+      Real-time schedule and luxury date reservation engine. Select your date on the
+      calendar and customise your performance package with transparent upfront rates.
+    </p>
+  </div>
+
+  <div class="airbnb-booking-container">
+    <div class="airbnb-booking-left">
+      <div class="calendar-wrapper-card">
+        <div class="bnb-calendar-card">
+          <div class="bnb-card-top-row">
+            <div class="bnb-heading-stack">
+              <span class="cal-card-kicker">Interactive Date Picker</span>
+              <h3 class="cal-card-heading">Select Performance Dates</h3>
+              <p id="bnb-schedule-caption">Continuous 12-month availability stream</p>
+            </div>
+
+            <div class="bnb-segmented-control" role="tablist" aria-label="Booking mode">
+              <button type="button" class="bnb-segment-btn active" id="bnb-mode-dates"
+                      role="tab" aria-selected="true" data-action="set-mode" data-mode="dates">Dates</button>
+              <button type="button" class="bnb-segment-btn" id="bnb-mode-flexible"
+                      role="tab" aria-selected="false" data-action="set-mode" data-mode="flexible">Flexible</button>
+            </div>
+          </div>
+
+          <div class="bnb-slot-bar">
+            <div class="bnb-slot-bar-left">
+              <span class="bnb-slot-bar-label">Performance slot / timing</span>
+              <span class="bnb-slot-bar-val" id="bnb-slot-bar-val">Evening Set (18:00 – 22:00)</span>
+            </div>
+            <button type="button" class="bnb-slot-change-btn" data-action="open-slot-modal">
+              <span>Change Slot</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <div class="bnb-weekday-row" aria-hidden="true">
+            <span class="bnb-weekday-cell">M</span>
+            <span class="bnb-weekday-cell">T</span>
+            <span class="bnb-weekday-cell">W</span>
+            <span class="bnb-weekday-cell">T</span>
+            <span class="bnb-weekday-cell">F</span>
+            <span class="bnb-weekday-cell">S</span>
+            <span class="bnb-weekday-cell">S</span>
+          </div>
+
+          <!-- Populated by js/airbnb-calendar.js -->
+          <div class="bnb-calendar-stream" id="bnb-calendar-stream"></div>
+
+          <div class="bnb-flex-section" id="bnb-flex-section" hidden>
+            <div class="bnb-flex-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Flexibility tolerance</span>
+            </div>
+            <div class="bnb-flex-chips" role="group" aria-label="Date flexibility tolerance">
+              <button type="button" class="bnb-flex-chip active" aria-pressed="true"
+                      data-action="set-tolerance" data-tolerance="exact">Exact dates</button>
+              <button type="button" class="bnb-flex-chip" aria-pressed="false"
+                      data-action="set-tolerance" data-tolerance="1">&plusmn; 1 day</button>
+              <button type="button" class="bnb-flex-chip" aria-pressed="false"
+                      data-action="set-tolerance" data-tolerance="2">&plusmn; 2 days</button>
+              <button type="button" class="bnb-flex-chip" aria-pressed="false"
+                      data-action="set-tolerance" data-tolerance="3">&plusmn; 3 days</button>
+              <button type="button" class="bnb-flex-chip" aria-pressed="false"
+                      data-action="set-tolerance" data-tolerance="7">&plusmn; 7 days</button>
+            </div>
+          </div>
+
+          <div class="bnb-bottom-bar">
+            <button type="button" class="bnb-clear-btn" data-action="clear-dates">Clear dates</button>
+            <div class="bnb-action-group">
+              <button type="button" class="bnb-btn-test-sim"
+                      data-action="reserve" data-simulate="true"
+                      title="Sends an automated simulated inquiry clearly marked as a test to WhatsApp">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <span>Simulate Test Booking</span>
+              </button>
+              <button type="button" class="bnb-btn-save" data-action="reserve" data-simulate="false">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                <span>Reserve on WhatsApp</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="airbnb-amenities-card">
+        <div class="amenities-header">
+          <span class="amenities-kicker">Premium Performance Standards</span>
+          <h3 class="amenities-title">What Every Booking Includes</h3>
+          <p class="amenities-sub">
+            Touring-grade live audio technology and concierge musical curation delivered for
+            every event across Nairobi and East Africa.
+          </p>
+        </div>
+
+        <div class="amenities-grid">
+          <div class="amenity-item">
+            <div class="amenity-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)"
+                   stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+            </div>
+            <div class="amenity-info">
+              <div class="amenity-name">Bespoke Setlist Curation</div>
+              <div class="amenity-desc">
+                Personalised musical consultation including up to three custom song
+                arrangements for your ceremony entrance or first dance.
+              </div>
+            </div>
+          </div>
+
+          <div class="amenity-item">
+            <div class="amenity-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)"
+                   stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+            </div>
+            <div class="amenity-info">
+              <div class="amenity-name">Wireless Shure Horn System</div>
+              <div class="amenity-desc">
+                Touring-grade wireless transmitter granting Frederic complete acoustic
+                freedom to move among guests, cocktail lawns and dance floors.
+              </div>
+            </div>
+          </div>
+
+          <div class="amenity-item">
+            <div class="amenity-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)"
+                   stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+            </div>
+            <div class="amenity-info">
+              <div class="amenity-name">Soundcheck 90 Minutes Early</div>
+              <div class="amenity-desc">
+                Comprehensive venue acoustic balancing and direct XLR soundboard interfacing
+                completed well before guest arrival.
+              </div>
+            </div>
+          </div>
+
+          <div class="amenity-item">
+            <div class="amenity-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)"
+                   stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+            </div>
+            <div class="amenity-info">
+              <div class="amenity-name">Executive Bespoke Attire</div>
+              <div class="amenity-desc">
+                Formal black-tie tuxedo or bespoke African luxury attire tailored to harmonise
+                with your high-society event palette.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="airbnb-booking-right" aria-label="Reservation summary">
+      <div class="airbnb-reserve-card">
+        <div class="airbnb-reserve-header">
+          <div class="airbnb-price-block">
+            <span class="airbnb-price-val ratecard-price-val" id="airbnb-price-val">Bespoke Booking</span>
+            <span class="airbnb-price-unit">/ event package</span>
+          </div>
+          <div class="airbnb-rating-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span class="rating-score">5.0</span>
+            <span class="rating-count">(38)</span>
+            <span class="rating-sep" aria-hidden="true">&bull;</span>
+            <span class="rating-badge">Superhost</span>
+          </div>
+        </div>
+
+        <div class="airbnb-segmented-box">
+          <div class="segmented-row-top">
+            <button type="button" class="segmented-cell cell-date" id="cal-pick-date-btn"
+                    title="Jump to the date picker">
+              <span class="segmented-label">Performance date</span>
+              <span class="segmented-value" id="cal-selected-date-text">Select performance dates</span>
+            </button>
+            <div class="segmented-cell cell-location">
+              <span class="segmented-label">Location</span>
+              <span class="segmented-value">Nairobi &amp; Kenya</span>
+            </div>
+          </div>
+          <div class="segmented-row-bottom">
+            <div class="segmented-cell cell-package">
+              <span class="segmented-label">Package selection</span>
+              <span class="segmented-value" id="airbnb-selected-pkg-display">Full Wedding Day Package</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="airbnb-package-chips-section">
+          <div class="cal-slots-section-title" id="cal-slots-grid-label">Select performance package:</div>
+          <div class="cal-slots-grid" id="cal-slots-grid" role="group" aria-labelledby="cal-slots-grid-label">
+            <button type="button" class="cal-slot-chip active" aria-pressed="true" data-package="Full Wedding Day Package">
+              <span class="slot-chip-top">
+                <span class="slot-chip-time">All Day / Full Day</span>
+                <span class="slot-chip-status-pill">Available</span>
+              </span>
+              <span class="slot-chip-name">Full Wedding Day Package</span>
+              <span class="slot-chip-status">Slot open &bull; free to hold</span>
+            </button>
+            <button type="button" class="cal-slot-chip" aria-pressed="false" data-package="Ceremony Sax Only">
+              <span class="slot-chip-top">
+                <span class="slot-chip-time">1 – 2 Hours / Morning</span>
+                <span class="slot-chip-status-pill">Available</span>
+              </span>
+              <span class="slot-chip-name">Ceremony Sax Only</span>
+              <span class="slot-chip-status">Slot open &bull; free to hold</span>
+            </button>
+            <button type="button" class="cal-slot-chip" aria-pressed="false" data-package="Cocktail Hour Sax">
+              <span class="slot-chip-top">
+                <span class="slot-chip-time">2 – 3 Hours / Afternoon</span>
+                <span class="slot-chip-status-pill">Available</span>
+              </span>
+              <span class="slot-chip-name">Cocktail Hour Sax</span>
+              <span class="slot-chip-status">Slot open &bull; free to hold</span>
+            </button>
+            <button type="button" class="cal-slot-chip" aria-pressed="false" data-package="Reception &amp; Corporate Gala">
+              <span class="slot-chip-top">
+                <span class="slot-chip-time">3+ Hours / Evening</span>
+                <span class="slot-chip-status-pill">Available</span>
+              </span>
+              <span class="slot-chip-name">Reception &amp; Corporate Gala</span>
+              <span class="slot-chip-status">Slot open &bull; free to hold</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="airbnb-price-breakdown">
+          <div class="breakdown-row">
+            <span class="breakdown-item" id="airbnb-item-name">Full Wedding Day Package</span>
+            <span class="breakdown-val free" id="airbnb-item-price">Selected</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-item">Wireless horn transmitter &amp; line-out</span>
+            <span class="breakdown-val free">Included</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-item">Bespoke repertoire &amp; rehearsals</span>
+            <span class="breakdown-val free">Included</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-item">Nairobi travel &amp; early soundcheck</span>
+            <span class="breakdown-val free">Included</span>
+          </div>
+          <div class="breakdown-divider" role="presentation"></div>
+          <div class="breakdown-row total-row">
+            <span class="breakdown-total-label">Performance pricing</span>
+            <a class="breakdown-total-val breakdown-total-val--link" id="airbnb-item-total" href="#ratecard">View official rate card &darr;</a>
+          </div>
+        </div>
+
+        <button class="btn-airbnb-reserve" type="button"
+                data-action="reserve" data-simulate="false"
+                aria-label="Reserve selected date on WhatsApp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span id="cal-book-btn-text">Reserve date on WhatsApp</span>
+        </button>
+
+        <button type="button" class="btn-airbnb-test-sim"
+                data-action="reserve" data-simulate="true"
+                title="Sends an automated simulated inquiry clearly marked as a test to WhatsApp">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          <span>Simulate test booking (test mode)</span>
+        </button>
+
+        <button type="button" class="btn-airbnb-secondary" data-action="fill-form-date">
+          <span>Fill booking form for this date &darr;</span>
+        </button>
+
+        <p class="airbnb-reassurance-note">
+          You won't be charged yet &bull; confirms directly with Frederic
+        </p>
+
+        <div class="airbnb-trust-badges">
+          <span class="trust-badge-pill">&#10022; Free date hold</span>
+          <span class="trust-badge-pill">Direct artist contact</span>
+          <span class="trust-badge-pill">100% verified</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Performance slot modal. Focus trap + Escape handled in js/airbnb-calendar.js -->
+  <div class="bnb-slot-modal-overlay" id="bnb-slot-modal" data-action="close-slot-modal" data-backdrop="true">
+    <div class="bnb-slot-modal-card" role="document">
+      <div class="bnb-modal-head">
+        <h4 id="bnb-slot-modal-title">Select performance slot</h4>
+        <button type="button" class="bnb-modal-close" data-action="close-slot-modal"
+                aria-label="Close slot picker">&times;</button>
+      </div>
+      <p class="bnb-modal-body">
+        Choose Frederic's performance timing window and set structure for your event.
+      </p>
+
+      <div class="bnb-slot-options-list" role="group" aria-labelledby="bnb-slot-modal-title">
+        <button type="button" class="bnb-slot-opt selected" aria-pressed="true"
+                data-slot="Evening Set (18:00 &#8211; 22:00)"
+                data-action="select-slot" data-slot="'Evening Set (18:00 &#8211; 22:00)'" data-label="'Evening Reception &amp; Cocktail'" data-package="'Full Wedding Day Package'">
+          <span>
+            <span class="bnb-slot-opt-title">Evening Set (18:00 – 22:00)</span>
+            <span class="bnb-slot-opt-desc">Cocktail reception &amp; dinner party &bull; full soundcheck</span>
+          </span>
+          <span class="bnb-slot-opt-tag">Prime slot</span>
+        </button>
+
+        <button type="button" class="bnb-slot-opt" aria-pressed="false"
+                data-slot="Afternoon Set (14:00 &#8211; 17:30)"
+                data-action="select-slot" data-slot="'Afternoon Set (14:00 &#8211; 17:30)'" data-label="'Afternoon Cocktail &amp; High Tea'" data-package="'Cocktail Hour Sax'">
+          <span>
+            <span class="bnb-slot-opt-title">Afternoon Set (14:00 – 17:30)</span>
+            <span class="bnb-slot-opt-desc">Garden wedding, sunset drinks &amp; high-society lounge</span>
+          </span>
+          <span class="bnb-slot-opt-tag">Daytime</span>
+        </button>
+
+        <button type="button" class="bnb-slot-opt" aria-pressed="false"
+                data-slot="Ceremony Set (10:00 &#8211; 13:00)"
+                data-action="select-slot" data-slot="'Ceremony Set (10:00 &#8211; 13:00)'" data-label="'Morning Vows &amp; Processional'" data-package="'Ceremony Sax Only'">
+          <span>
+            <span class="bnb-slot-opt-title">Ceremony Set (10:00 – 13:00)</span>
+            <span class="bnb-slot-opt-desc">Church or vow exchange &bull; prelude, bridal walk &amp; recessional</span>
+          </span>
+          <span class="bnb-slot-opt-tag">Morning</span>
+        </button>
+
+        <button type="button" class="bnb-slot-opt" aria-pressed="false"
+                data-slot="All-Day VIP Access (10:00 &#8211; 23:00)"
+                data-action="select-slot" data-slot="'All-Day VIP Access (10:00 &#8211; 23:00)'" data-label="'Full Day Exclusive Residency'" data-package="'Full Wedding Day Package'">
+          <span>
+            <span class="bnb-slot-opt-title">All-Day VIP Access (10:00 – 23:00)</span>
+            <span class="bnb-slot-opt-desc">Ceremony + cocktail + dinner + after-party live sax duo</span>
+          </span>
+          <span class="bnb-slot-opt-tag">Exclusive</span>
+        </button>
+      </div>
+
+      <div class="bnb-modal-actions">
+        <button type="button" class="bnb-modal-cancel" data-action="close-slot-modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</section>

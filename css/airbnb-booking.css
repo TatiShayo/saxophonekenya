@@ -541,3 +541,232 @@
     text-align: center;
   }
 }
+
+/* ==========================================================================
+   LAYER 2 — Components consumed by the modular build
+   These rules historically lived in the inline <style> block of index.html.
+   ========================================================================== */
+
+/* ---- Card heading stack -------------------------------------------------- */
+.bnb-heading-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.bnb-heading-stack h3 { margin: 0; }
+
+.bnb-heading-stack p {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--bnb-text-muted);
+}
+
+/* ---- Package chips section ---------------------------------------------- */
+.airbnb-package-chips-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ---- Slot modal: real dialog chrome ------------------------------------- */
+.bnb-slot-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal, 1100);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(5, 4, 7, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.bnb-slot-modal-overlay.active {
+  display: flex;
+}
+
+.bnb-slot-modal-overlay[aria-hidden="false"] { display: flex; }
+
+.bnb-slot-modal-card {
+  width: 100%;
+  max-width: 480px;
+  max-height: min(86vh, 720px);
+  overflow-y: auto;
+  padding: 28px 24px;
+  background: var(--bnb-bg-elevated);
+  border: 1px solid var(--bnb-border-medium);
+  border-radius: var(--bnb-radius-lg);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+}
+
+.bnb-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.bnb-modal-head h4 {
+  font-family: var(--font-display, serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bnb-text-pure);
+  margin: 0;
+}
+
+.bnb-modal-close {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--bnb-text-dim);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: var(--bnb-radius-pill);
+  transition: var(--bnb-transition);
+}
+
+.bnb-modal-close:hover {
+  background: var(--bnb-bg-hover);
+  color: var(--bnb-text-pure);
+}
+
+.bnb-modal-body {
+  margin-bottom: 16px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--bnb-text-muted);
+}
+
+.bnb-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.bnb-modal-cancel {
+  padding: 9px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: var(--bnb-text-main);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--bnb-transition);
+}
+
+.bnb-modal-cancel:hover {
+  background: var(--bnb-bg-hover);
+  color: var(--bnb-text-pure);
+}
+
+/* ---- Slot option button -------------------------------------------------- */
+.bnb-slot-opt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 16px;
+  text-align: left;
+  background: var(--bnb-bg-subtle);
+  border: 1px solid var(--bnb-border-subtle);
+  border-radius: var(--bnb-radius-md);
+  color: inherit;
+  cursor: pointer;
+  transition: var(--bnb-transition);
+}
+
+.bnb-slot-opt:hover {
+  background: var(--bnb-bg-hover);
+}
+
+.bnb-slot-opt.selected {
+  background: rgba(212, 178, 140, 0.12);
+  border-color: var(--bnb-gold-primary);
+}
+
+.bnb-slot-opt-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--bnb-text-pure);
+}
+
+.bnb-slot-opt-desc {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--bnb-text-muted);
+}
+
+.bnb-slot-opt-tag {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--bnb-text-muted);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.bnb-slot-opt.selected .bnb-slot-opt-tag {
+  color: var(--bnb-gold-light);
+  background: rgba(212, 178, 140, 0.15);
+}
+
+/* ---- Accessibility: keyboard focus on calendar and chips ----------------- */
+.bnb-day-cell:focus-visible,
+.bnb-slot-opt:focus-visible,
+.bnb-flex-chip:focus-visible,
+.bnb-segment-btn:focus-visible,
+.bnb-clear-btn:focus-visible,
+.bnb-btn-save:focus-visible,
+.bnb-btn-test-sim:focus-visible {
+  outline: 2px solid var(--bnb-gold-light);
+  outline-offset: 2px;
+  border-radius: var(--bnb-radius-sm);
+}
+
+/* A focus ring must be visible even when the cell is inside a range bridge. */
+.bnb-day-cell:focus-visible {
+  z-index: 3;
+}
+
+/* ---- Invoice preview container ------------------------------------------ */
+.invoice-lines {
+  display: block;
+  margin: 0;
+}
+
+.invoice-line dt,
+.invoice-line dd {
+  margin: 0;
+}
+
+/* ---- Wedding package CTA ------------------------------------------------- */
+.pkg-cta {
+  width: 100%;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* ---- aria-current nav indicator ----------------------------------------- */
+.nav-menu a[aria-current="true"] {
+  color: var(--accent-light);
+}
+
+/* ---- Coarse-pointer sizing for calendar cells --------------------------- */
+@media (pointer: coarse) {
+  .bnb-day-cell { min-height: 44px; }
+}

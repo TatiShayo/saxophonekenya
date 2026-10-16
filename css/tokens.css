@@ -1,0 +1,113 @@
+/* ==========================================================================
+   tokens.css — Design System Tokens
+   Frederic Sax Ke · Obsidian Black & Sandstone Camel
+   --------------------------------------------------------------------------
+   Single source of truth for every colour, type, spacing, radius, shadow,
+   z-index and motion value used anywhere on the site. Nothing in this file
+   may be overridden elsewhere; components only *consume* these tokens.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand palette -------------------------------------------------- */
+  --bg-base:            #08070a;
+  --bg-surface:         rgba(14, 12, 18, 0.90);
+  --bg-card:            rgba(19, 17, 24, 0.88);
+  --bg-card-elevated:   rgba(26, 23, 33, 0.92);
+  --bg-glass:           rgba(10, 9, 14, 0.92);
+
+  /* Refined Sandstone Camel & Cashmere Champagne */
+  --accent-primary:     #d4b28c;
+  --accent-gold:        #d4b28c;
+  --sandstone:          #d4b28c;
+  --accent-light:       #f3e5d3;
+  --accent-rich:        #b38b5d;
+  --accent-deep:        #7a5832;
+  --accent-glow:        rgba(212, 178, 140, 0.22);
+  --accent-border:      rgba(212, 178, 140, 0.28);
+  --accent-border-subtle: rgba(212, 178, 140, 0.14);
+
+  /* ---- Text ----------------------------------------------------------- */
+  --text-pure:          #ffffff;
+  --text-main:          #f5f2eb;
+  --text-muted:         #a6a095;
+  /* Raised from #6b6459: that value measured 3.2:1 on --bg-base and failed
+     WCAG 1.4.3 (AA, 4.5:1). #8b837a measures >= 5.0:1. */
+  --text-dim:           #8b837a;
+  --ink-on-accent:      #08070a;
+
+  /* ---- Borders -------------------------------------------------------- */
+  --border-subtle:      rgba(255, 255, 255, 0.08);
+  --border-light:       rgba(212, 178, 140, 0.18);
+
+  /* ---- Typography ----------------------------------------------------- */
+  --font-display:       'Cinzel', Georgia, 'Times New Roman', serif;
+  --font-sans:          'Plus Jakarta Sans', system-ui, -apple-system,
+                        'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono:          'JetBrains Mono', ui-monospace, SFMono-Regular,
+                        Menlo, Consolas, monospace;
+  /* Alias kept so any consumer of --font-body resolves instead of falling
+     back to a system font silently. */
+  --font-body:          var(--font-sans);
+
+  /* ---- Layout --------------------------------------------------------- */
+  --nav-height:         72px;
+  --max-width:          1200px;
+  --section-pad-y:      88px;
+  --section-pad-x:      24px;
+
+  /* ---- Radii ---------------------------------------------------------- */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   24px;
+  --radius-xl:   32px;
+  --radius-full: 9999px;
+
+  /* ---- Shadows --------------------------------------------------------
+     --shadow-card was referenced by .calendar-wrapper-card and
+     .airbnb-amenities-card but never defined, so both silently rendered
+     with no shadow at all. Defined here. */
+  --shadow-card:        0 18px 50px rgba(0, 0, 0, 0.55);
+  --shadow-card-hover:  0 22px 60px rgba(0, 0, 0, 0.7), 0 0 34px var(--accent-glow);
+  --shadow-pop:         0 12px 32px rgba(0, 0, 0, 0.55);
+  --shadow-accent:      0 8px 24px rgba(212, 178, 140, 0.35);
+  --shadow-accent-lg:   0 12px 32px rgba(212, 178, 140, 0.55);
+
+  /* ---- Motion --------------------------------------------------------- */
+  --transition-smooth:  all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast:    all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-expo:      cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ---- Z-index scale --------------------------------------------------
+     Kept in one place so stacking never gets debugged by guessing. */
+  --z-content:    1;
+  --z-nav:        1000;
+  --z-drawer:     999;
+  --z-toast:      2000;
+  --z-modal:      1100;
+}
+
+/* Calendar module tokens (consumed by css/airbnb-booking.css) live in their
+   own layer so the booking engine stays drop-in portable. */
+:root {
+  --bnb-bg-card:          rgba(18, 16, 22, 0.92);
+  --bnb-bg-elevated:      rgba(26, 23, 32, 0.96);
+  --bnb-bg-subtle:        rgba(255, 255, 255, 0.04);
+  --bnb-bg-hover:         rgba(255, 255, 255, 0.08);
+  --bnb-border-subtle:    rgba(255, 255, 255, 0.08);
+  --bnb-border-medium:    rgba(255, 255, 255, 0.16);
+  --bnb-border-gold:      rgba(212, 178, 140, 0.35);
+  --bnb-text-pure:        #ffffff;
+  --bnb-text-main:        #f3efe6;
+  --bnb-text-muted:       #b0a89c;
+  --bnb-text-dim:         #8b837a;
+  --bnb-gold-light:       #f3e5d3;
+  --bnb-gold-primary:     #d4b28c;
+  --bnb-gold-rich:        #a07840;
+  --bnb-range-bridge:     rgba(212, 178, 140, 0.16);
+  --bnb-radius-pill:      9999px;
+  --bnb-radius-md:        14px;
+  --bnb-radius-lg:        22px;
+  --bnb-transition:       all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  --bnb-shadow-card:      var(--shadow-card);
+}

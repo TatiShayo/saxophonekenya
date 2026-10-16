@@ -1,0 +1,314 @@
+/* ==========================================================================
+   hero.css — Full-bleed video hero, editorial marquee, immersive background
+   ========================================================================== */
+
+/* ---- Hero ---------------------------------------------------------------- */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh; /* respects mobile browser chrome */
+  padding: 130px 20px 70px;
+  overflow: hidden;
+}
+
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-content);
+  overflow: hidden;
+}
+
+.hero-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85) contrast(1.08) saturate(1.1);
+  transform: scale(1.02);
+}
+
+/* Poster is shown until the video can play — it is the real LCP element on
+   slow connections, so it must never be lazy-loaded. */
+.hero-video-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay-grad {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 7, 10, 0.35) 0%,
+    rgba(8, 7, 10, 0.15) 30%,
+    rgba(8, 7, 10, 0.65) 75%,
+    var(--bg-base) 100%
+  );
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 35%, rgba(8, 7, 10, 0.78) 100%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: var(--max-width);
+  text-align: center;
+}
+
+.hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 95%;
+  padding: 6px 14px;
+  background: rgba(212, 178, 140, 0.16);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-headline {
+  max-width: 100%;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 5.8vw, 84px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-pure);
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9), 0 0 60px rgba(212, 178, 140, 0.35);
+  overflow-wrap: break-word;
+}
+
+.hero-subhead {
+  max-width: 660px;
+  font-size: clamp(13px, 1.6vw, 16px);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: var(--text-main);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.hero-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.hero-bottom-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--max-width);
+  margin-top: 14px;
+  padding: 0 10px;
+}
+
+.hero-social-strip {
+  display: flex;
+  gap: 10px;
+}
+
+/* ---- Buttons ------------------------------------------------------------- */
+.btn-camel-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: linear-gradient(135deg, var(--accent-light), var(--accent-rich));
+  color: var(--ink-on-accent);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: var(--shadow-accent);
+  transition: var(--transition-smooth);
+}
+
+.btn-camel-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-accent-lg);
+  filter: brightness(1.08);
+}
+
+.btn-glass-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  background: rgba(19, 17, 24, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--text-pure);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-glass-secondary:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+  background: rgba(28, 24, 36, 0.95);
+  color: var(--accent-light);
+}
+
+/* ---- Social / audio controls -------------------------------------------- */
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(19, 17, 24, 0.75);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: var(--transition-smooth);
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  background: var(--accent-primary);
+  border-color: var(--accent-light);
+  color: var(--ink-on-accent);
+  box-shadow: 0 6px 18px rgba(212, 178, 140, 0.4);
+}
+
+.social-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+.video-sound-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(19, 17, 24, 0.8);
+  border: 1px solid var(--accent-border-subtle);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--accent-light);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: var(--transition-smooth);
+}
+
+.video-sound-toggle:hover {
+  border-color: var(--accent-primary);
+  background: rgba(30, 26, 38, 0.95);
+}
+
+/* ---- Editorial marquee --------------------------------------------------- */
+.marquee-strip {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #7a5832, #d4b28c, #f3e5d3, #b38b5d, #7a5832);
+  background-size: 300% 100%;
+  animation: marqueeShimmer 12s linear infinite;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes marqueeShimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+.marquee-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-family: var(--font-display);
+  font-size: clamp(11px, 1.4vw, 13px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-on-accent);
+  text-align: center;
+}
+
+/* ---- Immersive fixed background -----------------------------------------
+   `background-attachment: fixed` is a known mobile performance killer: it
+   forces a repaint on every scroll frame. base.css switches it to `scroll`
+   under 768px. */
+.site-main-flow {
+  position: relative;
+  background: url('../IMG_2259.jpg') fixed center top / cover no-repeat;
+}
+
+.site-main-flow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 7, 10, 0.94) 0%,
+    rgba(12, 10, 16, 0.88) 20%,
+    rgba(10, 9, 14, 0.85) 50%,
+    rgba(12, 10, 16, 0.89) 80%,
+    rgba(8, 7, 10, 0.96) 100%
+  );
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.site-main-flow > * {
+  position: relative;
+  z-index: 2;
+}

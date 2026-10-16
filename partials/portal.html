@@ -1,0 +1,120 @@
+<section class="section-wrap" id="portal" aria-labelledby="portal-title">
+  <div class="section-header">
+    <span class="section-tagline">Client Portal</span>
+    <h2 class="section-title" id="portal-title">Contract &amp; <span>Billing Portal</span></h2>
+    <p class="section-subtitle">
+      Formal performance agreements, transparent deposit terms and instant client invoice generator.
+    </p>
+  </div>
+
+  <div class="client-portal-box">
+    <div class="portal-tab-header">
+      <button type="button" class="portal-nav-tab active" id="tab-contract-btn" data-tab="contract"
+              role="tab" aria-selected="true" aria-controls="contract-view">
+        <span>Performance agreement</span>
+      </button>
+      <button type="button" class="portal-nav-tab" id="tab-invoice-btn" data-tab="invoice"
+              role="tab" aria-selected="false" aria-controls="invoice-view" tabindex="-1">
+        <span>Invoice generator</span>
+      </button>
+    </div>
+
+    <div class="portal-inner-pad">
+      <!-- Contract view -->
+      <div id="contract-view" role="tabpanel" aria-labelledby="tab-contract-btn" tabindex="0">
+        <div class="portal-toolbar">
+          <div>
+            <h3 class="portal-heading">Standard Performance Agreement</h3>
+            <p class="portal-meta">
+              Business: <strong>Frederic Sax Ke</strong> &bull;
+              Artist: <strong>Fredrick Ogonda Odundo</strong> &bull;
+              Email: <strong>saxophonekenya@gmail.com</strong>
+            </p>
+          </div>
+          <button type="button" class="btn-camel-primary" data-action="download-contract">
+            Print agreement
+          </button>
+        </div>
+
+        <div class="contract-doc">
+          <p><strong>1. Booking confirmation &amp; deposit</strong> &mdash;
+            Dates are exclusively locked upon receipt of a 50% commitment deposit. The
+            remaining 50% balance is settled on the event day prior to performance start.</p>
+          <p><strong>2. Technical &amp; sound check</strong> &mdash;
+            The venue or client provides clean power access. Soundcheck occurs approximately
+            90–120 minutes prior to guest arrival.</p>
+          <p><strong>3. Cancellation &amp; rescheduling</strong> &mdash;
+            Rescheduling requests communicated at least 14 days in advance allow the full
+            deposit to transfer to any mutually open date on the calendar.</p>
+          <p><strong>4. Performance rider</strong> &mdash;
+            A minimum performance area of 2m x 2m, dedicated power within 15 metres, and
+            access to the venue sound system or a supplied line-array arrangement.</p>
+          <p><strong>5. Liability</strong> &mdash;
+            Frederic Sax Ke maintains public liability insurance for the duration of the
+            engagement. The client retains responsibility for guest conduct and venue safety.</p>
+        </div>
+      </div>
+
+      <!-- Invoice view -->
+      <div id="invoice-view" role="tabpanel" aria-labelledby="tab-invoice-btn" tabindex="0" hidden>
+        <div class="portal-toolbar">
+          <div>
+            <h3 class="portal-heading">Client Billing &amp; Invoicing</h3>
+            <p class="portal-meta">
+              Generate an official invoice with Kenyan M-Pesa / bank wire details.
+              Email: <strong>saxophonekenya@gmail.com</strong>
+            </p>
+          </div>
+          <button type="button" class="btn-camel-primary" data-action="print-invoice">
+            Generate printable invoice
+          </button>
+        </div>
+
+        <form id="invoice-form" class="invoice-form" novalidate>
+          <div class="form-field">
+            <label class="form-field-label" for="inv-client-name">Client / organisation</label>
+            <input type="text" id="inv-client-name" class="form-input-clean"
+                   placeholder="Client name" value="Brian &amp; Joy Wedding" autocomplete="organization"
+                   required>
+            <p class="form-error">Please enter the client or organisation name.</p>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field-label" for="inv-date">Event date</label>
+            <input type="date" id="inv-date" class="form-input-clean" autocomplete="off" required>
+            <p class="form-error">Choose a date in the future.</p>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field-label" for="inv-package">Package selected</label>
+            <select id="inv-package" class="form-select-clean">
+              <option value="Full Wedding Day Package" data-kes="KES 75,000" data-usd="$580">Full Wedding Day Package (KES 75,000)</option>
+              <option value="Solo Sax • Cocktail Hour" data-kes="KES 25,000" data-usd="$190">Solo Sax - Cocktail Hour (KES 25,000)</option>
+              <option value="Solo Sax • Extended Event" data-kes="KES 45,000" data-usd="$350">Extended Performance (KES 45,000)</option>
+              <option value="Saxophone + DJ Live Duo" data-kes="KES 65,000" data-usd="$500">Sax + DJ Live Duo (KES 65,000)</option>
+              <option value="Full Live Band Experience" data-kes="KES 120,000" data-usd="$920">Full Live Band Experience (KES 120,000)</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field-label" for="inv-status">Payment status</label>
+            <select id="inv-status" class="form-select-clean">
+              <option value="50% deposit paid (pending balance)">50% deposit paid (pending balance)</option>
+              <option value="Fully settled (paid in full)">Fully settled (paid in full)</option>
+              <option value="Pending deposit">Pending deposit</option>
+            </select>
+          </div>
+
+          <div class="invoice-form__full form-submit-row">
+            <button type="submit" class="btn-camel-primary btn-full">
+              Update &amp; preview invoice
+            </button>
+          </div>
+        </form>
+
+        <!-- Populated by js/portal.js -->
+        <div id="invoice-preview" class="invoice-preview" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>

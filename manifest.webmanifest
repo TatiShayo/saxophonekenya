@@ -1,0 +1,45 @@
+{
+  "name": "Frederic Sax Ke — Luxury Live Saxophone",
+  "short_name": "Frederic Sax Ke",
+  "description": "Premier live saxophonist and luxury music curator in Nairobi, Kenya. Availability calendar, rate card and direct WhatsApp booking.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#08070a",
+  "theme_color": "#08070a",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["music", "entertainment", "business"],
+  "icons": [
+    {
+      "src": "IMG_3609.PNG",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "IMG_3609.PNG",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Check availability",
+      "short_name": "Calendar",
+      "url": "/#calendar"
+    },
+    {
+      "name": "Rate card",
+      "short_name": "Rates",
+      "url": "/rate-card.html"
+    },
+    {
+      "name": "WhatsApp booking",
+      "short_name": "Book",
+      "url": "https://wa.me/254745163122"
+    }
+  ]
+}

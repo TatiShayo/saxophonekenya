@@ -1,19 +1,140 @@
-# Frederic Sax Ke - Production Server Configuration
-DirectoryIndex index.html
+# ==========================================================================
+#  .htaccess — Apache / LiteSpeed configuration for Frederic Sax Ke
+#  Mirrors vercel.json. Every header set here is also set there, so the two
+#  hosting targets behave identically.
+#
+#  NOTE: this file is inert on Vercel, Netlify and nginx. On Vercel the
+#  equivalent configuration is vercel.json, which is the primary target.
+# ==========================================================================
 
-<IfModule mod_mime.c>
-  AddType video/mp4 .mp4
-  AddType image/webp .webp
-  AddType image/jpeg .jpg .jpeg
-  AddType image/png .png
-  AddType text/html .html
+# --------------------------------------------------------------------------
+# 1. Canonical host redirect (keeps the meta-refresh page as a fallback)
+# --------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # frederic-sax.html -> /
+  RewriteRule ^frederic-sax(\.html)?$ / [R=301,L]
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # Strip .html so /rate-card works as well as /rate-card.html
+  RewriteCond %{THE_REQUEST} \s/+([^?\s]+?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # Serve .html for extensionless URLs
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^([^\.]+)$ $1.html [L]
 </IfModule>
 
+# --------------------------------------------------------------------------
+# 2. Security headers
+#    X-XSS-Protection is deliberately NOT set: it is deprecated, removed
+#    from Chrome/Edge, and can introduce its own issues. CSP replaces it.
+# --------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests"
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set X-DNS-Prefetch-Control "on"
+
+  # Never let these leak through to the response
+  Header always unset X-Powered-By
+  Header always unset Server
+</IfModule>
+
+# --------------------------------------------------------------------------
+# 3. Compression — the site ships 82 MB of media and ~90 KB of text
+#    assets. Without this, every HTML/CSS/JS byte is sent uncompressed.
+# --------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  <IfModule mod_filter.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json application/manifest+json
+    AddOutputFilterByType DEFLATE application/xml application/xhtml+xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+  </IfModule>
+</IfModule>
+
+# Brotli where available
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# --------------------------------------------------------------------------
+# 4. Cache policy
+#    Filenames are NOT content-hashed, so `immutable` is unsafe: a
+#    re-cropped image or a CSS change would never reach a returning
+#    visitor. Short max-age with stale-while-revalidate is the correct
+#    trade-off for this site.
+# --------------------------------------------------------------------------
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresDefault "access plus 2 days"
-  ExpiresByType text/html "access plus 1 hour"
-  ExpiresByType image/jpeg "access plus 1 month"
-  ExpiresByType image/png "access plus 1 month"
-  ExpiresByType video/mp4 "access plus 1 month"
+
+  ExpiresByType text/html                     "access plus 0 seconds"
+  ExpiresByType text/css                      "access plus 1 day"
+  ExpiresByType application/javascript        "access plus 1 day"
+  ExpiresByType application/manifest+json     "access plus 1 day"
+  ExpiresByType application/json              "access plus 0 seconds"
+  ExpiresByType image/png                     "access plus 7 days"
+  ExpiresByType image/jpeg                    "access plus 7 days"
+  ExpiresByType image/webp                    "access plus 7 days"
+  ExpiresByType image/svg+xml                 "access plus 7 days"
+  ExpiresByType video/mp4                     "access plus 7 days"
+  ExpiresDefault                              "access plus 2 days"
 </IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(css|js|webmanifest)$">
+    Header set Cache-Control "public, max-age=86400, stale-while-revalidate=604800"
+  </FilesMatch>
+  <FilesMatch "\.(mp4|png|jpg|jpeg|webp|avif|svg|ico)$">
+    Header set Cache-Control "public, max-age=604800, stale-while-revalidate=86400"
+  </FilesMatch>
+</IfModule>
+
+# --------------------------------------------------------------------------
+# 5. Correct MIME types
+# --------------------------------------------------------------------------
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType image/webp .webp
+  AddType image/avif .avif
+  AddType video/mp4 .mp4
+  AddType application/json .json
+  AddCharset UTF-8 .html .css .js .json .webmanifest .xml
+</IfModule>
+
+# --------------------------------------------------------------------------
+# 6. Block deployment artefacts and developer tooling from public access.
+#    README_HOSTING.txt instructs extracting this folder into public_html;
+#    without these rules the two 82 MB zip archives and the build script
+#    become publicly downloadable.
+# --------------------------------------------------------------------------
+<FilesMatch "\.(zip|py|pyc|jsonl|log|md|sh|bak)$">
+  Require all denied
+</FilesMatch>
+
+<Files "build.py">
+  Require all denied
+</Files>
+
+# Directory listing off by default
+Options -Indexes
+
+# --------------------------------------------------------------------------
+# 7. Error documents
+# --------------------------------------------------------------------------
+ErrorDocument 404 /404.html

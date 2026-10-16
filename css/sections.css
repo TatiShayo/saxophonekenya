@@ -1,0 +1,953 @@
+/* ==========================================================================
+   sections.css — Section scaffolding and all content sections
+   ========================================================================== */
+
+/* ---- Section scaffolding ------------------------------------------------- */
+.section-wrap {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--section-pad-y) var(--section-pad-x);
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.section-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+}
+
+.section-tagline::before,
+.section-tagline::after {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: var(--accent-primary);
+  opacity: 0.5;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.8vw, 40px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.18;
+  color: var(--text-pure);
+}
+
+.section-title span { color: var(--accent-light); }
+
+.section-subtitle {
+  max-width: 600px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   1. ABOUT THE ARTIST
+   ========================================================================== */
+.bio-magazine-card {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 44px;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.bio-portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid var(--accent-border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 35px var(--accent-glow);
+}
+
+.bio-portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.bio-portrait-frame:hover img { transform: scale(1.04); }
+
+.bio-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bio-heading {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--accent-light);
+}
+
+.bio-meta-sub {
+  margin-top: -10px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.bio-paragraph {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-main);
+}
+
+.bio-link {
+  color: var(--accent-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.bio-quote-box {
+  padding: 16px 20px;
+  background: rgba(212, 178, 140, 0.08);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: var(--radius-xs);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--text-pure);
+}
+
+.bio-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.metric-card {
+  padding: 14px;
+  text-align: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.metric-val {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent-light);
+}
+
+.metric-lbl {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   2. LIVE PERFORMANCE VIDEOS
+   ========================================================================== */
+.video-theater-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.video-card-cinema {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  transition: var(--transition-smooth);
+}
+
+.video-card-cinema:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-border);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 30px var(--accent-glow);
+}
+
+.cinema-video-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  max-height: 440px;
+  overflow: hidden;
+  background: #000;
+  cursor: pointer;
+}
+
+.cinema-video-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Big centre play affordance shown while paused — replaces the old
+   div-level onclick that double-toggled against the native controls. */
+.cinema-play-affordance {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6));
+  border: none;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cinema-video-box:hover .cinema-play-affordance,
+.cinema-play-affordance:focus-visible { opacity: 1; }
+
+.cinema-play-affordance[hidden] { display: none; }
+
+.cinema-play-affordance svg {
+  width: 54px;
+  height: 54px;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.8));
+}
+
+.cinema-meta-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px;
+}
+
+.cinema-venue-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-primary);
+}
+
+.cinema-title {
+  font-family: var(--font-display);
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-pure);
+}
+
+.cinema-description {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   3. WEDDING PACKAGES & PARTNERS
+   ========================================================================== */
+.wedding-visual-hero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.wedding-photo-card {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-md);
+}
+
+.wedding-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.wedding-photo-card:hover img { transform: scale(1.04); }
+
+.wedding-photo-tag {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  padding: 6px 14px;
+  background: rgba(10, 9, 14, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--accent-border-subtle);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-light);
+}
+
+.wedding-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 44px;
+}
+
+.wedding-pkg-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 30px 22px;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  transition: var(--transition-smooth);
+}
+
+.wedding-pkg-card.featured-pkg {
+  background: linear-gradient(180deg, rgba(212, 178, 140, 0.12) 0%, var(--bg-card) 100%);
+  border-color: var(--accent-primary);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 35px var(--accent-glow);
+}
+
+.featured-label {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px 12px;
+  background: var(--accent-primary);
+  color: var(--ink-on-accent);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.pkg-title {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+
+.pkg-blurb {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.pkg-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  font-size: 13px;
+  color: var(--text-main);
+}
+
+.pkg-feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.svg-check {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--accent-light);
+}
+
+/* Partners collective ------------------------------------------------------ */
+.partners-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 34px;
+  background: var(--bg-surface);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-lg);
+}
+
+.partners-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.partners-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  color: var(--accent-light);
+}
+
+.partners-sub {
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.partners-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.partner-item-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 16px 12px;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+
+.partner-item-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+}
+
+.partner-category {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-pure);
+}
+
+.partner-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   5. RATE CARD GATEWAY
+   ========================================================================== */
+.ratecard-request-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  overflow: hidden;
+  padding: 72px 44px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(212, 178, 140, 0.10) 0%, rgba(19, 17, 24, 0.96) 60%);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 80px rgba(212, 178, 140, 0.06);
+}
+
+.ratecard-request-panel::before,
+.ratecard-request-panel::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.ratecard-request-panel::before {
+  top: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(212, 178, 140, 0.13) 0%, transparent 70%);
+}
+
+.ratecard-request-panel::after {
+  bottom: -40px;
+  left: -40px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(122, 88, 50, 0.12) 0%, transparent 70%);
+}
+
+.ratecard-icon-ring {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 4px;
+  background: rgba(212, 178, 140, 0.12);
+  border: 1px solid var(--accent-border);
+  border-radius: 50%;
+  color: var(--accent-light);
+}
+
+.ratecard-request-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  line-height: 1.12;
+  color: var(--text-pure);
+}
+
+.ratecard-request-title span { color: var(--accent-light); }
+
+.ratecard-request-body {
+  max-width: 540px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.ratecard-feature-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+/* Was a <div onclick>. Now a real <button> — keyboard reachable, focusable,
+   and announced as a control. See partials/ratecard.html */
+.ratecard-feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 15px;
+  background: rgba(212, 178, 140, 0.08);
+  border: 1px solid var(--accent-border-subtle);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-light);
+  transition: var(--transition-smooth);
+}
+
+.ratecard-feature-pill.interactive:hover {
+  transform: translateY(-1px);
+  background: rgba(212, 178, 140, 0.2);
+  border-color: var(--accent-primary);
+}
+
+.ratecard-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  padding: 16px 38px;
+  background: linear-gradient(135deg, var(--accent-light), var(--accent-rich));
+  color: var(--ink-on-accent);
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 13.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  box-shadow: 0 10px 32px rgba(212, 178, 140, 0.4);
+  transition: var(--transition-smooth);
+}
+
+.ratecard-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 44px rgba(212, 178, 140, 0.6);
+  filter: brightness(1.08);
+}
+
+.ratecard-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-dim);
+}
+
+.ratecard-inline-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.ratecard-inline-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+
+/* ==========================================================================
+   6. MOODBOARD
+   ========================================================================== */
+.pinterest-section-box {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 38px;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-lg);
+}
+
+.pinterest-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.pinterest-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--accent-light);
+}
+
+.pinterest-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.pinterest-badge-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: #e60023;
+  color: var(--text-pure) !important;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(230, 0, 35, 0.3);
+  transition: var(--transition-smooth);
+}
+
+.pinterest-badge-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(230, 0, 35, 0.5);
+}
+
+.phone-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* Was a <div onclick>. Now a <button> so it is keyboard reachable. */
+.phone-shot-item {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.phone-shot-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.phone-shot-item:hover img { transform: scale(1.06); }
+
+.phone-shot-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2px;
+  padding: 18px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.88) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.phone-shot-item:hover .phone-shot-hover,
+.phone-shot-item:focus-visible .phone-shot-hover { opacity: 1; }
+
+.phone-shot-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-pure);
+  text-align: left;
+}
+
+.phone-shot-meta {
+  font-size: 11px;
+  color: var(--accent-light);
+  text-align: left;
+}
+
+/* ==========================================================================
+   7 & 8. CONTRACT & INVOICE PORTAL
+   ========================================================================== */
+.client-portal-box {
+  overflow: hidden;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-lg);
+}
+
+.portal-tab-header {
+  display: flex;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--accent-border-subtle);
+}
+
+.portal-nav-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 24px;
+  background: none;
+  border: none;
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.portal-nav-tab.active {
+  background: var(--bg-card);
+  color: var(--accent-light);
+  border-bottom: 2px solid var(--accent-primary);
+}
+
+.portal-inner-pad { padding: 36px; }
+
+.portal-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.portal-heading {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: var(--accent-light);
+}
+
+.portal-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.contract-doc {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 26px;
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--text-main);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.contract-doc p strong { color: var(--accent-light); }
+
+/* Invoice preview ---------------------------------------------------------- */
+.invoice-preview {
+  margin-top: 24px;
+  padding: 26px;
+  background: var(--bg-surface);
+  border: 1px solid var(--accent-border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.invoice-preview-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--accent-light);
+  margin-bottom: 12px;
+}
+
+.invoice-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 7px 0;
+  font-size: 13px;
+  border-bottom: 1px dashed var(--border-subtle);
+}
+
+.invoice-line dt { color: var(--text-muted); }
+.invoice-line dd { color: var(--text-pure); font-weight: 600; text-align: right; }
+
+/* ==========================================================================
+   10. CONTACT
+   ========================================================================== */
+.booking-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding: 42px;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+}
+
+.booking-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.booking-sidebar-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  letter-spacing: 0.04em;
+  color: var(--accent-light);
+}
+
+.booking-sidebar-body {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.channel-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+
+.channel-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+}
+
+.channel-icon-svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--accent-light);
+}
+
+.channel-title { font-weight: 700; color: var(--text-pure); }
+.channel-detail { font-size: 12px; color: var(--accent-light); }
+
+/* ==========================================================================
+   TOAST SYSTEM
+   ========================================================================== */
+.toast-container {
+  position: fixed;
+  top: 88px;
+  right: 24px;
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  max-width: 320px;
+  padding: 14px 22px;
+  background: var(--bg-card);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.85), 0 0 25px var(--accent-glow);
+  color: var(--text-pure);
+  font-size: 13px;
+  pointer-events: auto;
+  animation: toastIn 0.3s var(--ease-out-expo) forwards;
+}
+
+.toast-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent-light);
+}
+
+@keyframes toastIn {
+  from { transform: translateX(120%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+/* ---- Utility classes replacing inline style attributes ----------------
+   Inline style="" attributes force a CSP to permit 'unsafe-inline' for
+   style-src. These utilities let the strict policy stay strict.        */
+.btn-full { width: 100%; justify-content: center; }
+
+.ratecard-cta-arrow { opacity: 0.7; }
+.ratecard-note-icon { opacity: 0.6; }
+.ratecard-price-val { font-size: 20px; letter-spacing: 0.04em; }
+.pinterest-icon { width: 16px; height: 16px; fill: currentColor; }
+
+/* No-JS fallback banner. */
+.noscript-banner {
+  padding: 24px;
+  background: #1a1420;
+  color: var(--text-main);
+  text-align: center;
+  font: 14px / 1.6 system-ui, sans-serif;
+}
+
+.noscript-banner a { color: var(--accent-primary); text-decoration: underline; }

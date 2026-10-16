@@ -1,0 +1,108 @@
+/* ==========================================================================
+   print.css — Print / PDF output for contracts, invoices and the rate card
+   --------------------------------------------------------------------------
+   Every printable surface is invoked from js/portal.js (index.html) or
+   js/rate-card.js (rate-card.html). The body gets one of three classes:
+       .printing-contract   -> only #contract-view prints
+       .printing-invoice    -> only #invoice-view prints
+       .printing-ratecard   -> only .ratecard-print-root prints
+   Everything else on the page is hidden and the dark theme is neutralised,
+   so the printed output is clean black-on-white regardless of what the
+   visitor was looking at.
+   ========================================================================== */
+
+@media print {
+  @page {
+    margin: 16mm;
+    size: A4 portrait;
+  }
+
+  /* 1. Hide every top-level child of <body>. */
+  body > * { display: none !important; }
+
+  /* 2. Bring back only the document being printed. */
+  body.printing-contract #contract-view,
+  body.printing-invoice  #invoice-view,
+  body.printing-ratecard .ratecard-print-root {
+    display: block !important;
+  }
+
+  /* 3. Neutralise the dark theme entirely. */
+  body.printing-contract,
+  body.printing-invoice,
+  body.printing-ratecard {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  body.printing-contract *,
+  body.printing-invoice  *,
+  body.printing-ratecard * {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    color: #000000 !important;
+    border-color: #999999 !important;
+  }
+
+  /* 4. Strip interactive chrome and decorative surfaces. */
+  nav,
+  .mobile-drawer,
+  .toast-container,
+  .marquee-strip,
+  .hero-video-wrap,
+  .skip-link,
+  .portal-tab-header,
+  .portal-toolbar,
+  .btn-camel-primary,
+  .btn-glass-secondary,
+  .ratecard-cta-btn,
+  .btn-airbnb-reserve,
+  .btn-airbnb-secondary,
+  .btn-airbnb-test-sim,
+  .cinema-play-affordance,
+  .phone-shot-hover,
+  .pinterest-badge-link { display: none !important; }
+
+  /* 5. Document typography: readable, compact, no orphans. */
+  body.printing-contract .contract-doc,
+  body.printing-invoice  .invoice-preview,
+  body.printing-ratecard .ratecard-print-root {
+    padding: 0 !important;
+    font-size: 11.5pt;
+    line-height: 1.55;
+  }
+
+  body.printing-contract .portal-heading,
+  body.printing-invoice  .portal-heading,
+  body.printing-ratecard .ratecard-print-title {
+    font-size: 16pt;
+    font-weight: 700;
+    margin-bottom: 4pt;
+  }
+
+  /* 6. Never split a line item across a page break. */
+  .invoice-line,
+  .contract-doc p,
+  .rates-table tr,
+  .ratecard-note { break-inside: avoid; }
+
+  /* 7. Tables get real header repetition on page 2+. */
+  .rates-table thead { display: table-header-group; }
+
+  /* 8. Force colour fidelity for anything that must print in colour. */
+  .featured-label,
+  .bnb-btn-save { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+
+  /* 9. Show the real destination of links, and URLs in full. */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #444444;
+  }
+
+  /* 10. Invoices and contracts must never leave a blank final page. */
+  .contract-doc p:last-child,
+  .invoice-line:last-child { break-after: avoid; }
+}

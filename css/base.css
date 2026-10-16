@@ -1,0 +1,174 @@
+/* ==========================================================================
+   base.css — Reset, document defaults, accessibility primitives
+   ========================================================================== */
+
+/* ---- Reset -------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  /* Anchor targets must clear the 72px fixed nav. Without this, every
+     in-page link lands with its heading hidden behind the navbar. */
+  scroll-padding-top: calc(var(--nav-height) + 24px);
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.65;
+  background: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(212, 178, 140, 0.18);
+}
+
+a { color: inherit; text-decoration: none; }
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* Every image gets a predictable box. `height: auto` plus explicit
+   width/height attributes in the HTML prevents cumulative layout shift. */
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+img { height: auto; }
+
+/* ---- Lists -------------------------------------------------------------- */
+ul, ol { list-style: none; }
+
+/* ---- Accessibility primitives ------------------------------------------- */
+
+/* Visually hidden but exposed to assistive tech. */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link: first focusable element on the page. */
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: calc(var(--z-toast) + 1);
+  padding: 12px 20px;
+  background: var(--accent-primary);
+  color: var(--ink-on-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-pop);
+  transform: translateY(-200%);
+  transition: transform 0.2s var(--ease-out-expo);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid var(--accent-light);
+  outline-offset: 2px;
+}
+
+/* WCAG 2.4.7 / 2.4.11 — every interactive element shows a ring. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible,
+.cal-day:focus-visible,
+.cal-slot-chip:focus-visible,
+.bnb-day-cell:focus-visible,
+.bnb-flex-chip:focus-visible,
+.bnb-segment-btn:focus-visible,
+.ratecard-feature-pill:focus-visible,
+.phone-shot-item:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* Buttons that only render an icon need an explicit label file. */
+button { cursor: pointer; }
+
+button:disabled,
+button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ---- Pointer / coarse-pointer targets (WCAG 2.5.8, 24px min) ----------- */
+@media (pointer: coarse) {
+  .bnb-day-cell,
+  .cal-day,
+  .cal-slot-chip,
+  .bnb-flex-chip,
+  .bnb-segment-btn,
+  .social-btn {
+    min-height: 44px;
+  }
+}
+
+/* ---- Screen-reader-only live region (used by the toast system) --------- */
+.sr-only-live {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---- Reduced motion (WCAG 2.3.3) ---------------------------------------
+   Also stops the hero background video, which is the largest motion
+   surface on the page and the one that triggers vestibular discomfort. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-bg-video { display: none; }
+  .marquee-strip { animation: none; }
+  .pulse-dot { animation: none; }
+}
+
+/* ---- Print rules live in css/print.css ---------------------------------- */
+
