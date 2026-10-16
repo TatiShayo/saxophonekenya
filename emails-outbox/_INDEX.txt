@@ -1,72 +1,41 @@
 HOTEL & RESORT OUTREACH - SEND INDEX
 ==========================================================================
 
-One plain-text draft per file. Paste the body into your mail client.
-The Subject: and To: lines are there for reference - do not send them.
+One plain-text draft per file. Verified & populated into Gmail Drafts.
 
-  #  PROPERTY                                        RECIPIENT                                   
+  #  FILE                 RECIPIENT                                   SUBJECT
 --------------------------------------------------------------------------
-  1  Send 1                                          meetings.villarosa@kempinski.com            
-     -> 01-send-1.txt
-  2  Send 2                                          kenya.reservations@fairmont.com             
-     -> 02-send-2.txt
-  3  Send 3                                          central.reservations@hemingways.co          
-     -> 03-send-3.txt
-  4  Send 4                                          reservations@tribehotel-kenya.com           
-     -> 04-send-4.txt
-  5  Send 5                                          info.nairobi@radissonblu.com                
-     -> 05-send-5.txt
-  6  Send 6                                          reservations.icnairobi@ihg.com              
-     -> 06-send-6.txt
-  7  Send 7                                          reservations.africa@serenahotels.com        
-     -> 07-send-7.txt
-  8  Send 8                                          sarovastanley@sarovahotels.com              
-     -> 08-send-8.txt
-  9  Send 9                                          centralreservations@sarovahotels.com        
-     -> 09-send-9.txt
- 10  Send 10                                         info@ole-serenihotel.com                    
-     -> 10-send-10.txt
- 11  Send 11                                         reservations.nairobi@hilton.com             
-     -> 11-send-11.txt
- 12  Send 12                                         sales@sankara.com                           
-     -> 12-send-12.txt
- 13  Send 13                                         hotel.nairobi@movenpick.com                 
-     -> 13-send-13.txt
- 14  Send 14                                         reservations@leopardbeachresort.com         
-     -> 14-send-14.txt
- 15  Send 15                                         info@dianireef.com                          
-     -> 15-send-15.txt
- 16  Send 16                                         reservations@medinapalms.com                
-     -> 16-send-16.txt
- 17  Send 17                                         enquiries@singita.com                       
-     -> 17-send-17.txt
- 18  Send 18                                         reservation-zanzibar@theresidence.com       
-     -> 18-send-18.txt
- 19  Send 19                                         kampala@serena.co.ug                        
-     -> 19-send-19.txt
- 20  Send 20                                         reservations@sheratonkampala.com            
-     -> 20-send-20.txt
- 21  Send 21                                         reservations@munyonyocommonwealth.com       
-     -> 21-send-21.txt
- 22  Send 22                                         banqueting.kigali@serenahotels.com          
-     -> 22-send-22.txt
- 23  Send 23                                         reservations.kigali@marriott.com            
-     -> 23-send-23.txt
- 24  Send 24                                         info.kigali@radissonblu.com                 
-     -> 24-send-24.txt
- 25  Send 25                                         info@millecollines.rw                       
-     -> 25-send-25.txt
- 26  Send 26                                         reservations.addisethiopia@luxurycollection 
-     -> 26-send-26.txt
- 27  Send 27                                         reservations.addisababa@hilton.com          
-     -> 27-send-27.txt
- 28  Send 28                                         reservations.addisababa@radissonblu.com     
-     -> 28-send-28.txt
- 29  Send 29                                         reservation@capitalhotelandspa.com          
-     -> 29-send-29.txt
-
+  1  emails-outbox\01-send-1.txt meetings.villarosa@kempinski.com           Live saxophone for Fedora Ballroom events — F
+  2  emails-outbox\02-send-2.txt kenya.reservations@fairmont.com            Live saxophone for Fairmont Kenya functions —
+  3  emails-outbox\03-send-3.txt central.reservations@hemingways.co         Live saxophone for Hemingways private functio
+  4  emails-outbox\04-send-4.txt reservations@tribehotel-kenya.com          Live saxophone for Tribe Hotel functions — Fr
+  5  emails-outbox\05-send-5.txt info.nairobi@radissonblu.com               Live saxophone for Radisson Blu Upper Hill fu
+  6  emails-outbox\06-send-6.txt reservations@crowneplazanairobiairport.com Live saxophone for Crowne Plaza Nairobi Airpo
+  7  emails-outbox\07-send-7.txt reservations.africa@serenahotels.com       Live saxophone for Serena events — Frederic S
+  8  emails-outbox\08-send-8.txt sarovastanley@sarovahotels.com             Live saxophone for Sarova Stanley functions —
+  9  emails-outbox\09-send-9.txt centralreservations@sarovahotels.com       Live saxophone for Sarova Whitesands & Lion H
+ 10  emails-outbox\10-send-10.txt info@ole-serenihotel.com                   Live saxophone for Ole Sereni events — Freder
+ 11  emails-outbox\11-send-11.txt nbokn_res@hilton.com                       Live saxophone for Kwetu Nairobi functions — 
+ 12  emails-outbox\12-send-12.txt sales@sankara.com                          Live saxophone for Woodvale Ballrooms & garde
+ 13  emails-outbox\13-send-13.txt hotel.nairobi@movenpick.com                Live saxophone for Mövenpick Nairobi function
+ 14  emails-outbox\14-send-14.txt reservations@leopardbeachresort.com        Live saxophone for Leopard Beach events — Fre
+ 15  emails-outbox\15-send-15.txt info@dianireef.com                         Live saxophone for Diani Reef events — Freder
+ 16  emails-outbox\16-send-16.txt reservations@medinapalms.com               Live saxophone for Medina Palms events — Fred
+ 17  emails-outbox\17-send-17.txt enquiries@singita.com                      Live saxophone for Singita functions — Nairob
+ 18  emails-outbox\18-send-18.txt reservation-zanzibar@theresidence.com      Live saxophone for The Residence Zanzibar eve
+ 19  emails-outbox\19-send-19.txt kampala@serena.co.ug                       Live saxophone for Kampala Serena functions —
+ 20  emails-outbox\20-send-20.txt reservations@sheratonkampala.com           Live saxophone for Sheraton Kampala functions
+ 21  emails-outbox\21-send-21.txt reservations@munyonyocommonwealth.com      Live saxophone for Speke Resort Munyonyo even
+ 22  emails-outbox\22-send-22.txt banqueting.kigali@serenahotels.com         Live saxophone for Kigali Serena banqueting —
+ 23  emails-outbox\23-send-23.txt reservations.kigali@marriott.com           Live saxophone for Kigali Marriott events — F
+ 24  emails-outbox\24-send-24.txt info.kigali@radissonblu.com                Live saxophone for Radisson Blu Kigali events
+ 25  emails-outbox\25-send-25.txt info@millecollines.rw                      Live saxophone for Hôtel des Mille Collines e
+ 26  emails-outbox\26-send-26.txt reservations.addisethiopia@luxurycollection.com Live saxophone for Sheraton Addis functions —
+ 27  emails-outbox\27-send-27.txt reservations.addisababa@hilton.com         Live saxophone for Hilton Addis Ababa functio
+ 28  emails-outbox\28-send-28.txt reservations.addisababa@radissonblu.com    Live saxophone for Radisson Blu Addis Ababa f
+ 29  emails-outbox\29-send-29.txt reservation@capitalhotelandspa.com         Live saxophone for Capital Hotel & Spa events
+ 30  emails-outbox\30-send-30.txt jw.nbojw.cateringsales@marriott.com        Live saxophone for Grand Ballroom events — Fr
+ 31  emails-outbox\31-send-31.txt reservations@windsor.co.ke                 Live saxophone for Windsor Golf Hotel garden 
+ 32  emails-outbox\32-send-32.txt reservations.tth@tamarind.co.ke            Live saxophone for Tamarind Tree Hotel functi
 --------------------------------------------------------------------------
-29 drafts ready in emails-outbox/
-
-Before sending, read Section 4 (Deliverability Rules) and Section 9
-(Legal & Compliance) of the outreach pack.
+32 drafts ready in emails-outbox/ and verified in Gmail Drafts.
