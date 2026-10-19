@@ -26,7 +26,7 @@ export const CONFIG = Object.freeze({
      site used a *relative* og:image, which no scraper can follow.
      ⚠️  Confirm this is the live domain before shipping to production —
      it is the only remaining unverified business fact in the repo. */
-  SITE_ORIGIN: 'https://fredericsax.com',
+  SITE_ORIGIN: 'https://saxophonekenya.com',
 
   /* Canonical terminology. AGENTS.md Operating Directive 4. */
   TERMS: Object.freeze({

@@ -47,7 +47,7 @@ FONT_URL = (
 
 def load_config() -> dict:
     defaults = {
-        "site_origin": "https://fredericsax.com",
+        "site_origin": "https://saxophonekenya.com",
         "og_image": "IMG_3609.PNG",
         "font_url": FONT_URL,
     }
@@ -176,12 +176,9 @@ def validate(document: str, extra_skip_dirs=(".git", "node_modules")) -> list[st
             if value.startswith(("http://", "https://", "mailto:", "tel:", "data:", "#")):
                 continue
             clean = value.split("?")[0].split("#")[0]
-            if not clean:
-                continue
-            if clean.startswith("css/") or clean.startswith("js/") or clean.startswith("partials/"):
-                target = ROOT / clean
-            else:
-                target = ROOT / clean
+            import urllib.parse
+            unquoted = urllib.parse.unquote(clean)
+            target = ROOT / unquoted
             if not target.exists():
                 problems.append(f"asset does not exist: {clean} (from {attr}=)")
 
