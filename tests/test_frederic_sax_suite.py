@@ -34,6 +34,7 @@ from __future__ import annotations
 
 import os
 import re
+import urllib.parse
 import unittest
 from pathlib import Path
 
@@ -188,7 +189,7 @@ class TestAssetResolution(unittest.TestCase):
         for src in img_srcs:
             if src.startswith(("http://", "https://", "data:")):
                 continue
-            clean = src.split("?")[0].split("#")[0]
+            clean = urllib.parse.unquote(src.split("?")[0].split("#")[0])
             self.assertTrue(
                 (REPO_DIR / clean).exists(),
                 f"index.html: image asset missing: {clean}",

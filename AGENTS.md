@@ -123,3 +123,23 @@ If you change a security header in one, change it in the other.
 ## Testing Decisions
 
 The suite covers: document structure, CSP prerequisites, asset resolution, modular architecture, navigation integrity, accessibility, the calendar engine, WhatsApp/form integration, security, brand purity, the booking engine, print documents, and performance budgets. See `tests/test_frederic_sax_suite.py` — every test's docstring records the specific bug it prevents.
+
+
+## Karpathy Engineering Directives (multica-ai/andrej-karpathy-skills)
+
+To eliminate common agent coding pitfalls and over-engineering, every agent working in this repo must adhere to the 4 Karpathy Principles:
+
+1. **Think Before Coding:**
+   - Don\'t assume. Don\'t hide confusion. Surface tradeoffs and state assumptions explicitly.
+   - If a simpler approach exists, say so. Push back when warranted.
+2. **Simplicity First:**
+   - Minimum code that solves the problem. Nothing speculative.
+   - No features beyond what was asked. No abstractions for single-use code.
+   - If you write 200 lines and it could be 50, rewrite it.
+3. **Surgical Changes:**
+   - Touch only what you must. Clean up only your own mess.
+   - Match existing vanilla style and conventions. Do not refactor code that is not broken.
+   - Every changed line must trace directly to the explicit request.
+4. **Goal-Driven Execution:**
+   - Define verifiable success criteria. Loop until verified.
+   - Run python -m unittest tests.test_frederic_sax_suite (all 94 tests must pass) and python build.py --check before committing.
