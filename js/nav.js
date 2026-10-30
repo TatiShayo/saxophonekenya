@@ -65,7 +65,6 @@ function trapFocus(event) {
   }
 }
 
-/* --------------------------------------------------------------------------
    Scroll-spy — highlight the nav link for the section in view
    -------------------------------------------------------------------------- */
 function initScrollSpy() {
@@ -100,7 +99,6 @@ function initScrollSpy() {
   for (const [section] of byId) observer.observe(section);
 }
 
-/* --------------------------------------------------------------------------
    Smooth anchor scrolling that respects the fixed navbar
    -------------------------------------------------------------------------- */
 function initAnchorScroll() {
@@ -122,7 +120,6 @@ function initAnchorScroll() {
   });
 }
 
-/* --------------------------------------------------------------------------
    WhatsApp CTAs — wired centrally so the number lives in one place
    -------------------------------------------------------------------------- */
 function initWhatsappCtAs() {

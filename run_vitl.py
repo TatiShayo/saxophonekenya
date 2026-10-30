@@ -78,15 +78,12 @@ def run_vitl():
             driver_desktop.get(base_url)
             time.sleep(2)
 
-            # 1. Desktop Hero
             save_and_copy(driver_desktop, "vitl_desktop_hero.png")
 
-            # 2. Desktop Videos
             driver_desktop.execute_script("document.getElementById('videos').scrollIntoView({behavior: 'instant'});")
             time.sleep(1)
             save_and_copy(driver_desktop, "vitl_desktop_videos.png")
 
-            # 3. Desktop Airbnb Continuous Calendar (Stream & Range Selection)
             driver_desktop.execute_script("document.getElementById('calendar').scrollIntoView({behavior: 'instant'});")
             time.sleep(1)
             save_and_copy(driver_desktop, "vitl_desktop_calendar.png")
@@ -131,22 +128,18 @@ def run_vitl():
             time.sleep(0.8)
             save_and_copy(driver_desktop, "vitl_desktop_amenities.png")
 
-            # 4. Desktop Weddings
             driver_desktop.execute_script("document.getElementById('weddings').scrollIntoView({behavior: 'instant'});")
             time.sleep(1)
             save_and_copy(driver_desktop, "vitl_desktop_weddings.png")
 
-            # 5. Desktop Rate Card Request Panel
             driver_desktop.execute_script("document.getElementById('ratecard').scrollIntoView({behavior: 'instant'});")
             time.sleep(1)
             save_and_copy(driver_desktop, "vitl_desktop_ratecard.png")
 
-            # 6. Desktop Client Portal (Contracts & Invoice)
             driver_desktop.execute_script("document.getElementById('portal').scrollIntoView({behavior: 'instant'});")
             time.sleep(1)
             save_and_copy(driver_desktop, "vitl_desktop_portal.png")
 
-            # 7. Dedicated Rate Card Page
             driver_desktop.get(f"{base_url}/rate-card.html")
             time.sleep(1.5)
             save_and_copy(driver_desktop, "vitl_ratecard_page.png")
@@ -197,10 +190,8 @@ def run_vitl():
             driver_mobile.get(base_url)
             time.sleep(2)
 
-            # 8. Mobile Hero
             save_and_copy(driver_mobile, "vitl_mobile_hero.png")
 
-            # 9. Mobile Navigation Drawer
             driver_mobile.execute_script("""
                 const btn = document.getElementById('hamburger-btn');
                 if (btn) btn.click();
@@ -215,10 +206,8 @@ def run_vitl():
             """)
             time.sleep(1)
 
-            # 10. Mobile Continuous Calendar Stream
             save_and_copy(driver_mobile, "vitl_mobile_calendar.png")
 
-            # 11. Mobile Flexible Mode & Tolerance Chips
             driver_mobile.execute_script("""
                 if (typeof setAirbnbBookingMode === 'function') {
                     setAirbnbBookingMode('flexible');
@@ -229,7 +218,6 @@ def run_vitl():
             time.sleep(0.8)
             save_and_copy(driver_mobile, "vitl_mobile_airbnb_flexible.png")
 
-            # 12. Mobile Slot Modal
             driver_mobile.execute_script("""
                 if (typeof openSlotChangeModal === 'function') {
                     openSlotChangeModal();
@@ -244,7 +232,6 @@ def run_vitl():
             """)
             time.sleep(0.5)
 
-            # 13. Mobile Reservation Card & Simulation Button
             driver_mobile.execute_script("""
                 const card = document.querySelector('.airbnb-reserve-card');
                 if (card) card.scrollIntoView({behavior: 'instant', block: 'center'});
@@ -252,7 +239,6 @@ def run_vitl():
             time.sleep(0.8)
             save_and_copy(driver_mobile, "vitl_mobile_reserve_card.png")
 
-            # 14. Mobile WhatsApp CTA Buttons
             driver_mobile.execute_script("""
                 const btn = document.querySelector('.btn-airbnb-reserve');
                 if (btn) btn.scrollIntoView({behavior: 'instant', block: 'center'});

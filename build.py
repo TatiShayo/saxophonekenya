@@ -44,7 +44,6 @@ FONT_URL = (
     "&family=JetBrains+Mono:wght@400;500;600&display=swap"
 )
 
-
 def load_config() -> dict:
     defaults = {
         "site_origin": "https://saxophonekenya.com",
@@ -57,7 +56,6 @@ def load_config() -> dict:
     defaults["og_image_url"] = _absolute(defaults["site_origin"], defaults["og_image"])
     return defaults
 
-
 def _absolute(origin: str, path: str) -> str:
     if not path:
         return ""
@@ -65,13 +63,11 @@ def _absolute(origin: str, path: str) -> str:
         return path
     return f"{origin.rstrip('/')}/{path.lstrip('/')}"
 
-
 def read_partial(name: str) -> str:
     path = PARTIALS / f"{name}.html"
     if not path.exists():
         raise SystemExit(f"Missing partial: {path}")
     return path.read_text(encoding="utf-8").strip()
-
 
 def substitute(text: str, cfg: dict) -> str:
     tokens = {
@@ -84,11 +80,9 @@ def substitute(text: str, cfg: dict) -> str:
         text = text.replace(token, value)
     return text
 
-
 def _today() -> str:
     from datetime import date
     return date.today().isoformat()
-
 
 SHELL = """<!DOCTYPE html>
 <html lang="en">
@@ -115,7 +109,6 @@ SHELL = """<!DOCTYPE html>
 </body>
 </html>
 """
-
 
 def build_document() -> str:
     cfg = load_config()
@@ -147,7 +140,6 @@ def build_document() -> str:
 
     return _normalise(document)
 
-
 def _normalise(document: str) -> str:
     """Collapse runs of blank lines. Never touches content inside <pre>."""
     lines = [line.rstrip() for line in document.splitlines()]
@@ -158,18 +150,13 @@ def _normalise(document: str) -> str:
         out.append(line)
     return "\n".join(out).strip() + "\n"
 
-
-# ---------------------------------------------------------------------------
 # Validation
-# ---------------------------------------------------------------------------
 
 ASSET_ATTRS = ("src", "poster", "href")
-
 
 def validate(document: str, extra_skip_dirs=(".git", "node_modules")) -> list[str]:
     problems: list[str] = []
 
-    # 1. Local assets resolve to real files.
     for attr in ASSET_ATTRS:
         for match in re.finditer(rf'{attr}\s*=\s*"([^"]+)"', document):
             value = match.group(1)
@@ -182,7 +169,6 @@ def validate(document: str, extra_skip_dirs=(".git", "node_modules")) -> list[st
             if not target.exists():
                 problems.append(f"asset does not exist: {clean} (from {attr}=)")
 
-    # 2. In-page anchors resolve to real element ids.
     declared_ids = set(re.findall(r'id\s*=\s*"([^"]+)"', document))
     for match in re.finditer(r'href\s*=\s*"(#[^"]+)"', document):
         target = match.group(1)[1:]
@@ -191,33 +177,26 @@ def validate(document: str, extra_skip_dirs=(".git", "node_modules")) -> list[st
         if target not in declared_ids:
             problems.append(f"anchor href=\"#{target}\" has no matching element id")
 
-    # 3. No duplicated ids — a real class of bug the old site never checked.
     seen: set[str] = set()
     for element_id in re.finditer(r'id\s*=\s*"([^"]+)"', document):
         if element_id.group(1) in seen:
             problems.append(f"duplicate element id: {element_id.group(1)}")
         seen.add(element_id.group(1))
 
-    # 4. Canonical WhatsApp number is the only one in use.
     for match in re.finditer(r"wa\.me/(\d+)", document):
         if match.group(1) != "254745163122":
             problems.append(f"non-canonical WhatsApp number: {match.group(1)}")
 
-    # 5. No inline event handlers remain (they block a strict CSP).
     for match in re.finditer(r'\son(click|load|error|mouseover|submit|change|input)\s*=', document):
         line = document[: match.start()].count("\n") + 1
         problems.append(f"inline handler at line {line}: {match.group(1)}")
 
-    # 6. No unresolved build tokens.
     for match in re.finditer(r"\{\{[A-Z_]+\}\}", document):
         problems.append(f"unresolved token: {match.group(0)}")
 
     return problems
 
-
-# ---------------------------------------------------------------------------
 # Rate card page
-# ---------------------------------------------------------------------------
 
 def build_rate_card(cfg: dict) -> str:
     """rate-card.html is unchanged in structure but is validated too."""
@@ -225,7 +204,6 @@ def build_rate_card(cfg: dict) -> str:
     if not path.exists():
         return ""
     return path.read_text(encoding="utf-8")
-
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build the Frederic Sax Ke site")
@@ -270,7 +248,6 @@ def main() -> int:
         print(f"     partials   : {len(list(PARTIALS.glob('*.html')))} files")
 
     return 0
-
 
 if __name__ == "__main__":
     sys.exit(main())

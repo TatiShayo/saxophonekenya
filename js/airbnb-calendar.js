@@ -39,7 +39,6 @@ import {
 } from './utils.js';
 import { showToast } from './toast.js';
 
-/* ==========================================================================
    State
    ========================================================================== */
 
@@ -71,7 +70,6 @@ const MONTH_NAMES = [
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
-/* ==========================================================================
    Availability
    ========================================================================== */
 
@@ -99,7 +97,6 @@ function isDateInRange(date) {
   return t > STATE.rangeStart.getTime() && t < STATE.rangeEnd.getTime();
 }
 
-/* ==========================================================================
    Rendering
    ========================================================================== */
 
@@ -210,7 +207,6 @@ function firstAvailableFrom(date) {
   return new Date(date);
 }
 
-/* ==========================================================================
    Keyboard navigation
    ========================================================================== */
 
@@ -258,7 +254,6 @@ function shiftMonth(delta) {
   renderCalendarStream();
 }
 
-/* ==========================================================================
    Selection
    ========================================================================== */
 
@@ -318,7 +313,6 @@ function syncUIWithSelection() {
   if (live) live.textContent = `Selected ${rangeText}`;
 }
 
-/* ==========================================================================
    Public API (kept window-global for compatibility)
    ========================================================================== */
 
@@ -493,14 +487,12 @@ window.dispatchAirbnbReservationWhatsApp = function dispatchAirbnbReservationWha
   window.setTimeout(() => openExternal(waUrl), CONFIG.TIMING.DISPATCH_MS);
 };
 
-/* ==========================================================================
    Month navigation
    ========================================================================== */
 
 window.calPrevMonth = () => shiftMonth(-1);
 window.calNextMonth = () => shiftMonth(1);
 
-/* ==========================================================================
    Init
    ========================================================================== */
 

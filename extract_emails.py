@@ -47,7 +47,6 @@ CODE = re.compile(r"`([^`]+)`")
 BACKTICK_ARROW = re.compile(r"&rarr;")
 HEADING_DIVIDER = re.compile(r"^\s*-{3,}\s*$")
 
-
 def clean_inline(text: str) -> str:
     """Strip markdown emphasis and decode HTML entities."""
     text = CODE.sub(r"\1", text)
@@ -58,12 +57,10 @@ def clean_inline(text: str) -> str:
     text = BACKTICK_ARROW.sub("->", text)
     return text
 
-
 def slugify(name: str) -> str:
     name = name.lower()
     name = re.sub(r"[^a-z0-9]+", "-", name)
     return name.strip("-")[:60]
-
 
 def main() -> int:
     if not PACK.exists():
@@ -169,7 +166,6 @@ def main() -> int:
     print(f"Average draft: {sum(sizes)/len(sizes)/1024:.1f} KB")
 
     return 0
-
 
 if __name__ == "__main__":
     sys.exit(main())

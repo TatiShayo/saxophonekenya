@@ -62,22 +62,14 @@ REQUIRED_JS = [
     "portal.js", "rate-card.js", "fonts.js", "app.js",
 ]
 
-
 def read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
-
 
 def read_js(name: str) -> str:
     return (JS_DIR / name).read_text(encoding="utf-8")
 
-
 def all_js_concatenated() -> str:
     return "\n".join(read_js(p.name) for p in sorted(JS_DIR.glob("*.js")))
-
-
-# ===========================================================================
-# 1. Document structure
-# ===========================================================================
 
 class TestDocumentStructure(unittest.TestCase):
     def setUp(self):
@@ -139,11 +131,6 @@ class TestDocumentStructure(unittest.TestCase):
     def test_noscript_fallback(self):
         self.assertIn('<noscript>', self.index, "A JS-disabled visitor must be told how to book")
 
-
-# ===========================================================================
-# 2. CSP prerequisites — the whole reason the refactor happened
-# ===========================================================================
-
 class TestNoInlineBehaviour(unittest.TestCase):
     """Inline handlers and inline styles are what block a strict CSP."""
 
@@ -172,11 +159,6 @@ class TestNoInlineBehaviour(unittest.TestCase):
     def test_no_javascript_urls(self):
         for path in self.html_files:
             self.assertNotIn('javascript:', read(path), "javascript: URLs are an XSS vector")
-
-
-# ===========================================================================
-# 3. Asset resolution — everything referenced must exist
-# ===========================================================================
 
 class TestAssetResolution(unittest.TestCase):
     def setUp(self):
@@ -250,11 +232,6 @@ class TestAssetResolution(unittest.TestCase):
                     f"{css.name} references a missing asset: {value}",
                 )
 
-
-# ===========================================================================
-# 4. Modular architecture
-# ===========================================================================
-
 class TestModularArchitecture(unittest.TestCase):
     def setUp(self):
         self.index = read(INDEX)
@@ -301,11 +278,6 @@ class TestModularArchitecture(unittest.TestCase):
             py_compile.compile(str(BUILD), doraise=True)
         except py_compile.PyCompileError as exc:
             self.fail(f"build.py does not compile: {exc}")
-
-
-# ===========================================================================
-# 5. Navigation integrity
-# ===========================================================================
 
 class TestNavigationIntegrity(unittest.TestCase):
     def setUp(self):
@@ -357,11 +329,6 @@ class TestNavigationIntegrity(unittest.TestCase):
         """Reverse tabnabbing: window.opener must never leak to a new tab."""
         for link in re.findall(r'<a[^>]+target="_blank"[^>]*>', self.index):
             self.assertIn('rel="noopener', link, f"target=_blank without rel=noopener: {link[:90]}")
-
-
-# ===========================================================================
-# 6. Accessibility
-# ===========================================================================
 
 class TestAccessibility(unittest.TestCase):
     def setUp(self):
@@ -415,11 +382,6 @@ class TestAccessibility(unittest.TestCase):
         """Hero portrait may be eager; everything else must be lazy."""
         lazy = len(re.findall(r'loading="lazy"', self.index))
         self.assertGreaterEqual(lazy, 6, f"expected many lazy images, found {lazy}")
-
-
-# ===========================================================================
-# 7. Calendar state engine
-# ===========================================================================
 
 class TestCalendarStateEngine(unittest.TestCase):
     def setUp(self):
@@ -493,11 +455,6 @@ class TestCalendarStateEngine(unittest.TestCase):
     def test_calendar_renders_twelve_months(self):
         """Two months meant the calendar went dead every other month."""
         self.assertIn("MONTHS_TO_RENDER: 12", read_js("config.js"))
-
-
-# ===========================================================================
-# 8. WhatsApp and form integration
-# ===========================================================================
 
 class TestWhatsAppAndFormIntegration(unittest.TestCase):
     def setUp(self):
@@ -574,11 +531,6 @@ class TestWhatsAppAndFormIntegration(unittest.TestCase):
         self.assertIn("setAirbnbReservationPackage", read_js("airbnb-calendar.js"))
         self.assertIn("fsk:package-selected", read_js("booking.js"))
         self.assertIn("STATE.selectedSlot.package", read_js("airbnb-calendar.js"))
-
-
-# ===========================================================================
-# 9. Security
-# ===========================================================================
 
 class TestSecurity(unittest.TestCase):
     SECRET_PATTERNS = [
@@ -725,11 +677,6 @@ class TestSecurity(unittest.TestCase):
         server = (REPO_DIR / "serve.py").read_text(encoding="utf-8")
         self.assertNotIn("Access-Control-Allow-Origin", server)
 
-
-# ===========================================================================
-# 10. Brand purity and content sanitisation
-# ===========================================================================
-
 class TestBrandPurityAndContentSanitization(unittest.TestCase):
     def setUp(self):
         self.index = read(INDEX).lower()
@@ -779,11 +726,6 @@ class TestBrandPurityAndContentSanitization(unittest.TestCase):
         self.assertIn("expressive saxophone phrasing", body)
         self.assertIn("dynamic stage presence", body)
         self.assertIn("premier live saxophonist", body)
-
-
-# ===========================================================================
-# 11. Booking engine (Airbnb widget)
-# ===========================================================================
 
 class TestAirbnbBookingEngine(unittest.TestCase):
     def setUp(self):
@@ -854,11 +796,6 @@ class TestAirbnbBookingEngine(unittest.TestCase):
         missing = used - registered
         self.assertEqual(set(), missing, f"data-actions with no handler: {missing}")
 
-
-# ===========================================================================
-# 12. Print / document generation
-# ===========================================================================
-
 class TestPrintAndDocuments(unittest.TestCase):
     def setUp(self):
         self.index = read(INDEX)
@@ -878,11 +815,6 @@ class TestPrintAndDocuments(unittest.TestCase):
         self.assertIn("buildInvoicePreview", read_js("portal.js"))
         self.assertIn("invoiceLine", read_js("portal.js"))
         self.assertIn('id="invoice-preview"', self.index)
-
-
-# ===========================================================================
-# 13. Performance
-# ===========================================================================
 
 class TestPerformance(unittest.TestCase):
     def setUp(self):
@@ -927,7 +859,6 @@ class TestPerformance(unittest.TestCase):
     def test_index_is_not_a_monolith(self):
         lines = len(self.index.splitlines())
         self.assertLess(lines, 1_600, f"index.html should be ~1,300 lines, found {lines}")
-
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

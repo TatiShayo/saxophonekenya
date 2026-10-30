@@ -25,7 +25,6 @@ import {
 } from './utils.js';
 import { showToast } from './toast.js';
 
-/* --------------------------------------------------------------------------
    Package selection chips
    -------------------------------------------------------------------------- */
 
@@ -52,7 +51,6 @@ function selectSlotType(button, packageName) {
   showToast(`Package selected: ${pkg ? pkg.name : packageName}`);
 }
 
-/* --------------------------------------------------------------------------
    Match a package name to the closest option in the contact form
    -------------------------------------------------------------------------- */
 
@@ -112,7 +110,6 @@ function selectPackageAndScroll(packageName) {
   );
 }
 
-/* --------------------------------------------------------------------------
    "Fill booking form for this date"
    -------------------------------------------------------------------------- */
 
@@ -133,7 +130,6 @@ function fillFormWithSelectedDate() {
   showToast(`Date ${formatReadableDate(date)} set. Complete the form below.`);
 }
 
-/* --------------------------------------------------------------------------
    Direct booking form
    -------------------------------------------------------------------------- */
 
@@ -205,7 +201,6 @@ function handleDirectBookingSubmit(event) {
   );
 }
 
-/* --------------------------------------------------------------------------
    Moodboard viewer
    -------------------------------------------------------------------------- */
 
@@ -213,7 +208,6 @@ function openPhotoViewer(title) {
   showToast(`Viewing: ${title} (@ojiespov)`);
 }
 
-/* --------------------------------------------------------------------------
    Init
    -------------------------------------------------------------------------- */
 

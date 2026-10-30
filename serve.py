@@ -30,7 +30,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 
-
 class DevHandler(SimpleHTTPRequestHandler):
     """Static file handler with strict, no-store cache semantics.
 
@@ -78,12 +77,10 @@ class DevHandler(SimpleHTTPRequestHandler):
                 pass
         super().send_error(code, message, explain)
 
-
 class ReusableThreadingHTTPServer(ThreadingHTTPServer):
     """Allow an immediate restart without 'Address already in use'."""
     allow_reuse_address = True
     daemon_threads = True
-
 
 def run_build() -> bool:
     """Rebuild index.html from partials/ before serving."""
@@ -108,7 +105,6 @@ def run_build() -> bool:
         return False
     return True
 
-
 def free_port(port: int) -> int:
     """If the port is taken, find the next free one so the server still starts."""
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
@@ -124,7 +120,6 @@ def free_port(port: int) -> int:
                 except OSError:
                     continue
     raise SystemExit(f"No free port found in {port}–{port + 40}.")
-
 
 def main() -> int:
     parser = argparse.ArgumentParser(
@@ -174,7 +169,6 @@ def main() -> int:
         httpd.server_close()
 
     return 0
-
 
 if __name__ == "__main__":
     sys.exit(main())

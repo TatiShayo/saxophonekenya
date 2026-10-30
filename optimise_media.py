@@ -65,10 +65,8 @@ EVIDENCE_FILES = [
 MAX_LONG_EDGE = 1920
 MAX_VIDEO_HEIGHT = 1080
 
-
 def megabytes(path: Path) -> float:
     return path.stat().st_size / 1_048_576
-
 
 def check_ffmpeg() -> bool:
     try:
@@ -76,7 +74,6 @@ def check_ffmpeg() -> bool:
         return True
     except (FileNotFoundError, subprocess.CalledProcessError):
         return False
-
 
 def optimise_video(path: Path, dry_run: bool) -> tuple[int, int]:
     before = path.stat().st_size
@@ -119,7 +116,6 @@ def optimise_video(path: Path, dry_run: bool) -> tuple[int, int]:
 
     tmp.replace(path)
     return before, after
-
 
 def optimise_image(path: Path, dry_run: bool) -> tuple[int, int]:
     before = path.stat().st_size
@@ -182,7 +178,6 @@ def optimise_image(path: Path, dry_run: bool) -> tuple[int, int]:
 
     tmp.replace(path)
     return before, after
-
 
 def main() -> int:
     parser = argparse.ArgumentParser()
@@ -259,7 +254,6 @@ def main() -> int:
     print(f"{'=' * 68}")
 
     return 0
-
 
 if __name__ == "__main__":
     sys.exit(main())
