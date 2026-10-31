@@ -11,7 +11,7 @@ We operate under the fundamental principle of **data minimization** (collecting 
 ---
 
 ## 1. Compliance with the Kenya Data Protection Act, 2019
-We process all personal data in strict compliance with the principles set out in **Section 3 of the Kenya Data Protection Act, 2019**:
+We process all personal data in strict compliance with the principles set out in **Sections 25 and 26 of the Kenya Data Protection Act, 2019**:
 - **Lawfulness, Fairness & Transparency:** Data is processed lawfully with your explicit consent or under clear contractual necessity.
 - **Purpose Limitation:** Data is collected for specific, explicit, and legitimate operational purposes.
 - **Data Minimization:** We restrict data collection strictly to what is adequate, relevant, and necessary.
@@ -60,7 +60,7 @@ Under the **Kenya Data Protection Act (Sections 26–36)** and international pri
 5. **Right to Object:** Object to processing based on legitimate interests or automated profiling.
 6. **Right to Lodge a Complaint:** You have the right to lodge a formal complaint with the **Office of the Data Protection Commissioner (ODPC) of Kenya** (Website: [www.odpc.go.ke](https://www.odpc.go.ke)).
 
-To exercise any of these rights, email: `privacy@saxophonekenya.dev`.
+To exercise any of these rights, email: `Tatibaraka@gmail.com`.
 
 ---
 
@@ -74,3 +74,7 @@ We implement defense-in-depth security:
 
 ## 7. Policy Updates
 We may update this Privacy Policy to reflect technical or regulatory changes. Updated versions will be published in this repository with an updated effective date.
+
+
+## Statutory Registration Notice (Section 18)
+Pursuant to Section 18 of the Kenya Data Protection Act, entities processing personal data in Kenya above statutory thresholds must maintain active registration with the Office of the Data Protection Commissioner (ODPC) (Website: www.odpc.go.ke). Contact: `Tatibaraka@gmail.com`.

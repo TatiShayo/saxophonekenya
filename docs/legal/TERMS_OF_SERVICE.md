@@ -86,5 +86,5 @@ We reserve the right to modify these Terms at any time by updating this file or 
 
 ## 11. Contact Information
 For legal inquiries regarding these Terms:
-- **Email:** legal@saxophonekenya.dev (or the primary contact address in the repository README)
+- **Email:** Tatibaraka@gmail.com (or the primary contact address in the repository README)
 - **Physical Jurisdiction:** Nairobi, Kenya

@@ -143,3 +143,19 @@ To eliminate common agent coding pitfalls and over-engineering, every agent work
 4. **Goal-Driven Execution:**
    - Define verifiable success criteria. Loop until verified.
    - Run python -m unittest tests.test_frederic_sax_suite (all 94 tests must pass) and python build.py --check before committing.
+
+
+## 12. Security & Design Skills Integration
+
+All code and styling updates must comply with the installed skills framework:
+1. **OWASP Top 10 Mitigator (skills/secure-code-guardian/):**
+   - Strictly zero exposed secrets or tokens in client code.
+   - Maintain defense-in-depth security headers across ercel.json and .htaccess.
+   - Adhere to vulnerability disclosure and security hygiene defined in SECURITY.md.
+2. **Apple Design & UI-UX Pro Max (skills/apple-design-ui-ux/):**
+   - Maintain understated luxury aesthetic: fluid typography, frosted glass surfaces, metallic accents (#D4AF37), WCAG 2.2 AA contrast ratios, and tactile micro-interactions.
+   - Support @media (prefers-reduced-motion: reduce) and responsive touch viewports.
+3. **Browserbase UI Testing (skills/browserbase-ui-test/):**
+   - Validate hermetic rendering, responsive viewport integrity, and zero console errors.
+4. **Hardening Matrix (CHECKLIST.md):**
+   - Follow the 18-point verification matrix before tagging or deploying production releases.

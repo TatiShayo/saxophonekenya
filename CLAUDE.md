@@ -63,3 +63,9 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 ---
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
+
+
+## Security & UI Skills Framework
+- **OWASP Mitigations:** Follow skills/secure-code-guardian/SKILL.md and SECURITY.md.
+- **Apple Design & UX:** Follow skills/apple-design-ui-ux/SKILL.md for aesthetics, typography, and accessibility.
+- **Verification Matrix:** Follow CHECKLIST.md for pre-deployment audits.
